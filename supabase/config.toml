@@ -1,1 +1,4 @@
 project_id = "pzqydeahhbcpkqlpmkym"
+
+[functions.nve-search]
+verify_jwt = false

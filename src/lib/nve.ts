@@ -1,3 +1,4 @@
+import { supabase } from "@/integrations/supabase/client";
 export interface NVEKraftverk {
   VannKraftverkID: number;
   Navn: string;
@@ -38,54 +39,24 @@ export interface NVEKraftverk {
 export async function searchKraftverkByName(query: string, kommune?: string): Promise<NVEKraftverk[]> {
   if (!query?.trim()) return [];
 
-  // Always use direct NVE API for better reliability
   try {
-    console.log(`Searching NVE API for: "${query}"${kommune ? ` in ${kommune}` : ''}`);
-    
-    const resp = await fetch("https://api.nve.no/web/Powerplant/GetHydroPowerPlantsInOperation", {
-      headers: { 
-        Accept: "application/json",
-        "User-Agent": "HydroNorge/1.0"
-      },
+    console.log(`Searching NVE via Edge Function for: "${query}"${kommune ? ` in ${kommune}` : ''}`);
+    const { data, error } = await supabase.functions.invoke("nve-search", {
+      body: { navn: query, kommune },
     });
-    
-    if (!resp.ok) {
-      console.error(`NVE API error: ${resp.status} ${resp.statusText}`);
+
+    if (error) {
+      console.error("Edge function nve-search error:", error);
       return [];
     }
 
-    const data: NVEKraftverk[] = await resp.json();
-    
-    if (!Array.isArray(data)) {
-      console.error("NVE API returned non-array data:", typeof data);
-      return [];
-    }
-
-    console.log(`NVE API returned ${data.length} total kraftverk`);
-
-    const navnLc = query.toLowerCase().trim();
-    const kommuneLc = kommune?.toLowerCase().trim();
-    
-    const filtered = data
-      .filter((k) => {
-        if (!k?.Navn) return false;
-        const kraftverkNavn = k.Navn.toLowerCase();
-        return kraftverkNavn.includes(navnLc);
-      })
-      .filter((k) => {
-        if (!kommuneLc) return true;
-        if (!k?.Kommune) return false;
-        const kraftverkKommune = k.Kommune.toLowerCase();
-        return kraftverkKommune.includes(kommuneLc);
-      })
-      .slice(0, 20);
-
-    console.log(`Filtered to ${filtered.length} kraftverk matching "${query}"`);
-    return filtered;
-    
+    const list = (data?.kraftverk ?? []) as NVEKraftverk[];
+    console.log(`Edge function returned ${list.length} results`);
+    return list.slice(0, 20);
   } catch (error) {
-    console.error("NVE API search failed:", error);
+    console.error("NVE Edge function search failed:", error);
     return [];
   }
 }
+
 
