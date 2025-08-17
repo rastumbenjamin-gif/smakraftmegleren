@@ -268,16 +268,18 @@ export const RegistrationModal = ({ plantName, children }: RegistrationModalProp
 
       {/* Hindbergelva Overview Modal */}
       {showOverview && (
-        <div className="fixed inset-0 z-50 bg-background">
+        <div className="fixed inset-0 z-[9999] bg-background overflow-y-auto">
           <Button
             variant="outline"
             size="icon"
-            className="fixed top-4 right-4 z-60 bg-background border border-border rounded-full shadow-lg"
+            className="fixed top-4 right-4 z-[10000] bg-background border border-border rounded-full shadow-lg hover:bg-muted"
             onClick={() => setShowOverview(false)}
           >
             <X className="h-4 w-4" />
           </Button>
-          <HindbergelvaOverview />
+          <div className="w-full h-full">
+            <HindbergelvaOverview />
+          </div>
         </div>
       )}
     </>
