@@ -51,6 +51,7 @@ export const HeroSection = () => {
               variant="invest" 
               size="lg" 
               className="text-lg px-8 py-6 h-auto"
+              onClick={() => document.getElementById('investment-opportunities')?.scrollIntoView({ behavior: 'smooth' })}
             >
               View Investment Opportunities
             </Button>
