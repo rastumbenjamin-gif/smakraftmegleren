@@ -3,6 +3,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
 import { MapPin, Zap, Calendar, Users, TrendingUp } from "lucide-react";
+import { RegistrationModal } from "./RegistrationModal";
 
 const opportunities = [
   {
@@ -144,12 +145,14 @@ export const InvestmentOpportunities = () => {
                 </div>
 
                 {/* CTA Button */}
-                <Button 
-                  variant="default" 
-                  className="w-full bg-primary hover:bg-primary/90 text-white"
-                >
-                  Register to get pricing and detailed information →
-                </Button>
+                <RegistrationModal plantName={plant.name}>
+                  <Button 
+                    variant="default" 
+                    className="w-full bg-primary hover:bg-primary/90 text-white"
+                  >
+                    Register to get pricing and detailed information →
+                  </Button>
+                </RegistrationModal>
               </CardContent>
             </Card>
           ))}
