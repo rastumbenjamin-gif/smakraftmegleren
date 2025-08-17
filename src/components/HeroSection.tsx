@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import heroImage from "@/assets/hydro-hero.jpg";
 import { Zap, Droplet, TrendingUp } from "lucide-react";
+import { SellPowerPlantModal } from "./SellPowerPlantModal";
 
 export const HeroSection = () => {
   return (
@@ -54,13 +55,15 @@ export const HeroSection = () => {
             >
               View Investment Opportunities
             </Button>
-            <Button 
-              variant="hydro-outline" 
-              size="lg"
-              className="text-lg px-8 py-6 h-auto text-white border-white hover:bg-white hover:text-primary"
-            >
-              Compare vs Carbon Credits
-            </Button>
+            <SellPowerPlantModal>
+              <Button 
+                variant="hydro-outline" 
+                size="lg"
+                className="text-lg px-8 py-6 h-auto text-white border-white hover:bg-white hover:text-primary"
+              >
+                Sell Your Power Plant
+              </Button>
+            </SellPowerPlantModal>
           </div>
         </div>
       </div>
