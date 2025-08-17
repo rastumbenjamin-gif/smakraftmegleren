@@ -7,48 +7,47 @@ import { MapPin, Zap, Calendar, Users, TrendingUp } from "lucide-react";
 const opportunities = [
   {
     id: 1,
-    name: "Lofoten Falls Hydro Station",
-    location: "Lofoten Islands, Norway",
-    capacity: "12.5 MW",
-    annualProduction: "45 GWh",
-    roi: "12.3%",
-    funded: 68,
-    totalInvestment: "€8.2M",
+    name: "Hindbergelva kraftverk",
+    location: "Mosvik, Trøndelag",
+    capacity: "1.2 MW",
+    annualProduction: "5.8 GWh/år",
+    roi: "11.2%",
+    funded: 45,
+    totalInvestment: "€3.2M",
     minInvestment: "€25,000",
-    co2Reduction: "18,500",
-    operationalDate: "Q2 2025",
-    investors: 156,
-    image: "🏔️"
+    co2Reduction: "2,400",
+    operationalDate: "In Operation (1987)",
+    investors: 89,
+    image: "🏔️",
+    status: "Featured opportunity",
+    statusColor: "bg-gradient-to-r from-yellow-400 to-orange-500",
+    buildYear: "1987",
+    advantages: [
+      "High winter production when electricity prices are highest",
+      "Recently renovated turbine and waterway"
+    ]
   },
   {
     id: 2,
-    name: "Sognefjord Power Plant",
-    location: "Sogn og Fjordane, Norway", 
-    capacity: "8.7 MW",
-    annualProduction: "32 GWh",
-    roi: "10.8%",
-    funded: 89,
-    totalInvestment: "€5.9M",
+    name: "Bjørå kraftverk",
+    location: "Voss, Vestland", 
+    capacity: "2.8 MW",
+    annualProduction: "12.5 GWh/år",
+    roi: "13.7%",
+    funded: 0,
+    totalInvestment: "€7.1M",
     minInvestment: "€25,000",
-    co2Reduction: "13,200",
-    operationalDate: "Q4 2024",
-    investors: 203,
-    image: "💧"
-  },
-  {
-    id: 3,
-    name: "Hardangerfjord Mini-Hydro",
-    location: "Hardanger, Norway",
-    capacity: "4.2 MW", 
-    annualProduction: "15 GWh",
-    roi: "14.7%",
-    funded: 23,
-    totalInvestment: "€2.8M",
-    minInvestment: "€25,000",
-    co2Reduction: "6,150",
-    operationalDate: "Q1 2026",
-    investors: 67,
-    image: "⚡"
+    co2Reduction: "5,150",
+    operationalDate: "2025",
+    investors: 0,
+    image: "💧",
+    status: "Consented project",
+    statusColor: "bg-hydro-green",
+    buildYear: "2025",
+    advantages: [
+      "Fresh consent granted December 2024",
+      "High annual production provides solid revenue base"
+    ]
   }
 ];
 
@@ -65,22 +64,22 @@ export const InvestmentOpportunities = () => {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-8 max-w-7xl mx-auto">
+        <div className="grid lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
           {opportunities.map((plant) => (
             <Card key={plant.id} className="shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02]">
               <CardHeader className="pb-4">
-                <div className="flex items-start justify-between">
-                  <div className="text-4xl">{plant.image}</div>
+                <div className="flex items-start justify-between mb-2">
+                  <Badge className={`${plant.statusColor} text-white px-3 py-1`}>
+                    ⭐ {plant.status}
+                  </Badge>
                   <Badge 
                     className={`${
-                      plant.funded > 80 
+                      plant.operationalDate.includes("Operation") 
                         ? 'bg-success text-white' 
-                        : plant.funded > 50 
-                          ? 'bg-warning text-white'
-                          : 'bg-hydro-blue text-white'
+                        : 'bg-primary text-white'
                     }`}
                   >
-                    {plant.funded}% Funded
+                    {plant.operationalDate.includes("Operation") ? "In operation" : "Consented project"}
                   </Badge>
                 </div>
                 <CardTitle className="text-xl">{plant.name}</CardTitle>
@@ -90,74 +89,67 @@ export const InvestmentOpportunities = () => {
                 </div>
               </CardHeader>
 
-              <CardContent className="space-y-4">
-                {/* Progress Bar */}
-                <div className="space-y-2">
-                  <div className="flex justify-between text-sm">
-                    <span>Investment Progress</span>
-                    <span>{plant.totalInvestment}</span>
-                  </div>
-                  <Progress value={plant.funded} className="h-2" />
-                </div>
+              <CardContent className="space-y-6">
+                {/* Plant Description */}
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  {plant.id === 1 
+                    ? "Modern hydropower plant with high winter production and potential for increased output. Located downstream of regulated lake providing stable production throughout the year."
+                    : "Recently consented hydropower project with high production and attractive economics. All permits are in place and the project is ready for construction or further development."
+                  }
+                </p>
 
-                {/* Key Metrics */}
-                <div className="grid grid-cols-2 gap-4 text-sm">
-                  <div className="flex items-center gap-2">
-                    <Zap className="h-4 w-4 text-hydro-blue" />
+                {/* Key Metrics Grid */}
+                <div className="grid grid-cols-2 gap-6 text-sm">
+                  <div className="flex items-start gap-2">
+                    <Zap className="h-4 w-4 text-hydro-blue mt-0.5" />
                     <div>
                       <div className="font-semibold">{plant.capacity}</div>
-                      <div className="text-muted-foreground">Capacity</div>
+                      <div className="text-muted-foreground">Power</div>
                     </div>
                   </div>
-                  <div className="flex items-center gap-2">
-                    <TrendingUp className="h-4 w-4 text-success" />
+                  <div className="flex items-start gap-2">
+                    <TrendingUp className="h-4 w-4 text-success mt-0.5" />
                     <div>
-                      <div className="font-semibold text-success">{plant.roi}</div>
-                      <div className="text-muted-foreground">Annual ROI</div>
+                      <div className="font-semibold">{plant.annualProduction}</div>
+                      <div className="text-muted-foreground">Annual production (GWh, average last 5 years)</div>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <MapPin className="h-4 w-4 text-muted-foreground mt-0.5" />
+                    <div>
+                      <div className="font-semibold">{plant.location}</div>
+                      <div className="text-muted-foreground">Location</div>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <Calendar className="h-4 w-4 text-muted-foreground mt-0.5" />
+                    <div>
+                      <div className="font-semibold">{plant.buildYear}</div>
+                      <div className="text-muted-foreground">Build year</div>
                     </div>
                   </div>
                 </div>
 
-                <div className="grid grid-cols-2 gap-4 text-sm">
-                  <div>
-                    <div className="font-semibold">{plant.annualProduction}</div>
-                    <div className="text-muted-foreground">Annual Production</div>
-                  </div>
-                  <div>
-                    <div className="font-semibold text-hydro-green">{plant.co2Reduction}t CO₂</div>
-                    <div className="text-muted-foreground">Annual Reduction</div>
-                  </div>
-                </div>
-
-                <div className="flex items-center justify-between text-sm border-t pt-4">
-                  <div className="flex items-center gap-1">
-                    <Users className="h-4 w-4 text-muted-foreground" />
-                    <span>{plant.investors} investors</span>
-                  </div>
-                  <div className="flex items-center gap-1">
-                    <Calendar className="h-4 w-4 text-muted-foreground" />
-                    <span>{plant.operationalDate}</span>
+                {/* Unique Advantages */}
+                <div>
+                  <h4 className="font-semibold mb-3">Unique Advantages</h4>
+                  <div className="space-y-2">
+                    {plant.advantages.map((advantage, index) => (
+                      <div key={index} className="flex items-start gap-2">
+                        <div className="w-2 h-2 rounded-full bg-hydro-green mt-2 flex-shrink-0" />
+                        <span className="text-sm text-muted-foreground">{advantage}</span>
+                      </div>
+                    ))}
                   </div>
                 </div>
 
-                <div className="pt-4 space-y-3">
-                  <div className="text-sm">
-                    <span className="font-semibold">Minimum investment: </span>
-                    <span className="text-hydro-blue">{plant.minInvestment}</span>
-                  </div>
-                  
-                  <Button 
-                    variant="invest" 
-                    className="w-full" 
-                    disabled={plant.funded >= 100}
-                  >
-                    {plant.funded >= 100 ? 'Fully Funded' : 'Invest Now'}
-                  </Button>
-                  
-                  <Button variant="hydro-outline" className="w-full">
-                    View Details & Financials
-                  </Button>
-                </div>
+                {/* CTA Button */}
+                <Button 
+                  variant="default" 
+                  className="w-full bg-primary hover:bg-primary/90 text-white"
+                >
+                  Register to get pricing and detailed information →
+                </Button>
               </CardContent>
             </Card>
           ))}
