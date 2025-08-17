@@ -40,8 +40,35 @@ export async function searchKraftverkByName(query: string, kommune?: string): Pr
   const url = `/functions/v1/nve-search?navn=${encodeURIComponent(query)}${
     kommune ? `&kommune=${encodeURIComponent(kommune)}` : ""
   }`;
-  const res = await fetch(url, { headers: { Accept: "application/json" } });
-  if (!res.ok) return [];
-  const data = await res.json();
-  return data.kraftverk ?? [];
+
+  try {
+    const res = await fetch(url, { headers: { Accept: "application/json" } });
+    if (res.ok) {
+      const data = await res.json();
+      return data.kraftverk ?? [];
+    }
+
+    // If the edge function is not available (404) or other failure, fall back to direct NVE API
+    console.warn("nve-search edge function unavailable, falling back to direct NVE API", res.status);
+  } catch (e) {
+    console.warn("nve-search edge function fetch failed, falling back to direct NVE API", e);
+  }
+
+  try {
+    const resp = await fetch("https://api.nve.no/web/Powerplant/GetHydroPowerPlantsInOperation", {
+      headers: { Accept: "application/json" },
+    });
+    if (!resp.ok) return [];
+    const data: NVEKraftverk[] = await resp.json();
+    const navnLc = query.toLowerCase();
+    const kommuneLc = kommune?.toLowerCase();
+    return (Array.isArray(data) ? data : [])
+      .filter((k) => (k.Navn || "").toLowerCase().includes(navnLc))
+      .filter((k) => (!kommuneLc ? true : (k.Kommune || "").toLowerCase().includes(kommuneLc!)))
+      .slice(0, 20);
+  } catch (e) {
+    console.error("Direct NVE API fallback failed", e);
+    return [];
+  }
 }
+
