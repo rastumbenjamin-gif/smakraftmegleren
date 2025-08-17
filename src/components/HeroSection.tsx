@@ -24,7 +24,6 @@ export const HeroSection = () => {
           
           <h1 className="text-5xl md:text-7xl font-bold leading-tight">
             Real Green Investments
-            <span className="block text-hydro-green-light">Not Greenwashing</span>
           </h1>
           
           <p className="text-xl md:text-2xl text-white/90 max-w-2xl mx-auto leading-relaxed">
