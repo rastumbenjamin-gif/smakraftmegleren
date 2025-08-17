@@ -37,37 +37,54 @@ export interface NVEKraftverk {
 
 export async function searchKraftverkByName(query: string, kommune?: string): Promise<NVEKraftverk[]> {
   if (!query?.trim()) return [];
-  const url = `/functions/v1/nve-search?navn=${encodeURIComponent(query)}${
-    kommune ? `&kommune=${encodeURIComponent(kommune)}` : ""
-  }`;
 
+  // Always use direct NVE API for better reliability
   try {
-    const res = await fetch(url, { headers: { Accept: "application/json" } });
-    if (res.ok) {
-      const data = await res.json();
-      return data.kraftverk ?? [];
+    console.log(`Searching NVE API for: "${query}"${kommune ? ` in ${kommune}` : ''}`);
+    
+    const resp = await fetch("https://api.nve.no/web/Powerplant/GetHydroPowerPlantsInOperation", {
+      headers: { 
+        Accept: "application/json",
+        "User-Agent": "HydroNorge/1.0"
+      },
+    });
+    
+    if (!resp.ok) {
+      console.error(`NVE API error: ${resp.status} ${resp.statusText}`);
+      return [];
     }
 
-    // If the edge function is not available (404) or other failure, fall back to direct NVE API
-    console.warn("nve-search edge function unavailable, falling back to direct NVE API", res.status);
-  } catch (e) {
-    console.warn("nve-search edge function fetch failed, falling back to direct NVE API", e);
-  }
-
-  try {
-    const resp = await fetch("https://api.nve.no/web/Powerplant/GetHydroPowerPlantsInOperation", {
-      headers: { Accept: "application/json" },
-    });
-    if (!resp.ok) return [];
     const data: NVEKraftverk[] = await resp.json();
-    const navnLc = query.toLowerCase();
-    const kommuneLc = kommune?.toLowerCase();
-    return (Array.isArray(data) ? data : [])
-      .filter((k) => (k.Navn || "").toLowerCase().includes(navnLc))
-      .filter((k) => (!kommuneLc ? true : (k.Kommune || "").toLowerCase().includes(kommuneLc!)))
+    
+    if (!Array.isArray(data)) {
+      console.error("NVE API returned non-array data:", typeof data);
+      return [];
+    }
+
+    console.log(`NVE API returned ${data.length} total kraftverk`);
+
+    const navnLc = query.toLowerCase().trim();
+    const kommuneLc = kommune?.toLowerCase().trim();
+    
+    const filtered = data
+      .filter((k) => {
+        if (!k?.Navn) return false;
+        const kraftverkNavn = k.Navn.toLowerCase();
+        return kraftverkNavn.includes(navnLc);
+      })
+      .filter((k) => {
+        if (!kommuneLc) return true;
+        if (!k?.Kommune) return false;
+        const kraftverkKommune = k.Kommune.toLowerCase();
+        return kraftverkKommune.includes(kommuneLc);
+      })
       .slice(0, 20);
-  } catch (e) {
-    console.error("Direct NVE API fallback failed", e);
+
+    console.log(`Filtered to ${filtered.length} kraftverk matching "${query}"`);
+    return filtered;
+    
+  } catch (error) {
+    console.error("NVE API search failed:", error);
     return [];
   }
 }
