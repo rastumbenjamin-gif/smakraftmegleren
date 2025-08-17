@@ -8,6 +8,8 @@ import { Textarea } from "@/components/ui/textarea";
 import { Checkbox } from "@/components/ui/checkbox";
 import { useToast } from "@/hooks/use-toast";
 import { X, Search, Rocket } from "lucide-react";
+import { SearchKraftverkCombobox } from "./SearchKraftverkCombobox";
+
 
 interface SellPowerPlantModalProps {
   children: React.ReactNode;
@@ -158,13 +160,19 @@ export const SellPowerPlantModal = ({ children }: SellPowerPlantModalProps) => {
             <div className="ml-10 space-y-4">
               <div className="space-y-2">
                 <Label htmlFor="plantName">Power plant name * <Search className="inline h-4 w-4 ml-1" /></Label>
-                <Input
-                  id="plantName"
+                <SearchKraftverkCombobox
                   value={formData.plantName}
-                  onChange={(e) => setFormData(prev => ({ ...prev, plantName: e.target.value }))}
-                  placeholder="Start typing the power plant name..."
-                  required
-                  className="bg-background"
+                  onChange={(v) => setFormData((prev) => ({ ...prev, plantName: v }))}
+                  onSelect={(k) => {
+                    setFormData((prev) => ({
+                      ...prev,
+                      plantName: k.Navn,
+                      municipality: k.Kommune,
+                      county: k.Fylke,
+                      installedCapacity: String(k.MaksYtelse ?? ""),
+                      annualProduction: String(k.MidProd_91_20 ?? ""),
+                    }));
+                  }}
                 />
               </div>
 
