@@ -37,8 +37,7 @@ export interface NVEKraftverk {
 
 export async function searchKraftverkByName(query: string, kommune?: string): Promise<NVEKraftverk[]> {
   if (!query?.trim()) return [];
-  const baseUrl = import.meta.env.VITE_SUPABASE_URL;
-  const url = `${baseUrl}/functions/v1/nve-search?navn=${encodeURIComponent(query)}${
+  const url = `/functions/v1/nve-search?navn=${encodeURIComponent(query)}${
     kommune ? `&kommune=${encodeURIComponent(kommune)}` : ""
   }`;
   const res = await fetch(url, { headers: { Accept: "application/json" } });
