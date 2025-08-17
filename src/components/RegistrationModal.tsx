@@ -7,6 +7,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import { X } from "lucide-react";
+import { supabase } from "@/integrations/supabase/client";
 
 interface RegistrationModalProps {
   plantName: string;
@@ -27,7 +28,7 @@ export const RegistrationModal = ({ plantName, children }: RegistrationModalProp
   });
   const { toast } = useToast();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
     // Basic validation
@@ -40,23 +41,59 @@ export const RegistrationModal = ({ plantName, children }: RegistrationModalProp
       return;
     }
 
-    // Simulate form submission
-    toast({
-      title: "Registration Successful!",
-      description: `Thank you for your interest in ${plantName}. We'll contact you within 24 hours with detailed information.`,
-    });
-    
-    setOpen(false);
-    setFormData({
-      name: "",
-      email: "",
-      investorType: "",
-      budgetRange: "",
-      pricingArea: "",
-      productionRange: "",
-      timeframe: "",
-      comments: ""
-    });
+    try {
+      // Send notification email
+      const { error } = await supabase.functions.invoke("send-notification", {
+        body: {
+          type: "buyer",
+          data: {
+            name: formData.name,
+            email: formData.email,
+            investorType: formData.investorType,
+            budgetRange: formData.budgetRange,
+            pricingArea: formData.pricingArea,
+            productionRange: formData.productionRange,
+            timeframe: formData.timeframe,
+            comments: formData.comments,
+            plantName: plantName
+          }
+        }
+      });
+
+      if (error) {
+        console.error("Email notification error:", error);
+        toast({
+          title: "Registration Error",
+          description: "There was an issue sending your registration. Please try again.",
+          variant: "destructive"
+        });
+        return;
+      }
+
+      toast({
+        title: "Registration Successful!",
+        description: `Thank you for your interest in ${plantName}. We'll contact you within 24 hours with detailed information.`,
+      });
+      
+      setOpen(false);
+      setFormData({
+        name: "",
+        email: "",
+        investorType: "",
+        budgetRange: "",
+        pricingArea: "",
+        productionRange: "",
+        timeframe: "",
+        comments: ""
+      });
+    } catch (error) {
+      console.error("Form submission error:", error);
+      toast({
+        title: "Registration Error", 
+        description: "There was an issue sending your registration. Please try again.",
+        variant: "destructive"
+      });
+    }
   };
 
   return (

@@ -9,6 +9,7 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { useToast } from "@/hooks/use-toast";
 import { X, Search, Rocket } from "lucide-react";
 import { SearchKraftverkCombobox } from "./SearchKraftverkCombobox";
+import { supabase } from "@/integrations/supabase/client";
 
 
 interface SellPowerPlantModalProps {
@@ -39,7 +40,7 @@ export const SellPowerPlantModal = ({ children }: SellPowerPlantModalProps) => {
   });
   const { toast } = useToast();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
     // Basic validation
@@ -52,31 +53,71 @@ export const SellPowerPlantModal = ({ children }: SellPowerPlantModalProps) => {
       return;
     }
 
-    // Simulate form submission
-    toast({
-      title: "Evaluation Request Sent!",
-      description: "Thank you for your submission. We'll contact you within 24 hours with a free evaluation of your power plant.",
-    });
-    
-    setOpen(false);
-    // Reset form
-    setFormData({
-      name: "",
-      phone: "",
-      email: "",
-      plantName: "",
-      municipality: "",
-      county: "",
-      installedCapacity: "",
-      annualProduction: "",
-      mainReason: "",
-      maintenanceResponsible: "",
-      waterRightsLease: "",
-      salesTimeframe: "",
-      priceExpectation: "",
-      additionalComments: "",
-      consentAgreed: false
-    });
+    try {
+      // Send notification email
+      const { error } = await supabase.functions.invoke("send-notification", {
+        body: {
+          type: "seller",
+          data: {
+            navn: formData.name,
+            telefon: formData.phone,
+            epost: formData.email,
+            kraftverkNavn: formData.plantName,
+            lokasjon: `${formData.municipality}, ${formData.county}`,
+            installertEffekt: formData.installedCapacity,
+            aarligProduksjon: formData.annualProduction,
+            byggeaar: "N/A", // Not collected in this form
+            pris: formData.priceExpectation,
+            salgsgrunn: formData.mainReason,
+            tidslinje: formData.salesTimeframe,
+            kommentarer: formData.additionalComments,
+            samtykke: formData.consentAgreed
+          }
+        }
+      });
+
+      if (error) {
+        console.error("Email notification error:", error);
+        toast({
+          title: "Submission Error",
+          description: "There was an issue sending your request. Please try again.",
+          variant: "destructive"
+        });
+        return;
+      }
+
+      toast({
+        title: "Evaluation Request Sent!",
+        description: "Thank you for your submission. We'll contact you within 24 hours with a free evaluation of your power plant.",
+      });
+      
+      setOpen(false);
+      // Reset form
+      setFormData({
+        name: "",
+        phone: "",
+        email: "",
+        plantName: "",
+        municipality: "",
+        county: "",
+        installedCapacity: "",
+        annualProduction: "",
+        mainReason: "",
+        maintenanceResponsible: "",
+        waterRightsLease: "",
+        salesTimeframe: "",
+        priceExpectation: "",
+        additionalComments: "",
+        consentAgreed: false
+      });
+    } catch (error) {
+      console.error("Form submission error:", error);
+      toast({
+        title: "Submission Error",
+        description: "There was an issue sending your request. Please try again.",
+        variant: "destructive"
+      });
+    }
   };
 
   return (
