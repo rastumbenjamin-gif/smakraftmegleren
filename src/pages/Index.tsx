@@ -3,10 +3,12 @@
 import { HeroSection } from "@/components/HeroSection";
 import { ComparisonSection } from "@/components/ComparisonSection";
 import { InvestmentOpportunities } from "@/components/InvestmentOpportunities";
+import { Header } from "@/components/Header";
 
 const Index = () => {
   return (
     <div className="min-h-screen">
+      <Header />
       <HeroSection />
       <ComparisonSection />
       <InvestmentOpportunities />
