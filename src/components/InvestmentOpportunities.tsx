@@ -157,6 +157,59 @@ export const InvestmentOpportunities = () => {
             </Card>
           ))}
         </div>
+
+        {/* More Opportunities CTA Section */}
+        <div className="mt-20 text-center">
+          <Card className="max-w-4xl mx-auto bg-gradient-to-br from-hydro-blue/5 to-hydro-green/5 border-hydro-blue/20">
+            <CardContent className="p-8">
+              <div className="space-y-6">
+                <div className="flex items-center justify-center gap-3 mb-4">
+                  <div className="w-12 h-12 rounded-full bg-gradient-to-r from-hydro-blue to-hydro-green flex items-center justify-center">
+                    <Zap className="h-6 w-6 text-white" />
+                  </div>
+                  <h3 className="text-2xl font-bold">Discover More Opportunities</h3>
+                </div>
+                
+                <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                  These are just our featured investments. We have <strong>15+ additional hydropower plants</strong> across Norway, 
+                  ranging from small-scale community projects to larger commercial installations.
+                </p>
+
+                <div className="flex flex-wrap justify-center gap-4 text-sm">
+                  <div className="flex items-center gap-2 bg-hydro-blue/10 px-4 py-2 rounded-full">
+                    <MapPin className="h-4 w-4 text-hydro-blue" />
+                    <span>Nationwide coverage</span>
+                  </div>
+                  <div className="flex items-center gap-2 bg-hydro-green/10 px-4 py-2 rounded-full">
+                    <TrendingUp className="h-4 w-4 text-hydro-green" />
+                    <span>ROI 5-18%</span>
+                  </div>
+                  <div className="flex items-center gap-2 bg-primary/10 px-4 py-2 rounded-full">
+                    <Users className="h-4 w-4 text-primary" />
+                    <span>€10k-€100k investments</span>
+                  </div>
+                </div>
+
+                <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
+                  <Button 
+                    variant="default"
+                    size="lg"
+                    className="bg-gradient-to-r from-hydro-blue to-hydro-green text-white px-8 py-6 h-auto text-lg"
+                  >
+                    View All 17 Investment Opportunities
+                  </Button>
+                  <Button 
+                    variant="outline"
+                    size="lg"
+                    className="border-hydro-blue text-hydro-blue hover:bg-hydro-blue hover:text-white px-8 py-6 h-auto text-lg"
+                  >
+                    Get Personalized Recommendations
+                  </Button>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
       </div>
     </section>
   );
