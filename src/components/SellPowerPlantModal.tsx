@@ -9,6 +9,7 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { useToast } from "@/hooks/use-toast";
 import { X, Search, Rocket } from "lucide-react";
 import { SearchKraftverkCombobox } from "./SearchKraftverkCombobox";
+import { RevenueOptionInput } from "./RevenueOptionInput";
 import { supabase } from "@/integrations/supabase/client";
 
 
@@ -36,7 +37,9 @@ export const SellPowerPlantModal = ({ children }: SellPowerPlantModalProps) => {
     salesTimeframe: "",
     priceExpectation: "",
     additionalComments: "",
-    consentAgreed: false
+    consentAgreed: false,
+    // Water rights lease details
+    waterRightsDetails: null as { type: 'percentage' | 'fixed'; amount: string } | null
   });
   const { toast } = useToast();
 
@@ -108,7 +111,8 @@ export const SellPowerPlantModal = ({ children }: SellPowerPlantModalProps) => {
         salesTimeframe: "",
         priceExpectation: "",
         additionalComments: "",
-        consentAgreed: false
+        consentAgreed: false,
+        waterRightsDetails: null
       });
     } catch (error) {
       console.error("Form submission error:", error);
@@ -332,6 +336,17 @@ export const SellPowerPlantModal = ({ children }: SellPowerPlantModalProps) => {
                   </SelectContent>
                 </Select>
               </div>
+
+              {/* Show revenue input when percentage or fixed is selected */}
+              {(formData.waterRightsLease === 'percentage-revenue' || formData.waterRightsLease === 'fixed-annual') && (
+                <div className="mt-4">
+                  <RevenueOptionInput
+                    value={formData.waterRightsDetails}
+                    onChange={(value) => setFormData(prev => ({ ...prev, waterRightsDetails: value }))}
+                    label="Water Rights Lease Details"
+                  />
+                </div>
+              )}
 
               <div className="space-y-2">
                 <Label>Sales timeframe *</Label>
