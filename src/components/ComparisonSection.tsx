@@ -69,7 +69,7 @@ export const ComparisonSection = () => {
                           <div className="w-2 h-2 rounded-full bg-hydro-blue mt-2 flex-shrink-0"></div>
                           <div>
                             <span className="font-medium text-foreground">Real Asset Ownership:</span>
-                            <span className="text-muted-foreground ml-1">You own an actual piece of renewable energy infrastructure, not just certificates or promises.</span>
+                            <span className="text-muted-foreground ml-1">You own actual renewable energy infrastructure, not just certificates or promises.</span>
                           </div>
                         </div>
                         <div className="flex gap-3">
@@ -82,29 +82,8 @@ export const ComparisonSection = () => {
                         <div className="flex gap-3">
                           <div className="w-2 h-2 rounded-full bg-hydro-blue mt-2 flex-shrink-0"></div>
                           <div>
-                            <span className="font-medium text-foreground">Climate Impact:</span>
+                            <span className="font-medium text-foreground">Direct Climate Impact:</span>
                             <span className="text-muted-foreground ml-1">Every kWh produced directly displaces fossil fuel energy and creates measurable CO₂ reduction.</span>
-                          </div>
-                        </div>
-                        <div className="flex gap-3">
-                          <div className="w-2 h-2 rounded-full bg-hydro-blue mt-2 flex-shrink-0"></div>
-                          <div>
-                            <span className="font-medium text-foreground">Inflation Hedge:</span>
-                            <span className="text-muted-foreground ml-1">Energy prices typically rise with inflation, protecting your investment's real value.</span>
-                          </div>
-                        </div>
-                        <div className="flex gap-3">
-                          <div className="w-2 h-2 rounded-full bg-hydro-blue mt-2 flex-shrink-0"></div>
-                          <div>
-                            <span className="font-medium text-foreground">Norwegian Stability:</span>
-                            <span className="text-muted-foreground ml-1">Backed by one of the world's most stable economies and transparent regulatory frameworks.</span>
-                          </div>
-                        </div>
-                        <div className="flex gap-3">
-                          <div className="w-2 h-2 rounded-full bg-hydro-blue mt-2 flex-shrink-0"></div>
-                          <div>
-                            <span className="font-medium text-foreground">Long-term Value:</span>
-                            <span className="text-muted-foreground ml-1">Hydro plants can operate for 80-100+ years with proper maintenance, creating generational wealth.</span>
                           </div>
                         </div>
                       </div>
@@ -172,27 +151,6 @@ export const ComparisonSection = () => {
                         <div className="flex gap-3">
                           <div className="w-2 h-2 rounded-full bg-warning mt-2 flex-shrink-0"></div>
                           <div>
-                            <span className="font-medium text-foreground">Double Counting:</span>
-                            <span className="text-muted-foreground ml-1">The same carbon reduction is often claimed by multiple parties (project country AND credit buyer).</span>
-                          </div>
-                        </div>
-                        <div className="flex gap-3">
-                          <div className="w-2 h-2 rounded-full bg-warning mt-2 flex-shrink-0"></div>
-                          <div>
-                            <span className="font-medium text-foreground">Verification Issues:</span>
-                            <span className="text-muted-foreground ml-1">Remote monitoring is difficult, and many projects overstate their impact.</span>
-                          </div>
-                        </div>
-                        <div className="flex gap-3">
-                          <div className="w-2 h-2 rounded-full bg-warning mt-2 flex-shrink-0"></div>
-                          <div>
-                            <span className="font-medium text-foreground">Price Manipulation:</span>
-                            <span className="text-muted-foreground ml-1">Oversupply and market manipulation can crash prices overnight.</span>
-                          </div>
-                        </div>
-                        <div className="flex gap-3">
-                          <div className="w-2 h-2 rounded-full bg-warning mt-2 flex-shrink-0"></div>
-                          <div>
                             <span className="font-medium text-foreground">No Asset Value:</span>
                             <span className="text-muted-foreground ml-1">You own nothing tangible - just a digital certificate that can become worthless.</span>
                           </div>
@@ -255,13 +213,6 @@ export const ComparisonSection = () => {
                         <div className="flex gap-3">
                           <div className="w-2 h-2 rounded-full bg-muted-foreground mt-2 flex-shrink-0"></div>
                           <div>
-                            <span className="font-medium text-foreground">No Direct Control:</span>
-                            <span className="text-muted-foreground ml-1">Fund managers make decisions - you have no say in what companies are supported.</span>
-                          </div>
-                        </div>
-                        <div className="flex gap-3">
-                          <div className="w-2 h-2 rounded-full bg-muted-foreground mt-2 flex-shrink-0"></div>
-                          <div>
                             <span className="font-medium text-foreground">Fee Erosion:</span>
                             <span className="text-muted-foreground ml-1">1-2% annual fees compound over time, significantly reducing your returns.</span>
                           </div>
@@ -269,22 +220,8 @@ export const ComparisonSection = () => {
                         <div className="flex gap-3">
                           <div className="w-2 h-2 rounded-full bg-muted-foreground mt-2 flex-shrink-0"></div>
                           <div>
-                            <span className="font-medium text-foreground">Marketing Over Substance:</span>
-                            <span className="text-muted-foreground ml-1">ESG scores are often manipulated by companies and don't reflect real environmental impact.</span>
-                          </div>
-                        </div>
-                        <div className="flex gap-3">
-                          <div className="w-2 h-2 rounded-full bg-muted-foreground mt-2 flex-shrink-0"></div>
-                          <div>
                             <span className="font-medium text-foreground">Diluted Impact:</span>
                             <span className="text-muted-foreground ml-1">Your money is spread across hundreds of companies - minimal influence on any single environmental outcome.</span>
-                          </div>
-                        </div>
-                        <div className="flex gap-3">
-                          <div className="w-2 h-2 rounded-full bg-muted-foreground mt-2 flex-shrink-0"></div>
-                          <div>
-                            <span className="font-medium text-foreground">Performance Lag:</span>
-                            <span className="text-muted-foreground ml-1">ESG funds often underperform traditional funds while charging higher fees.</span>
                           </div>
                         </div>
                       </div>
