@@ -22,10 +22,10 @@ export const ComparisonSection = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <Badge className="mb-4">Real Investment Comparison</Badge>
-          <h2 className="text-4xl font-bold mb-6">Hydro Plants vs Carbon Credits</h2>
+          <h2 className="text-4xl font-bold mb-6">Hydro Plants vs Alternative Investments</h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             See why owning actual renewable energy infrastructure delivers superior 
-            returns and genuine environmental impact compared to carbon offset schemes.
+            returns and genuine environmental impact compared to carbon credits and ESG funds.
           </p>
         </div>
 
