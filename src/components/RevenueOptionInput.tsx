@@ -11,16 +11,18 @@ interface RevenueOptionInputProps {
   onChange?: (value: { type: 'percentage' | 'fixed'; amount: string }) => void;
   label?: string;
   placeholder?: string;
+  fixedType?: 'percentage' | 'fixed'; // When set, hides radio buttons and forces this type
 }
 
 export const RevenueOptionInput = ({ 
   value, 
   onChange, 
   label = "Revenue Structure",
-  placeholder 
+  placeholder,
+  fixedType
 }: RevenueOptionInputProps) => {
   const [selectedType, setSelectedType] = useState<'percentage' | 'fixed'>(
-    value?.type || 'percentage'
+    fixedType || value?.type || 'percentage'
   );
   const [amount, setAmount] = useState(value?.amount || '');
 
@@ -39,31 +41,34 @@ export const RevenueOptionInput = ({
     <div className="space-y-4">
       <Label className="text-sm font-medium">{label}</Label>
       
-      <RadioGroup
-        value={selectedType}
-        onValueChange={handleTypeChange}
-        className="space-y-3"
-      >
-        <div className="flex items-center space-x-2 p-3 rounded-lg border border-input hover:bg-muted/50 transition-colors">
-          <RadioGroupItem value="percentage" id="percentage" />
-          <Label 
-            htmlFor="percentage" 
-            className="flex-1 cursor-pointer text-sm font-medium text-success"
-          >
-            Percentage of gross revenue
-          </Label>
-        </div>
-        
-        <div className="flex items-center space-x-2 p-3 rounded-lg border border-input hover:bg-muted/50 transition-colors">
-          <RadioGroupItem value="fixed" id="fixed" />
-          <Label 
-            htmlFor="fixed" 
-            className="flex-1 cursor-pointer text-sm font-medium text-muted-foreground"
-          >
-            Fixed annual amount
-          </Label>
-        </div>
-      </RadioGroup>
+      {/* Only show radio buttons if type is not fixed */}
+      {!fixedType && (
+        <RadioGroup
+          value={selectedType}
+          onValueChange={handleTypeChange}
+          className="space-y-3"
+        >
+          <div className="flex items-center space-x-2 p-3 rounded-lg border border-input hover:bg-muted/50 transition-colors">
+            <RadioGroupItem value="percentage" id="percentage" />
+            <Label 
+              htmlFor="percentage" 
+              className="flex-1 cursor-pointer text-sm font-medium text-success"
+            >
+              Percentage of gross revenue
+            </Label>
+          </div>
+          
+          <div className="flex items-center space-x-2 p-3 rounded-lg border border-input hover:bg-muted/50 transition-colors">
+            <RadioGroupItem value="fixed" id="fixed" />
+            <Label 
+              htmlFor="fixed" 
+              className="flex-1 cursor-pointer text-sm font-medium text-muted-foreground"
+            >
+              Fixed annual amount
+            </Label>
+          </div>
+        </RadioGroup>
+      )}
 
       {/* Dynamic Input Field */}
       <div className="mt-4">

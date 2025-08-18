@@ -344,6 +344,7 @@ export const SellPowerPlantModal = ({ children }: SellPowerPlantModalProps) => {
                     value={formData.waterRightsDetails}
                     onChange={(value) => setFormData(prev => ({ ...prev, waterRightsDetails: value }))}
                     label="Water Rights Lease Details"
+                    fixedType={formData.waterRightsLease === 'percentage-revenue' ? 'percentage' : 'fixed'}
                   />
                 </div>
               )}
