@@ -4,8 +4,7 @@ export const Header = () => {
       <div className="container mx-auto px-4 py-6">
         <div className="flex items-center justify-between">
           <div className="text-2xl md:text-3xl font-bold text-white tracking-tight">
-            <span className="text-hydro-blue">Små</span>
-            <span className="text-white">kraft</span>
+            <span className="text-white">Småkraft</span>
             <span className="text-hydro-green">megleren</span>
           </div>
           
