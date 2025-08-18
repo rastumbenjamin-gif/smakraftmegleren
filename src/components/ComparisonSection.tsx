@@ -1,6 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { CheckCircle, XCircle, TrendingUp, Target, Banknote } from "lucide-react";
+import { CheckCircle, XCircle, TrendingUp, Target } from "lucide-react";
 
 export const ComparisonSection = () => {
   return (
@@ -17,14 +17,8 @@ export const ComparisonSection = () => {
 
         <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {/* Hydro Plants - Featured */}
-          <Card className="relative border-2 border-hydro-blue/40 shadow-2xl hover:shadow-3xl transition-all duration-300 bg-gradient-to-br from-hydro-blue/5 to-hydro-green/5 md:scale-105 md:-translate-y-4">
-            {/* Recommended Badge */}
-            <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
-              <Badge className="bg-gradient-to-r from-hydro-blue to-hydro-green text-white px-4 py-1 text-sm font-semibold shadow-lg">
-                🏆 RECOMMENDED
-              </Badge>
-            </div>
-            <CardHeader className="text-center pb-4 pt-8">
+          <Card className="border-2 border-hydro-blue/40 shadow-2xl hover:shadow-3xl transition-all duration-300 bg-gradient-to-br from-hydro-blue/5 to-hydro-green/5 md:scale-105 md:-translate-y-4">
+            <CardHeader className="text-center pb-4">
               <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-gradient-to-r from-hydro-blue to-hydro-green flex items-center justify-center shadow-lg animate-pulse">
                 <TrendingUp className="h-10 w-10 text-white" />
               </div>
@@ -54,12 +48,6 @@ export const ComparisonSection = () => {
               <div className="flex items-center gap-2">
                 <CheckCircle className="h-4 w-4 text-success" />
                 <span className="text-sm">Inflation-protected revenue</span>
-              </div>
-              <div className="pt-4 border-t">
-                <div className="flex items-center gap-1">
-                  <Banknote className="h-4 w-4 text-hydro-blue" />
-                  <span className="text-sm font-semibold">€25,000 minimum investment</span>
-                </div>
               </div>
             </CardContent>
           </Card>
@@ -97,12 +85,6 @@ export const ComparisonSection = () => {
                 <XCircle className="h-4 w-4 text-destructive" />
                 <span className="text-sm">Price volatility risk</span>
               </div>
-              <div className="pt-4 border-t">
-                <div className="flex items-center gap-1">
-                  <Banknote className="h-4 w-4 text-warning" />
-                  <span className="text-sm font-semibold">€15-100 per ton CO₂</span>
-                </div>
-              </div>
             </CardContent>
           </Card>
 
@@ -138,12 +120,6 @@ export const ComparisonSection = () => {
               <div className="flex items-center gap-2">
                 <XCircle className="h-4 w-4 text-destructive" />
                 <span className="text-sm">Unclear impact measurement</span>
-              </div>
-              <div className="pt-4 border-t">
-                <div className="flex items-center gap-1">
-                  <Banknote className="h-4 w-4 text-muted-foreground" />
-                  <span className="text-sm font-semibold">€1,000 minimum</span>
-                </div>
               </div>
             </CardContent>
           </Card>
