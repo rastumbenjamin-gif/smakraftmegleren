@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
 import { MapPin, Zap, Calendar, Users, TrendingUp } from "lucide-react";
 import { RegistrationModal } from "./RegistrationModal";
+import { MoreOpportunitiesModal } from "./MoreOpportunitiesModal";
 
 const opportunities = [
   {
@@ -171,7 +172,7 @@ export const InvestmentOpportunities = () => {
                 </div>
                 
                 <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                  These are just our featured investments. We have <strong>15+ additional hydropower plants</strong> across Norway, 
+                  These are just our featured investments. We have <strong>additional hydropower plants</strong> across Norway, 
                   ranging from small-scale community projects to larger commercial installations.
                 </p>
 
@@ -186,25 +187,20 @@ export const InvestmentOpportunities = () => {
                   </div>
                   <div className="flex items-center gap-2 bg-primary/10 px-4 py-2 rounded-full">
                     <Users className="h-4 w-4 text-primary" />
-                    <span>€10k-€100k investments</span>
+                    <span>Various investment sizes</span>
                   </div>
                 </div>
 
                 <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-                  <Button 
-                    variant="default"
-                    size="lg"
-                    className="bg-gradient-to-r from-hydro-blue to-hydro-green text-white px-8 py-6 h-auto text-lg"
-                  >
-                    View All 17 Investment Opportunities
-                  </Button>
-                  <Button 
-                    variant="outline"
-                    size="lg"
-                    className="border-hydro-blue text-hydro-blue hover:bg-hydro-blue hover:text-white px-8 py-6 h-auto text-lg"
-                  >
-                    Get Personalized Recommendations
-                  </Button>
+                  <MoreOpportunitiesModal>
+                    <Button 
+                      variant="default"
+                      size="lg"
+                      className="bg-gradient-to-r from-hydro-blue to-hydro-green text-white px-8 py-6 h-auto text-lg w-full sm:w-auto"
+                    >
+                      Request More Investment Opportunities
+                    </Button>
+                  </MoreOpportunitiesModal>
                 </div>
               </div>
             </CardContent>

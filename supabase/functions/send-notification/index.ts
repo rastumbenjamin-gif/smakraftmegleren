@@ -9,7 +9,7 @@ const corsHeaders = {
 };
 
 interface NotificationRequest {
-  type: 'seller' | 'buyer';
+  type: 'seller' | 'buyer' | 'registration' | 'more_opportunities_request';
   data: any;
 }
 
@@ -78,6 +78,35 @@ const handler = async (req: Request): Promise<Response> => {
 
         ${data.comments ? `<h3>Comments:</h3><p>${data.comments}</p>` : ''}
         
+        <p><em>Submitted at: ${new Date().toLocaleString()}</em></p>
+      `;
+    } else if (type === 'registration') {
+      subject = `New Registration: ${data.plantName}`;
+      htmlContent = `
+        <h2>New Investment Registration</h2>
+        <p><strong>Plant:</strong> ${data.plantName}</p>
+        <p><strong>Name:</strong> ${data.name}</p>
+        <p><strong>Email:</strong> ${data.email}</p>
+        <p><strong>Phone:</strong> ${data.phone || 'Not provided'}</p>
+        <p><strong>Company:</strong> ${data.company || 'Not provided'}</p>
+        <p><strong>Investment Amount:</strong> ${data.investmentAmount}</p>
+        <p><strong>Investment Timeframe:</strong> ${data.investmentTimeframe}</p>
+        <p><strong>Experience Level:</strong> ${data.experienceLevel}</p>
+        <p><strong>Additional Comments:</strong> ${data.additionalComments || 'None'}</p>
+        <p><em>Submitted at: ${new Date().toLocaleString()}</em></p>
+      `;
+    } else if (type === 'more_opportunities_request') {
+      subject = "New Request for More Investment Opportunities";
+      htmlContent = `
+        <h2>More Opportunities Request</h2>
+        <p><strong>Name:</strong> ${data.name}</p>
+        <p><strong>Email:</strong> ${data.email}</p>
+        <p><strong>Phone:</strong> ${data.phone || 'Not provided'}</p>
+        <p><strong>Investment Amount Range:</strong> ${data.investmentAmount}</p>
+        <p><strong>Investment Timeframe:</strong> ${data.investmentTimeframe}</p>
+        <p><strong>Experience Level:</strong> ${data.experience}</p>
+        <p><strong>Specific Interests:</strong> ${data.interests || 'None specified'}</p>
+        <p><strong>Additional Information:</strong> ${data.additionalInfo || 'None'}</p>
         <p><em>Submitted at: ${new Date().toLocaleString()}</em></p>
       `;
     }
