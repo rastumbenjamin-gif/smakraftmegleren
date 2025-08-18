@@ -5,6 +5,7 @@ import { Progress } from "@/components/ui/progress";
 import { MapPin, Zap, Calendar, Users, TrendingUp } from "lucide-react";
 import { RegistrationModal } from "./RegistrationModal";
 import { MoreOpportunitiesModal } from "./MoreOpportunitiesModal";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const opportunities = [
   {
@@ -54,8 +55,14 @@ const opportunities = [
 ];
 
 export const InvestmentOpportunities = () => {
+  const sectionRef = useScrollAnimation();
+  
   return (
-    <section id="investment-opportunities" className="py-20 bg-muted/20">
+    <section 
+      id="investment-opportunities" 
+      ref={sectionRef}
+      className="py-20 bg-muted/20 opacity-0 translate-y-8 transition-all duration-1000 ease-out"
+    >
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <Badge className="mb-4 bg-hydro-blue text-white">Current Opportunities</Badge>

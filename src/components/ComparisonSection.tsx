@@ -4,16 +4,21 @@ import { Button } from "@/components/ui/button";
 import { Collapsible, CollapsibleContent } from "@/components/ui/collapsible";
 import { CheckCircle, XCircle, TrendingUp, Target, ChevronDown, Info } from "lucide-react";
 import { useState } from "react";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 export const ComparisonSection = () => {
   const [allDetailsOpen, setAllDetailsOpen] = useState(false);
+  const sectionRef = useScrollAnimation();
 
   const toggleAllDetails = () => {
     setAllDetailsOpen(!allDetailsOpen);
   };
 
   return (
-    <section className="py-20 bg-gradient-to-b from-background to-muted/30">
+    <section 
+      ref={sectionRef}
+      className="py-20 bg-gradient-to-b from-background to-muted/30 opacity-0 translate-y-8 transition-all duration-1000 ease-out"
+    >
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <Badge className="mb-4">Real Investment Comparison</Badge>

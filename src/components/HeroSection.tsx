@@ -7,9 +7,9 @@ import { SellPowerPlantModal } from "./SellPowerPlantModal";
 export const HeroSection = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image */}
+      {/* Background Image with Parallax Effect */}
       <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat bg-fixed"
         style={{ backgroundImage: `url(${heroImage})` }}
       >
         <div className="absolute inset-0 bg-gradient-to-r from-primary/80 via-primary/50 to-hydro-green/60" />
@@ -17,21 +17,21 @@ export const HeroSection = () => {
 
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 text-center text-white">
-        <div className="max-w-4xl mx-auto space-y-8">
-          <Badge className="bg-white/20 text-white border-white/30 text-sm px-4 py-2 mb-6">
+        <div className="max-w-4xl mx-auto space-y-8 animate-fade-in">
+          <Badge className="bg-white/20 text-white border-white/30 text-sm px-4 py-2 mb-6 animate-fade-in [animation-delay:200ms]">
             🇳🇴 Norwegian Hydroelectric Investments
           </Badge>
           
-          <h1 className="text-5xl md:text-7xl font-bold leading-tight">
+          <h1 className="text-5xl md:text-7xl font-bold leading-tight animate-fade-in [animation-delay:400ms]">
             Real Green Investments
           </h1>
           
-          <p className="text-xl md:text-2xl text-white/90 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-xl md:text-2xl text-white/90 max-w-2xl mx-auto leading-relaxed animate-fade-in [animation-delay:600ms]">
             Own actual hydro plants in Norway. Generate 5-15% annual returns while creating 
             measurable environmental impact that directly contributes to your sustainability goals.
           </p>
 
-          <div className="flex flex-wrap justify-center gap-4 text-sm">
+          <div className="flex flex-wrap justify-center gap-4 text-sm animate-fade-in [animation-delay:800ms]">
             <div className="flex items-center gap-2 bg-white/10 px-4 py-2 rounded-full">
               <Zap className="h-4 w-4" />
               <span>Clean Energy Production</span>
@@ -46,7 +46,7 @@ export const HeroSection = () => {
             </div>
           </div>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-6">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-6 animate-fade-in [animation-delay:1000ms]">
             <Button 
               variant="invest" 
               size="lg" 
