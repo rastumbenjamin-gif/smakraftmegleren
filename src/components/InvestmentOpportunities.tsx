@@ -68,28 +68,43 @@ export const InvestmentOpportunities = () => {
 
         <div className="grid lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
           {opportunities.map((plant) => (
-            <Card key={plant.id} className="shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02]">
-              <CardHeader className="pb-4">
-                <div className="flex items-start justify-between mb-2">
-                  <Badge className={`${plant.statusColor} text-white px-3 py-1`}>
-                    ⭐ {plant.status}
-                  </Badge>
-                  <Badge 
-                    className={`${
-                      plant.operationalDate.includes("Operation") 
-                        ? 'bg-success text-white' 
-                        : 'bg-primary text-white'
-                    }`}
-                  >
-                    {plant.operationalDate.includes("Operation") ? "In operation" : "Consented project"}
-                  </Badge>
-                </div>
-                <CardTitle className="text-xl">{plant.name}</CardTitle>
-                <div className="flex items-center gap-1 text-muted-foreground text-sm">
-                  <MapPin className="h-4 w-4" />
-                  {plant.location}
-                </div>
-              </CardHeader>
+            <Card key={plant.id} className="group relative overflow-hidden border-0 shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-[1.02] bg-gradient-to-br from-white to-muted/20">
+              {/* Gradient Border Effect */}
+              <div className="absolute inset-0 bg-gradient-to-r from-hydro-blue via-hydro-green to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-[2px] rounded-lg">
+                <div className="w-full h-full bg-background rounded-[6px]" />
+              </div>
+              
+              <div className="relative z-10">
+                <CardHeader className="pb-4">
+                  {/* Status Badge - Clean Design */}
+                  <div className="flex items-start justify-between mb-4">
+                    <Badge 
+                      variant="secondary"
+                      className={`${
+                        plant.operationalDate.includes("Operation") 
+                          ? 'bg-success/10 text-success border-success/20' 
+                          : 'bg-primary/10 text-primary border-primary/20'
+                      } px-3 py-1 text-xs font-medium`}
+                    >
+                      {plant.operationalDate.includes("Operation") ? "In Operation" : "Consented Project"}
+                    </Badge>
+                    {plant.id === 1 && (
+                      <div className="flex items-center gap-1 bg-gradient-to-r from-yellow-400/20 to-orange-500/20 text-orange-600 px-2 py-1 rounded-full text-xs font-medium">
+                        <div className="w-2 h-2 rounded-full bg-orange-400 animate-pulse" />
+                        Featured
+                      </div>
+                    )}
+                  </div>
+                  
+                  {/* Plant Info */}
+                  <div className="space-y-2">
+                    <CardTitle className="text-xl group-hover:text-hydro-blue transition-colors duration-300">{plant.name}</CardTitle>
+                    <div className="flex items-center gap-1 text-muted-foreground text-sm">
+                      <MapPin className="h-4 w-4" />
+                      {plant.location}
+                    </div>
+                  </div>
+                </CardHeader>
 
               <CardContent className="space-y-6">
                 {/* Plant Description */}
@@ -149,12 +164,13 @@ export const InvestmentOpportunities = () => {
                 <RegistrationModal plantName={plant.name}>
                   <Button 
                     variant="default" 
-                    className="w-full bg-primary hover:bg-primary/90 text-white"
+                    className="w-full bg-primary hover:bg-primary/90 text-white group-hover:bg-gradient-to-r group-hover:from-hydro-blue group-hover:to-hydro-green transition-all duration-300"
                   >
                     Register to get pricing and detailed information →
                   </Button>
                 </RegistrationModal>
               </CardContent>
+              </div>
             </Card>
           ))}
         </div>
