@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
@@ -25,6 +25,15 @@ export const RevenueOptionInput = ({
     fixedType || value?.type || 'percentage'
   );
   const [amount, setAmount] = useState(value?.amount || '');
+
+  // Update selectedType when fixedType changes
+  useEffect(() => {
+    if (fixedType && fixedType !== selectedType) {
+      setSelectedType(fixedType);
+      setAmount(''); // Clear amount when type changes
+      onChange?.({ type: fixedType, amount: '' });
+    }
+  }, [fixedType, selectedType, onChange]);
 
   const handleTypeChange = (newType: 'percentage' | 'fixed') => {
     setSelectedType(newType);
