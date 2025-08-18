@@ -6,14 +6,10 @@ import { CheckCircle, XCircle, TrendingUp, Target, ChevronDown, Info, AlertTrian
 import { useState } from "react";
 
 export const ComparisonSection = () => {
-  const [openDetails, setOpenDetails] = useState<{[key: string]: boolean}>({
-    hydro: false,
-    carbon: false,
-    esg: false
-  });
+  const [openDetail, setOpenDetail] = useState<string | null>(null);
 
   const toggleDetails = (type: string) => {
-    setOpenDetails(prev => ({ ...prev, [type]: !prev[type] }));
+    setOpenDetail(prev => prev === type ? null : type);
   };
 
   return (
@@ -63,12 +59,12 @@ export const ComparisonSection = () => {
                 <span className="text-sm">Inflation-protected revenue</span>
               </div>
               
-              <Collapsible open={openDetails.hydro} onOpenChange={() => toggleDetails('hydro')}>
+              <Collapsible open={openDetail === 'hydro'} onOpenChange={() => toggleDetails('hydro')}>
                 <CollapsibleTrigger asChild>
                   <Button variant="ghost" className="w-full mt-4 text-hydro-blue hover:text-hydro-blue hover:bg-hydro-blue/10">
                     <Info className="h-4 w-4 mr-2" />
                     Learn More About Hydro Investments
-                    <ChevronDown className={`h-4 w-4 ml-2 transition-transform ${openDetails.hydro ? 'rotate-180' : ''}`} />
+                    <ChevronDown className={`h-4 w-4 ml-2 transition-transform ${openDetail === 'hydro' ? 'rotate-180' : ''}`} />
                   </Button>
                 </CollapsibleTrigger>
                 <CollapsibleContent className="mt-4 p-4 bg-hydro-blue/5 rounded-lg border border-hydro-blue/20">
@@ -158,12 +154,12 @@ export const ComparisonSection = () => {
                 <span className="text-sm">Price volatility risk</span>
               </div>
               
-              <Collapsible open={openDetails.carbon} onOpenChange={() => toggleDetails('carbon')}>
+              <Collapsible open={openDetail === 'carbon'} onOpenChange={() => toggleDetails('carbon')}>
                 <CollapsibleTrigger asChild>
                   <Button variant="ghost" className="w-full mt-4 text-warning hover:text-warning hover:bg-warning/10">
                     <AlertTriangle className="h-4 w-4 mr-2" />
                     Critical Issues with Carbon Credits
-                    <ChevronDown className={`h-4 w-4 ml-2 transition-transform ${openDetails.carbon ? 'rotate-180' : ''}`} />
+                    <ChevronDown className={`h-4 w-4 ml-2 transition-transform ${openDetail === 'carbon' ? 'rotate-180' : ''}`} />
                   </Button>
                 </CollapsibleTrigger>
                 <CollapsibleContent className="mt-4 p-4 bg-warning/5 rounded-lg border border-warning/20">
@@ -253,12 +249,12 @@ export const ComparisonSection = () => {
                 <span className="text-sm">Unclear impact measurement</span>
               </div>
               
-              <Collapsible open={openDetails.esg} onOpenChange={() => toggleDetails('esg')}>
+              <Collapsible open={openDetail === 'esg'} onOpenChange={() => toggleDetails('esg')}>
                 <CollapsibleTrigger asChild>
                   <Button variant="ghost" className="w-full mt-4 text-muted-foreground hover:text-muted-foreground hover:bg-muted/20">
                     <AlertTriangle className="h-4 w-4 mr-2" />
                     Problems with ESG Funds
-                    <ChevronDown className={`h-4 w-4 ml-2 transition-transform ${openDetails.esg ? 'rotate-180' : ''}`} />
+                    <ChevronDown className={`h-4 w-4 ml-2 transition-transform ${openDetail === 'esg' ? 'rotate-180' : ''}`} />
                   </Button>
                 </CollapsibleTrigger>
                 <CollapsibleContent className="mt-4 p-4 bg-muted/20 rounded-lg border border-muted/40">
