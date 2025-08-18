@@ -16,13 +16,19 @@ export const ComparisonSection = () => {
         </div>
 
         <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          {/* Hydro Plants */}
-          <Card className="border-hydro-blue/20 shadow-lg hover:shadow-xl transition-shadow">
-            <CardHeader className="text-center pb-4">
-              <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-r from-hydro-blue to-hydro-green flex items-center justify-center">
-                <TrendingUp className="h-8 w-8 text-white" />
+          {/* Hydro Plants - Featured */}
+          <Card className="relative border-2 border-hydro-blue/40 shadow-2xl hover:shadow-3xl transition-all duration-300 bg-gradient-to-br from-hydro-blue/5 to-hydro-green/5 md:scale-105 md:-translate-y-4">
+            {/* Recommended Badge */}
+            <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
+              <Badge className="bg-gradient-to-r from-hydro-blue to-hydro-green text-white px-4 py-1 text-sm font-semibold shadow-lg">
+                🏆 RECOMMENDED
+              </Badge>
+            </div>
+            <CardHeader className="text-center pb-4 pt-8">
+              <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-gradient-to-r from-hydro-blue to-hydro-green flex items-center justify-center shadow-lg animate-pulse">
+                <TrendingUp className="h-10 w-10 text-white" />
               </div>
-              <CardTitle className="text-2xl text-hydro-blue">Norwegian Hydro Plants</CardTitle>
+              <CardTitle className="text-2xl text-hydro-blue font-bold">Norwegian Hydro Plants</CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
               <div className="flex items-center justify-between">
