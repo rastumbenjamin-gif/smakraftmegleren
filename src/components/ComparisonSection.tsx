@@ -1,19 +1,15 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
-import { CheckCircle, XCircle, TrendingUp, Target, ChevronDown, Info, AlertTriangle } from "lucide-react";
+import { Collapsible, CollapsibleContent } from "@/components/ui/collapsible";
+import { CheckCircle, XCircle, TrendingUp, Target, ChevronDown, Info } from "lucide-react";
 import { useState } from "react";
 
 export const ComparisonSection = () => {
-  const [openDetails, setOpenDetails] = useState<{[key: string]: boolean}>({
-    hydro: false,
-    carbon: false,
-    esg: false
-  });
+  const [allDetailsOpen, setAllDetailsOpen] = useState(false);
 
-  const toggleDetails = (type: string) => {
-    setOpenDetails(prev => ({ ...prev, [type]: !prev[type] }));
+  const toggleAllDetails = () => {
+    setAllDetailsOpen(!allDetailsOpen);
   };
 
   return (
@@ -64,14 +60,7 @@ export const ComparisonSection = () => {
               </div>
               
               <div className="mt-auto">
-                <Collapsible open={openDetails.hydro} onOpenChange={() => toggleDetails('hydro')}>
-                  <CollapsibleTrigger asChild>
-                    <Button variant="ghost" className="w-full mt-4 text-hydro-blue hover:text-hydro-blue hover:bg-hydro-blue/10">
-                      <Info className="h-4 w-4 mr-2" />
-                      Learn More About Hydro Investments
-                      <ChevronDown className={`h-4 w-4 ml-2 transition-transform ${openDetails.hydro ? 'rotate-180' : ''}`} />
-                    </Button>
-                  </CollapsibleTrigger>
+                <Collapsible open={allDetailsOpen}>
                   <CollapsibleContent className="mt-4 p-4 bg-hydro-blue/5 rounded-lg border border-hydro-blue/20">
                     <div className="space-y-4 text-sm">
                       <p className="font-semibold text-hydro-blue text-base mb-3">Why Norwegian Hydro Plants Are Superior:</p>
@@ -161,14 +150,7 @@ export const ComparisonSection = () => {
               </div>
               
               <div className="mt-auto">
-                <Collapsible open={openDetails.carbon} onOpenChange={() => toggleDetails('carbon')}>
-                  <CollapsibleTrigger asChild>
-                    <Button variant="ghost" className="w-full mt-4 text-warning hover:text-warning hover:bg-warning/10">
-                      <AlertTriangle className="h-4 w-4 mr-2" />
-                      Critical Issues with Carbon Credits
-                      <ChevronDown className={`h-4 w-4 ml-2 transition-transform ${openDetails.carbon ? 'rotate-180' : ''}`} />
-                    </Button>
-                  </CollapsibleTrigger>
+                <Collapsible open={allDetailsOpen}>
                   <CollapsibleContent className="mt-4 p-4 bg-warning/5 rounded-lg border border-warning/20">
                     <div className="space-y-4 text-sm">
                       <p className="font-semibold text-warning text-base mb-3">Why Carbon Credits Often Fail:</p>
@@ -258,14 +240,7 @@ export const ComparisonSection = () => {
               </div>
               
               <div className="mt-auto">
-                <Collapsible open={openDetails.esg} onOpenChange={() => toggleDetails('esg')}>
-                  <CollapsibleTrigger asChild>
-                    <Button variant="ghost" className="w-full mt-4 text-muted-foreground hover:text-muted-foreground hover:bg-muted/20">
-                      <AlertTriangle className="h-4 w-4 mr-2" />
-                      Problems with ESG Funds
-                      <ChevronDown className={`h-4 w-4 ml-2 transition-transform ${openDetails.esg ? 'rotate-180' : ''}`} />
-                    </Button>
-                  </CollapsibleTrigger>
+                <Collapsible open={allDetailsOpen}>
                   <CollapsibleContent className="mt-4 p-4 bg-muted/20 rounded-lg border border-muted/40">
                     <div className="space-y-4 text-sm">
                       <p className="font-semibold text-muted-foreground text-base mb-3">Why ESG Funds Disappoint:</p>
@@ -319,6 +294,20 @@ export const ComparisonSection = () => {
               </div>
             </CardContent>
           </Card>
+        </div>
+
+        {/* Single Read More Button */}
+        <div className="flex justify-center mt-12">
+          <Button 
+            onClick={toggleAllDetails}
+            variant="outline"
+            size="lg"
+            className="px-8 py-3 border-2 hover:bg-primary hover:text-white transition-all duration-300"
+          >
+            <Info className="h-5 w-5 mr-2" />
+            {allDetailsOpen ? 'Show Less Details' : 'Read More Details'}
+            <ChevronDown className={`h-5 w-5 ml-2 transition-transform duration-300 ${allDetailsOpen ? 'rotate-180' : ''}`} />
+          </Button>
         </div>
       </div>
     </section>
