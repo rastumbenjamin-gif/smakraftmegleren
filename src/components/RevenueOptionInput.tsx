@@ -1,0 +1,100 @@
+import { useState } from "react";
+import { Label } from "@/components/ui/label";
+import { Input } from "@/components/ui/input";
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+
+interface RevenueOptionInputProps {
+  value?: {
+    type: 'percentage' | 'fixed';
+    amount: string;
+  };
+  onChange?: (value: { type: 'percentage' | 'fixed'; amount: string }) => void;
+  label?: string;
+  placeholder?: string;
+}
+
+export const RevenueOptionInput = ({ 
+  value, 
+  onChange, 
+  label = "Revenue Structure",
+  placeholder 
+}: RevenueOptionInputProps) => {
+  const [selectedType, setSelectedType] = useState<'percentage' | 'fixed'>(
+    value?.type || 'percentage'
+  );
+  const [amount, setAmount] = useState(value?.amount || '');
+
+  const handleTypeChange = (newType: 'percentage' | 'fixed') => {
+    setSelectedType(newType);
+    setAmount(''); // Clear amount when switching types
+    onChange?.({ type: newType, amount: '' });
+  };
+
+  const handleAmountChange = (newAmount: string) => {
+    setAmount(newAmount);
+    onChange?.({ type: selectedType, amount: newAmount });
+  };
+
+  return (
+    <div className="space-y-4">
+      <Label className="text-sm font-medium">{label}</Label>
+      
+      <RadioGroup
+        value={selectedType}
+        onValueChange={handleTypeChange}
+        className="space-y-3"
+      >
+        <div className="flex items-center space-x-2 p-3 rounded-lg border border-input hover:bg-muted/50 transition-colors">
+          <RadioGroupItem value="percentage" id="percentage" />
+          <Label 
+            htmlFor="percentage" 
+            className="flex-1 cursor-pointer text-sm font-medium text-success"
+          >
+            Percentage of gross revenue
+          </Label>
+        </div>
+        
+        <div className="flex items-center space-x-2 p-3 rounded-lg border border-input hover:bg-muted/50 transition-colors">
+          <RadioGroupItem value="fixed" id="fixed" />
+          <Label 
+            htmlFor="fixed" 
+            className="flex-1 cursor-pointer text-sm font-medium text-muted-foreground"
+          >
+            Fixed annual amount
+          </Label>
+        </div>
+      </RadioGroup>
+
+      {/* Dynamic Input Field */}
+      <div className="mt-4">
+        <div className="relative">
+          <Input
+            type="number"
+            placeholder={
+              placeholder || 
+              (selectedType === 'percentage' ? 'Enter percentage (e.g., 5.5)' : 'Enter amount in NOK')
+            }
+            value={amount}
+            onChange={(e) => handleAmountChange(e.target.value)}
+            className="pr-12"
+          />
+          <div className="absolute right-3 top-1/2 transform -translate-y-1/2 text-muted-foreground text-sm font-medium">
+            {selectedType === 'percentage' ? '%' : 'kr/år'}
+          </div>
+        </div>
+        
+        {selectedType === 'percentage' && amount && (
+          <p className="text-xs text-muted-foreground mt-2">
+            {amount}% of the gross revenue from the hydroelectric plant
+          </p>
+        )}
+        
+        {selectedType === 'fixed' && amount && (
+          <p className="text-xs text-muted-foreground mt-2">
+            Fixed annual payment of {parseInt(amount).toLocaleString('no-NO')} NOK
+          </p>
+        )}
+      </div>
+    </div>
+  );
+};
