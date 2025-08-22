@@ -59,9 +59,16 @@ export const HeroSection = () => {
               <Button 
                 variant="hydro-outline" 
                 size="lg"
-                className="text-lg px-8 py-6 h-auto text-white border-white hover:bg-white hover:text-primary"
+                className="text-lg px-8 py-6 h-auto text-white border-white hover:bg-white hover:text-primary flex flex-col items-center"
               >
-                Sell Your Power Plant
+                <div className="flex items-center gap-2">
+                  <span>Sell Your Power Plant</span>
+                  <div className="flex items-center gap-2 bg-white/20 px-3 py-1 rounded-full text-sm">
+                    <span className="line-through text-white/70">10,000 NOK</span>
+                    <span className="font-bold text-green-400">FREE</span>
+                  </div>
+                </div>
+                <span className="text-sm font-normal mt-1 opacity-90">Free evaluation • No obligations</span>
               </Button>
             </SellPowerPlantModal>
           </div>
