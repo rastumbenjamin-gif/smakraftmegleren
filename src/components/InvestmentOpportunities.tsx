@@ -26,8 +26,8 @@ const opportunities = [
     statusColor: "bg-gradient-to-r from-yellow-400 to-orange-500",
     buildYear: "1987",
     advantages: [
-      "High winter production when electricity prices are highest",
-      "Recently renovated turbine and waterway"
+      "High winter production (peak prices)",
+      "Recently renovated equipment"
     ]
   },
   {
@@ -48,8 +48,8 @@ const opportunities = [
     statusColor: "bg-hydro-green",
     buildYear: "2025",
     advantages: [
-      "Fresh consent granted December 2024",
-      "High annual production provides solid revenue base"
+      "Fresh consent (December 2024)",
+      "High production, solid revenue"
     ]
   },
   {
@@ -70,8 +70,8 @@ const opportunities = [
     statusColor: "bg-hydro-blue",
     buildYear: "2018",
     advantages: [
-      "High head height of 132.4m provides efficient energy conversion",
-      "Stable water intake of 0.88 m³/s ensures consistent production"
+      "High head height (132.4m)",
+      "Stable water intake (0.88 m³/s)"
     ]
   }
 ];
@@ -130,44 +130,32 @@ export const InvestmentOpportunities = () => {
                 </CardHeader>
 
               <CardContent className="space-y-6">
-                {/* Plant Description */}
-                <p className="text-sm text-muted-foreground leading-relaxed">
-                  {plant.id === 1 
-                    ? "Modern hydropower plant with high winter production and potential for increased output. Located downstream of regulated lake providing stable production throughout the year."
-                    : plant.id === 2
-                    ? "Recently consented hydropower project with high production and attractive economics. All permits are in place and the project is ready for construction or further development."
-                    : "Established hydropower plant in Rogaland with excellent head height and stable water flow. Proven track record since 2018 with consistent energy production in a prime location."
-                  }
-                </p>
+                {/* Key Metrics - Prominent Display */}
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="text-center p-4 bg-hydro-blue/5 rounded-lg border border-hydro-blue/10">
+                    <div className="text-2xl font-bold text-hydro-blue">{plant.capacity}</div>
+                    <div className="text-xs text-muted-foreground mt-1">Power</div>
+                  </div>
+                  <div className="text-center p-4 bg-success/5 rounded-lg border border-success/10">
+                    <div className="text-2xl font-bold text-success">{plant.annualProduction}</div>
+                    <div className="text-xs text-muted-foreground mt-1">Annual production (GWh, average last 5 years)</div>
+                  </div>
+                </div>
 
-                {/* Key Metrics Grid */}
-                <div className="grid grid-cols-2 gap-6 text-sm">
-                  <div className="flex items-start gap-2">
-                    <Zap className="h-4 w-4 text-hydro-blue mt-0.5" />
+                {/* Additional Details */}
+                <div className="grid grid-cols-2 gap-4 text-sm">
+                  <div className="flex items-center gap-2">
+                    <MapPin className="h-4 w-4 text-muted-foreground" />
                     <div>
-                      <div className="font-semibold">{plant.capacity}</div>
-                      <div className="text-muted-foreground">Power</div>
+                      <div className="font-medium">{plant.location.split(',')[0]}</div>
+                      <div className="text-xs text-muted-foreground">{plant.location.split(',')[1]}</div>
                     </div>
                   </div>
-                  <div className="flex items-start gap-2">
-                    <TrendingUp className="h-4 w-4 text-success mt-0.5" />
+                  <div className="flex items-center gap-2">
+                    <Calendar className="h-4 w-4 text-muted-foreground" />
                     <div>
-                      <div className="font-semibold">{plant.annualProduction}</div>
-                      <div className="text-muted-foreground">Annual production (GWh, average last 5 years)</div>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-2">
-                    <MapPin className="h-4 w-4 text-muted-foreground mt-0.5" />
-                    <div>
-                      <div className="font-semibold">{plant.location}</div>
-                      <div className="text-muted-foreground">Location</div>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-2">
-                    <Calendar className="h-4 w-4 text-muted-foreground mt-0.5" />
-                    <div>
-                      <div className="font-semibold">{plant.buildYear}</div>
-                      <div className="text-muted-foreground">Build year</div>
+                      <div className="font-medium">{plant.buildYear}</div>
+                      <div className="text-xs text-muted-foreground">Build year</div>
                     </div>
                   </div>
                 </div>
