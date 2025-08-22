@@ -37,8 +37,8 @@ export const SearchKraftverkCombobox = ({ value, kommuneHint, onChange, onSelect
   }, [query, kommuneHint]);
 
   useEffect(() => {
-    setOpen(results.length > 0 || loading);
-  }, [results, loading]);
+    setOpen((results.length > 0 || loading) && query.trim().length >= 2);
+  }, [results, loading, query]);
 
   const items = useMemo(() => results.slice(0, 10), [results]);
 

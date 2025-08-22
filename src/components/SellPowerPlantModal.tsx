@@ -240,17 +240,18 @@ export const SellPowerPlantModal = ({ children }: SellPowerPlantModalProps) => {
                       <SelectValue placeholder="Select county" />
                     </SelectTrigger>
                     <SelectContent className="bg-background border-border shadow-lg z-50">
-                      <SelectItem value="agder">Agder</SelectItem>
-                      <SelectItem value="innlandet">Innlandet</SelectItem>
-                      <SelectItem value="more-og-romsdal">Møre og Romsdal</SelectItem>
-                      <SelectItem value="nordland">Nordland</SelectItem>
-                      <SelectItem value="oslo">Oslo</SelectItem>
-                      <SelectItem value="rogaland">Rogaland</SelectItem>
-                      <SelectItem value="troms-og-finnmark">Troms og Finnmark</SelectItem>
-                      <SelectItem value="trondelag">Trøndelag</SelectItem>
-                      <SelectItem value="vestfold-og-telemark">Vestfold og Telemark</SelectItem>
-                      <SelectItem value="vestland">Vestland</SelectItem>
-                      <SelectItem value="viken">Viken</SelectItem>
+                      <SelectItem value="Agder">Agder</SelectItem>
+                      <SelectItem value="Buskerud">Buskerud</SelectItem>
+                      <SelectItem value="Innlandet">Innlandet</SelectItem>
+                      <SelectItem value="Møre og Romsdal">Møre og Romsdal</SelectItem>
+                      <SelectItem value="Nordland">Nordland</SelectItem>
+                      <SelectItem value="Oslo">Oslo</SelectItem>
+                      <SelectItem value="Rogaland">Rogaland</SelectItem>
+                      <SelectItem value="Troms og Finnmark">Troms og Finnmark</SelectItem>
+                      <SelectItem value="Trøndelag">Trøndelag</SelectItem>
+                      <SelectItem value="Vestfold og Telemark">Vestfold og Telemark</SelectItem>
+                      <SelectItem value="Vestland">Vestland</SelectItem>
+                      <SelectItem value="Viken">Viken</SelectItem>
                     </SelectContent>
                   </Select>
                 </div>
