@@ -195,9 +195,9 @@ export const InvestmentOpportunities = () => {
                 <RegistrationModal plantName={plant.name}>
                   <Button 
                     variant="default" 
-                    className="w-full bg-primary hover:bg-primary/90 text-white group-hover:bg-gradient-to-r group-hover:from-hydro-blue group-hover:to-hydro-green transition-all duration-300"
+                    className="w-full bg-primary hover:bg-primary/90 text-white group-hover:bg-gradient-to-r group-hover:from-hydro-blue group-hover:to-hydro-green transition-all duration-300 h-auto py-3 px-4 text-sm font-medium whitespace-normal"
                   >
-                    Register to get pricing and detailed information →
+                    Register for pricing and info
                   </Button>
                 </RegistrationModal>
               </CardContent>
