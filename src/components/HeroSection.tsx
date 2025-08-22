@@ -49,29 +49,34 @@ export const HeroSection = () => {
             </div>
           </div>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-6 animate-fade-in [animation-delay:1000ms]">
+          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center pt-8 animate-fade-in [animation-delay:1000ms] max-w-4xl mx-auto">
             <Button 
               variant="invest" 
               size="lg" 
-              className="text-lg px-8 py-6 h-auto"
+              className="w-full sm:w-80 text-xl px-8 py-8 h-auto bg-gradient-to-r from-hydro-blue to-hydro-green hover:opacity-90 shadow-2xl border-2 border-white/20"
               onClick={() => document.getElementById('investment-opportunities')?.scrollIntoView({ behavior: 'smooth' })}
             >
-              View Investment Opportunities
+              <div className="flex flex-col items-center">
+                <span className="font-bold">View Investment Opportunities</span>
+                <span className="text-sm opacity-90 mt-1">Start investing today</span>
+              </div>
             </Button>
             <SellPowerPlantModal>
               <Button 
-                variant="hydro-outline" 
+                variant="outline" 
                 size="lg"
-                className="text-lg px-8 py-6 h-auto text-white border-white hover:bg-white hover:text-primary flex flex-col items-center"
+                className="w-full sm:w-80 text-xl px-8 py-8 h-auto bg-black/30 backdrop-blur-sm text-white border-2 border-white hover:bg-white hover:text-primary shadow-2xl"
               >
-                <div className="flex items-center gap-3">
-                  <span>Sell Your Power Plant</span>
-                  <div className="flex items-center gap-2 bg-black/30 backdrop-blur-sm px-4 py-2 rounded-full">
-                    <span className="line-through text-white/80 text-lg font-medium">10,000 NOK</span>
-                    <span className="font-bold text-green-300 text-xl">FREE</span>
+                <div className="flex flex-col items-center">
+                  <div className="flex items-center gap-2 mb-1">
+                    <span className="font-bold">Sell Your Power Plant</span>
+                    <div className="flex items-center gap-1 bg-green-500 px-2 py-1 rounded text-xs font-bold text-white">
+                      <span className="line-through text-green-200 text-xs">10k NOK</span>
+                      <span>FREE</span>
+                    </div>
                   </div>
+                  <span className="text-sm opacity-90">Free evaluation • No obligations</span>
                 </div>
-                <span className="text-base font-medium mt-2 opacity-95">Free evaluation • No obligations</span>
               </Button>
             </SellPowerPlantModal>
           </div>
