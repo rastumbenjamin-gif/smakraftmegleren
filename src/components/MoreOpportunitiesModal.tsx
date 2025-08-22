@@ -5,10 +5,9 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Badge } from "@/components/ui/badge";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
-import { Loader2 } from "lucide-react";
+import { Loader2, X } from "lucide-react";
 
 interface MoreOpportunitiesModalProps {
   children: React.ReactNode;
@@ -77,59 +76,74 @@ export const MoreOpportunitiesModal = ({ children }: MoreOpportunitiesModalProps
       </div>
 
       <Dialog open={isOpen} onOpenChange={setIsOpen}>
-        <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
-          <DialogHeader className="text-center">
+        <DialogContent className="sm:max-w-[600px] max-h-[90vh] overflow-y-auto bg-background border-border">
+          <DialogHeader className="relative">
             <DialogTitle className="text-2xl font-bold mb-2">
-              Discover More Opportunities
+              Register for more information
             </DialogTitle>
-            <Badge className="mx-auto bg-hydro-blue text-white">
-              Request Additional Investment Options
-            </Badge>
+            <p className="text-muted-foreground">
+              Request additional hydropower investment opportunities
+            </p>
+            <Button 
+              variant="ghost" 
+              size="icon"
+              className="absolute right-0 top-0 h-6 w-6"
+              onClick={() => setIsOpen(false)}
+            >
+              <X className="h-4 w-4" />
+            </Button>
           </DialogHeader>
 
           <form onSubmit={handleSubmit} className="space-y-6 mt-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div>
-                <Label htmlFor="name">Full Name *</Label>
+              <div className="space-y-2">
+                <Label htmlFor="name">Name *</Label>
                 <Input
                   id="name"
                   value={formData.name}
                   onChange={(e) => handleInputChange("name", e.target.value)}
-                  placeholder="Enter your full name"
+                  placeholder=""
                   required
+                  className="bg-background"
                 />
               </div>
-              <div>
-                <Label htmlFor="email">Email Address *</Label>
+              <div className="space-y-2">
+                <Label htmlFor="email">Email *</Label>
                 <Input
                   id="email"
                   type="email"
                   value={formData.email}
                   onChange={(e) => handleInputChange("email", e.target.value)}
-                  placeholder="your@email.com"
+                  placeholder=""
                   required
+                  className="bg-background"
                 />
               </div>
             </div>
 
-            <div>
-              <Label htmlFor="phone">Phone Number</Label>
-              <Input
-                id="phone"
-                value={formData.phone}
-                onChange={(e) => handleInputChange("phone", e.target.value)}
-                placeholder="+47 123 45 678"
-              />
+            <div className="space-y-2">
+              <Label>Investor type *</Label>
+              <Select value={formData.experience} onValueChange={(value) => handleInputChange("experience", value)} required>
+                <SelectTrigger className="bg-background border-input">
+                  <SelectValue placeholder="Select investor type" />
+                </SelectTrigger>
+                <SelectContent className="bg-background border-border shadow-lg z-50">
+                  <SelectItem value="private-person">Private person</SelectItem>
+                  <SelectItem value="company">Company</SelectItem>
+                  <SelectItem value="investment-fund">Investment fund</SelectItem>
+                  <SelectItem value="institutional-investor">Institutional investor</SelectItem>
+                </SelectContent>
+              </Select>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div>
-                <Label>Investment Amount Range *</Label>
+              <div className="space-y-2">
+                <Label>Budget range *</Label>
                 <Select value={formData.investmentAmount} onValueChange={(value) => handleInputChange("investmentAmount", value)} required>
-                  <SelectTrigger>
-                    <SelectValue placeholder="Select investment range" />
+                  <SelectTrigger className="bg-background border-input">
+                    <SelectValue placeholder="Select budget" />
                   </SelectTrigger>
-                  <SelectContent>
+                  <SelectContent className="bg-background border-border shadow-lg z-50">
                     <SelectItem value="25k-50k">0.5 MNOK - 1 MNOK</SelectItem>
                     <SelectItem value="50k-100k">1 MNOK - 2.5 MNOK</SelectItem>
                     <SelectItem value="100k-250k">2.5 MNOK - 5 MNOK</SelectItem>
@@ -138,60 +152,68 @@ export const MoreOpportunitiesModal = ({ children }: MoreOpportunitiesModalProps
                   </SelectContent>
                 </Select>
               </div>
-              <div>
-                <Label>Investment Timeframe *</Label>
-                <Select value={formData.investmentTimeframe} onValueChange={(value) => handleInputChange("investmentTimeframe", value)} required>
-                  <SelectTrigger>
-                    <SelectValue placeholder="Select timeframe" />
+              <div className="space-y-2">
+                <Label>Pricing area *</Label>
+                <Select value={formData.phone} onValueChange={(value) => handleInputChange("phone", value)}>
+                  <SelectTrigger className="bg-background border-input">
+                    <SelectValue placeholder="Select pricing area" />
                   </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="immediate">Immediate (within 1 month)</SelectItem>
-                    <SelectItem value="short">Short-term (1-3 months)</SelectItem>
-                    <SelectItem value="medium">Medium-term (3-6 months)</SelectItem>
-                    <SelectItem value="long">Long-term (6+ months)</SelectItem>
+                  <SelectContent className="bg-background border-border shadow-lg z-50">
+                    <SelectItem value="no1">NO1 - Eastern Norway</SelectItem>
+                    <SelectItem value="no2">NO2 - Southern Norway</SelectItem>
+                    <SelectItem value="no3">NO3 - Central Norway</SelectItem>
+                    <SelectItem value="no4">NO4 - Northern Norway</SelectItem>
+                    <SelectItem value="no5">NO5 - Western Norway</SelectItem>
                   </SelectContent>
                 </Select>
               </div>
             </div>
 
-            <div>
-              <Label>Investment Experience *</Label>
-              <Select value={formData.experience} onValueChange={(value) => handleInputChange("experience", value)} required>
-                <SelectTrigger>
-                  <SelectValue placeholder="Select your experience level" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="first-time">First-time investor</SelectItem>
-                  <SelectItem value="some">Some investment experience</SelectItem>
-                  <SelectItem value="experienced">Experienced investor</SelectItem>
-                  <SelectItem value="professional">Professional investor</SelectItem>
-                </SelectContent>
-              </Select>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="space-y-2">
+                <Label>Preferred production range *</Label>
+                <Select value={formData.interests} onValueChange={(value) => handleInputChange("interests", value)}>
+                  <SelectTrigger className="bg-background border-input">
+                    <SelectValue placeholder="Select production range" />
+                  </SelectTrigger>
+                  <SelectContent className="bg-background border-border shadow-lg z-50">
+                    <SelectItem value="under-3">Under 3 GWh</SelectItem>
+                    <SelectItem value="3-5">3-5 GWh</SelectItem>
+                    <SelectItem value="6-10">6-10 GWh</SelectItem>
+                    <SelectItem value="11-20">11-20 GWh</SelectItem>
+                    <SelectItem value="over-20">Over 20 GWh</SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
+              <div className="space-y-2">
+                <Label>Sales timeframe *</Label>
+                <Select value={formData.investmentTimeframe} onValueChange={(value) => handleInputChange("investmentTimeframe", value)} required>
+                  <SelectTrigger className="bg-background border-input">
+                    <SelectValue placeholder="Select timeframe" />
+                  </SelectTrigger>
+                  <SelectContent className="bg-background border-border shadow-lg z-50">
+                    <SelectItem value="immediate">Immediate (0-3 months)</SelectItem>
+                    <SelectItem value="short-term">Short term (3-6 months)</SelectItem>
+                    <SelectItem value="medium-term">Medium term (6-12 months)</SelectItem>
+                    <SelectItem value="long-term">Long term (12+ months)</SelectItem>
+                    <SelectItem value="exploring">Just exploring options</SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
             </div>
 
-            <div>
-              <Label htmlFor="interests">Specific Interests</Label>
-              <Textarea
-                id="interests"
-                value={formData.interests}
-                onChange={(e) => handleInputChange("interests", e.target.value)}
-                placeholder="Are you interested in specific regions, plant sizes, or operational status? (e.g., operational plants only, new construction projects, specific Norwegian regions)"
-                rows={3}
-              />
-            </div>
-
-            <div>
-              <Label htmlFor="additionalInfo">Additional Information</Label>
+            <div className="space-y-2">
+              <Label htmlFor="additionalInfo">Additional comments</Label>
               <Textarea
                 id="additionalInfo"
                 value={formData.additionalInfo}
                 onChange={(e) => handleInputChange("additionalInfo", e.target.value)}
-                placeholder="Any additional questions or requirements?"
-                rows={3}
+                placeholder="Describe your specific requirements or preferences..."
+                className="bg-background min-h-[100px] resize-none"
               />
             </div>
 
-            <div className="flex gap-4 pt-4">
+            <div className="flex gap-3 pt-4">
               <Button
                 type="button"
                 variant="outline"
@@ -203,7 +225,7 @@ export const MoreOpportunitiesModal = ({ children }: MoreOpportunitiesModalProps
               <Button
                 type="submit"
                 disabled={isLoading}
-                className="flex-1 bg-hydro-blue hover:bg-hydro-blue/90"
+                className="flex-1 bg-gradient-to-r from-hydro-blue to-hydro-green text-white hover:opacity-90"
               >
                 {isLoading ? (
                   <>
@@ -211,7 +233,7 @@ export const MoreOpportunitiesModal = ({ children }: MoreOpportunitiesModalProps
                     Submitting...
                   </>
                 ) : (
-                  "Request More Opportunities"
+                  "Register interest"
                 )}
               </Button>
             </div>
