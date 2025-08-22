@@ -12,37 +12,40 @@ export const HeroSection = () => {
         className="absolute inset-0 bg-cover bg-center bg-no-repeat bg-fixed"
         style={{ backgroundImage: `url(${heroImage})` }}
       >
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/80 via-primary/50 to-hydro-green/60" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70" />
+        <div className="absolute inset-0 bg-gradient-to-r from-primary/60 via-primary/40 to-hydro-green/50" />
       </div>
 
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 text-center text-white">
         <div className="max-w-4xl mx-auto space-y-8 animate-fade-in">
-          <Badge className="bg-white/20 text-white border-white/30 text-sm px-4 py-2 mb-6 animate-fade-in [animation-delay:200ms]">
+          <Badge className="bg-black/40 backdrop-blur-sm text-white border-white/30 text-sm px-4 py-2 mb-6 animate-fade-in [animation-delay:200ms] shadow-lg">
             🇳🇴 Norwegian Hydroelectric Investments
           </Badge>
           
-          <h1 className="text-5xl md:text-7xl font-bold leading-tight animate-fade-in [animation-delay:400ms]">
+          <h1 className="text-5xl md:text-7xl font-bold leading-tight animate-fade-in [animation-delay:400ms] text-white drop-shadow-2xl [text-shadow:_2px_2px_8px_rgb(0_0_0_/_0.8)]">
             Real Green Investments
           </h1>
           
-          <p className="text-xl md:text-2xl text-white/90 max-w-2xl mx-auto leading-relaxed animate-fade-in [animation-delay:600ms]">
-            Own actual hydro plants in Norway. Generate 5-10% annual returns while creating 
-            measurable environmental impact that directly contributes to your sustainability goals.
-          </p>
+          <div className="bg-black/30 backdrop-blur-sm rounded-xl p-6 mx-auto max-w-3xl border border-white/20 shadow-2xl">
+            <p className="text-xl md:text-2xl text-white leading-relaxed animate-fade-in [animation-delay:600ms] font-medium">
+              Own actual hydro plants in Norway. Generate 5-10% annual returns while creating 
+              measurable environmental impact that directly contributes to your sustainability goals.
+            </p>
+          </div>
 
           <div className="flex flex-wrap justify-center gap-4 text-sm animate-fade-in [animation-delay:800ms]">
-            <div className="flex items-center gap-2 bg-white/10 px-4 py-2 rounded-full">
+            <div className="flex items-center gap-2 bg-black/40 backdrop-blur-sm px-4 py-2 rounded-full border border-white/30 shadow-lg">
               <Zap className="h-4 w-4" />
-              <span>Clean Energy Production</span>
+              <span className="font-medium">Clean Energy Production</span>
             </div>
-            <div className="flex items-center gap-2 bg-white/10 px-4 py-2 rounded-full">
+            <div className="flex items-center gap-2 bg-black/40 backdrop-blur-sm px-4 py-2 rounded-full border border-white/30 shadow-lg">
               <Droplet className="h-4 w-4" />
-              <span>Norwegian Fjord Power</span>
+              <span className="font-medium">Norwegian Fjord Power</span>
             </div>
-            <div className="flex items-center gap-2 bg-white/10 px-4 py-2 rounded-full">
+            <div className="flex items-center gap-2 bg-black/40 backdrop-blur-sm px-4 py-2 rounded-full border border-white/30 shadow-lg">
               <TrendingUp className="h-4 w-4" />
-              <span>5-10% Annual ROI</span>
+              <span className="font-medium">5-10% Annual ROI</span>
             </div>
           </div>
 
