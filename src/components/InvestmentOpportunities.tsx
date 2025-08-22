@@ -137,8 +137,8 @@ export const InvestmentOpportunities = () => {
                     <div className="text-xs text-muted-foreground mt-1">Power</div>
                   </div>
                   <div className="text-center p-4 bg-success/5 rounded-lg border border-success/10">
-                    <div className="text-2xl font-bold text-success">{plant.annualProduction}</div>
-                    <div className="text-xs text-muted-foreground mt-1">Annual production (GWh, average last 5 years)</div>
+                    <div className="text-2xl font-bold text-success">{plant.annualProduction.replace('år', 'year')}</div>
+                    <div className="text-xs text-muted-foreground mt-1">Annual production</div>
                   </div>
                 </div>
 
