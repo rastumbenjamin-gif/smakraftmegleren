@@ -19,10 +19,6 @@ export const HeroSection = () => {
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 text-center text-white">
         <div className="max-w-4xl mx-auto space-y-8 animate-fade-in">
-          <Badge className="bg-black/40 backdrop-blur-sm text-white border-white/30 text-sm px-4 py-2 mb-6 animate-fade-in [animation-delay:200ms] shadow-lg">
-            🇳🇴 Norwegian Hydroelectric Investments
-          </Badge>
-          
           <h1 className="text-5xl md:text-7xl font-bold leading-tight animate-fade-in [animation-delay:400ms] text-white drop-shadow-2xl [text-shadow:_2px_2px_8px_rgb(0_0_0_/_0.8)]">
             Real Green Investments
           </h1>
