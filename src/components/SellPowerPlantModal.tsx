@@ -402,7 +402,7 @@ export const SellPowerPlantModal = ({ children }: SellPowerPlantModalProps) => {
                 className="mt-1"
               />
               <Label htmlFor="consent" className="text-sm leading-relaxed">
-                Jeg samtykker til at mine opplysninger behandles i henhold til personvernreglene, og at Småkraftmeglerne kan kontakte meg angående verdivurdering av mitt kraftverk. *
+                I consent to my information being processed in accordance with privacy regulations, and that Småkraftmeglerne may contact me regarding the valuation of my power plant. *
               </Label>
             </div>
           </div>
