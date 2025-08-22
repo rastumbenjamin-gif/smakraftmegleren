@@ -6,6 +6,9 @@ import { MapPin, Zap, Calendar, Users, TrendingUp } from "lucide-react";
 import { RegistrationModal } from "./RegistrationModal";
 import { MoreOpportunitiesModal } from "./MoreOpportunitiesModal";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import hydroPlant1 from "@/assets/hydro-plant-1.jpg";
+import hydroPlant2 from "@/assets/hydro-plant-2.jpg";
+import hydroPlant3 from "@/assets/hydro-plant-3.jpg";
 
 const opportunities = [
   {
@@ -21,7 +24,7 @@ const opportunities = [
     co2Reduction: "2,400",
     operationalDate: "In Operation (1987)",
     investors: 89,
-    image: "🏔️",
+    image: hydroPlant1,
     status: "Available investment",
     statusColor: "bg-gradient-to-r from-yellow-400 to-orange-500",
     buildYear: "1987",
@@ -43,7 +46,7 @@ const opportunities = [
     co2Reduction: "5,150",
     operationalDate: "2025",
     investors: 0,
-    image: "💧",
+    image: hydroPlant2,
     status: "Consented project",
     statusColor: "bg-hydro-green",
     buildYear: "2025",
@@ -65,7 +68,7 @@ const opportunities = [
     co2Reduction: "1,530",
     operationalDate: "In Operation (2018)",
     investors: 0,
-    image: "🌊",
+    image: hydroPlant3,
     status: "Available investment",
     statusColor: "bg-hydro-blue",
     buildYear: "2018",
@@ -104,21 +107,29 @@ export const InvestmentOpportunities = () => {
               </div>
               
               <div className="relative z-10">
-                <CardHeader className="pb-4">
-                  {/* Status Badge - Clean Design */}
-                  <div className="flex items-start justify-between mb-4">
+                {/* Plant Image */}
+                <div className="relative h-48 overflow-hidden rounded-t-lg">
+                  <img 
+                    src={plant.image} 
+                    alt={`${plant.name} hydroelectric plant`}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  {/* Status Badge Overlay on Image */}
+                  <div className="absolute top-4 left-4">
                     <Badge 
                       variant="secondary"
                       className={`${
                         plant.operationalDate.includes("Operation") 
-                          ? 'bg-success/10 text-success border-success/20' 
-                          : 'bg-primary/10 text-primary border-primary/20'
-                      } px-3 py-1 text-xs font-medium`}
+                          ? 'bg-success/90 text-white border-success/20' 
+                          : 'bg-primary/90 text-white border-primary/20'
+                      } px-3 py-1 text-xs font-medium backdrop-blur-sm`}
                     >
                       {plant.operationalDate.includes("Operation") ? "In Operation" : "Consented Project"}
                     </Badge>
                   </div>
-                  
+                </div>
+
+                <CardHeader className="pb-4">
                   {/* Plant Info */}
                   <div className="space-y-2">
                     <CardTitle className="text-xl group-hover:text-hydro-blue transition-colors duration-300">{plant.name}</CardTitle>
