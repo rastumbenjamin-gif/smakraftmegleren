@@ -65,7 +65,7 @@ export const HeroSection = () => {
               >
                 <div className="flex flex-col items-center text-center w-full">
                   <div className="flex flex-wrap items-center justify-center gap-2 mb-1">
-                    <span className="font-bold whitespace-nowrap">Sell Your Power Plant</span>
+                    <span className="font-bold whitespace-nowrap">Evaluate Your Hydro Plant</span>
                     <div className="flex items-center gap-1 bg-green-500 px-2 py-1 rounded text-xs font-bold text-white whitespace-nowrap">
                       <span className="line-through text-green-200">10k NOK</span>
                       <span>FREE</span>
