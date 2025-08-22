@@ -7,7 +7,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Textarea } from "@/components/ui/textarea";
 import { Checkbox } from "@/components/ui/checkbox";
 import { useToast } from "@/hooks/use-toast";
-import { X, Search, Rocket } from "lucide-react";
+import { Search, Rocket } from "lucide-react";
 import { SearchKraftverkCombobox } from "./SearchKraftverkCombobox";
 import { RevenueOptionInput } from "./RevenueOptionInput";
 import { supabase } from "@/integrations/supabase/client";
@@ -130,19 +130,11 @@ export const SellPowerPlantModal = ({ children }: SellPowerPlantModalProps) => {
         {children}
       </DialogTrigger>
       <DialogContent className="sm:max-w-[700px] max-h-[90vh] overflow-y-auto bg-background border-border">
-        <DialogHeader className="relative">
+        <DialogHeader>
           <DialogTitle className="text-2xl font-bold mb-2">Sell Your Power Plant</DialogTitle>
           <p className="text-muted-foreground">
             Get a free evaluation of your hydroelectric facility
           </p>
-          <Button 
-            variant="ghost" 
-            size="icon"
-            className="absolute right-0 top-0 h-6 w-6"
-            onClick={() => setOpen(false)}
-          >
-            <X className="h-4 w-4" />
-          </Button>
         </DialogHeader>
 
         <form onSubmit={handleSubmit} className="space-y-8 mt-6">
