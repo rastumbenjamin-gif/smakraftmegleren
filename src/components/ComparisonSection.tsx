@@ -41,7 +41,7 @@ export const ComparisonSection = () => {
             <CardContent className="space-y-4 flex-grow flex flex-col">
               <div className="flex items-center justify-between">
                 <span className="text-sm font-medium">Annual ROI</span>
-                <Badge className="bg-success text-white">5-15%</Badge>
+                <Badge className="bg-success text-white">5-10%</Badge>
               </div>
               <div className="flex items-center gap-2">
                 <CheckCircle className="h-4 w-4 text-success" />

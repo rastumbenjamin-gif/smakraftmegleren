@@ -27,7 +27,7 @@ export const HeroSection = () => {
           </h1>
           
           <p className="text-xl md:text-2xl text-white/90 max-w-2xl mx-auto leading-relaxed animate-fade-in [animation-delay:600ms]">
-            Own actual hydro plants in Norway. Generate 5-15% annual returns while creating 
+            Own actual hydro plants in Norway. Generate 5-10% annual returns while creating 
             measurable environmental impact that directly contributes to your sustainability goals.
           </p>
 
@@ -42,7 +42,7 @@ export const HeroSection = () => {
             </div>
             <div className="flex items-center gap-2 bg-white/10 px-4 py-2 rounded-full">
               <TrendingUp className="h-4 w-4" />
-              <span>5-15% Annual ROI</span>
+              <span>5-10% Annual ROI</span>
             </div>
           </div>
 
