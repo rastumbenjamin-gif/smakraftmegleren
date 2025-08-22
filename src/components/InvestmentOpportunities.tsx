@@ -22,7 +22,7 @@ const opportunities = [
     operationalDate: "In Operation (1987)",
     investors: 89,
     image: "🏔️",
-    status: "Featured opportunity",
+    status: "Available investment",
     statusColor: "bg-gradient-to-r from-yellow-400 to-orange-500",
     buildYear: "1987",
     advantages: [
@@ -117,12 +117,6 @@ export const InvestmentOpportunities = () => {
                     >
                       {plant.operationalDate.includes("Operation") ? "In Operation" : "Consented Project"}
                     </Badge>
-                    {plant.id === 1 && (
-                      <div className="flex items-center gap-1 bg-gradient-to-r from-yellow-400/20 to-orange-500/20 text-orange-600 px-2 py-1 rounded-full text-xs font-medium">
-                        <div className="w-2 h-2 rounded-full bg-orange-400 animate-pulse" />
-                        Featured
-                      </div>
-                    )}
                   </div>
                   
                   {/* Plant Info */}
