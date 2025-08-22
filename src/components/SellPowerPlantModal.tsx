@@ -131,9 +131,9 @@ export const SellPowerPlantModal = ({ children }: SellPowerPlantModalProps) => {
       </DialogTrigger>
       <DialogContent className="sm:max-w-[700px] max-h-[90vh] overflow-y-auto bg-background border-border">
         <DialogHeader>
-          <DialogTitle className="text-2xl font-bold mb-2">Sell Your Power Plant</DialogTitle>
+          <DialogTitle className="text-2xl font-bold mb-2">Evaluate Your Hydro Plant</DialogTitle>
           <p className="text-muted-foreground mb-4">
-            Get a free evaluation of your hydroelectric facility
+            Get a professional evaluation of your hydroelectric facility with detailed market analysis
           </p>
           <div className="bg-gradient-to-r from-green-50 to-blue-50 dark:from-green-950/20 dark:to-blue-950/20 border border-green-200 dark:border-green-800 rounded-lg p-4 text-center">
             <div className="flex items-center justify-center gap-3 mb-2">
@@ -294,7 +294,7 @@ export const SellPowerPlantModal = ({ children }: SellPowerPlantModalProps) => {
               <div className="w-8 h-8 rounded-full bg-accent text-white flex items-center justify-center text-sm font-semibold">
                 3
               </div>
-              <h3 className="text-lg font-semibold">Sales Details</h3>
+              <h3 className="text-lg font-semibold">Plant Details</h3>
             </div>
             
             <div className="ml-10 space-y-4">
