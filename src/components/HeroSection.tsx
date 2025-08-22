@@ -49,29 +49,29 @@ export const HeroSection = () => {
             </div>
           </div>
 
-          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center pt-8 animate-fade-in [animation-delay:1000ms] max-w-4xl mx-auto">
+          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center pt-8 animate-fade-in [animation-delay:1000ms] max-w-5xl mx-auto">
             <Button 
               variant="invest" 
               size="lg" 
-              className="w-full sm:w-80 text-xl px-8 py-8 h-auto bg-gradient-to-r from-hydro-blue to-hydro-green hover:opacity-90 shadow-2xl border-2 border-white/20"
+              className="w-full sm:min-w-[400px] text-lg px-6 py-6 h-auto bg-gradient-to-r from-hydro-blue to-hydro-green hover:opacity-90 shadow-2xl border-2 border-white/20"
               onClick={() => document.getElementById('investment-opportunities')?.scrollIntoView({ behavior: 'smooth' })}
             >
-              <div className="flex flex-col items-center">
-                <span className="font-bold">View Investment Opportunities</span>
-                <span className="text-sm opacity-90 mt-1">Start investing today</span>
+              <div className="flex flex-col items-center text-center">
+                <span className="font-bold text-white">View Investment Opportunities</span>
+                <span className="text-sm opacity-90 mt-1 text-white">Start investing today</span>
               </div>
             </Button>
             <SellPowerPlantModal>
               <Button 
                 variant="outline" 
                 size="lg"
-                className="w-full sm:w-80 text-xl px-8 py-8 h-auto bg-black/30 backdrop-blur-sm text-white border-2 border-white hover:bg-white hover:text-primary shadow-2xl"
+                className="w-full sm:min-w-[400px] text-lg px-6 py-6 h-auto bg-black/30 backdrop-blur-sm text-white border-2 border-white hover:bg-white hover:text-primary shadow-2xl"
               >
-                <div className="flex flex-col items-center">
-                  <div className="flex items-center gap-2 mb-1">
-                    <span className="font-bold">Sell Your Power Plant</span>
-                    <div className="flex items-center gap-1 bg-green-500 px-2 py-1 rounded text-xs font-bold text-white">
-                      <span className="line-through text-green-200 text-xs">10k NOK</span>
+                <div className="flex flex-col items-center text-center w-full">
+                  <div className="flex flex-wrap items-center justify-center gap-2 mb-1">
+                    <span className="font-bold whitespace-nowrap">Sell Your Power Plant</span>
+                    <div className="flex items-center gap-1 bg-green-500 px-2 py-1 rounded text-xs font-bold text-white whitespace-nowrap">
+                      <span className="line-through text-green-200">10k NOK</span>
                       <span>FREE</span>
                     </div>
                   </div>
