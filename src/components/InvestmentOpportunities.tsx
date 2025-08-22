@@ -51,6 +51,28 @@ const opportunities = [
       "Fresh consent granted December 2024",
       "High annual production provides solid revenue base"
     ]
+  },
+  {
+    id: 3,
+    name: "Sandvik",
+    location: "Vindafjord, Rogaland",
+    capacity: "0.99 MW",
+    annualProduction: "3.718 GWh/år",
+    roi: "10.8%",
+    funded: 0,
+    totalInvestment: "€2.8M",
+    minInvestment: "€25,000",
+    co2Reduction: "1,530",
+    operationalDate: "In Operation (2018)",
+    investors: 0,
+    image: "🌊",
+    status: "Available investment",
+    statusColor: "bg-hydro-blue",
+    buildYear: "2018",
+    advantages: [
+      "High head height of 132.4m provides efficient energy conversion",
+      "Stable water intake of 0.88 m³/s ensures consistent production"
+    ]
   }
 ];
 
@@ -73,7 +95,7 @@ export const InvestmentOpportunities = () => {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
+        <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-8 max-w-7xl mx-auto">
           {opportunities.map((plant) => (
             <Card key={plant.id} className="group relative overflow-hidden border-0 shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-[1.02] bg-gradient-to-br from-white to-muted/20">
               {/* Gradient Border Effect */}
@@ -118,7 +140,9 @@ export const InvestmentOpportunities = () => {
                 <p className="text-sm text-muted-foreground leading-relaxed">
                   {plant.id === 1 
                     ? "Modern hydropower plant with high winter production and potential for increased output. Located downstream of regulated lake providing stable production throughout the year."
-                    : "Recently consented hydropower project with high production and attractive economics. All permits are in place and the project is ready for construction or further development."
+                    : plant.id === 2
+                    ? "Recently consented hydropower project with high production and attractive economics. All permits are in place and the project is ready for construction or further development."
+                    : "Established hydropower plant in Rogaland with excellent head height and stable water flow. Proven track record since 2018 with consistent energy production in a prime location."
                   }
                 </p>
 
