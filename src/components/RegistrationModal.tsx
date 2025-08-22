@@ -169,11 +169,11 @@ export const RegistrationModal = ({ plantName, children }: RegistrationModalProp
                   <SelectValue placeholder="Select budget" />
                 </SelectTrigger>
                 <SelectContent className="bg-background border-border shadow-lg z-50">
-                  <SelectItem value="25k-100k">€25,000 - €100,000</SelectItem>
-                  <SelectItem value="100k-500k">€100,000 - €500,000</SelectItem>
-                  <SelectItem value="500k-1m">€500,000 - €1,000,000</SelectItem>
-                  <SelectItem value="1m-5m">€1,000,000 - €5,000,000</SelectItem>
-                  <SelectItem value="5m+">Over €5,000,000</SelectItem>
+                  <SelectItem value="25k-100k">0.3 MNOK - 1.2 MNOK</SelectItem>
+                  <SelectItem value="100k-500k">1.2 MNOK - 6 MNOK</SelectItem>
+                  <SelectItem value="500k-1m">6 MNOK - 12 MNOK</SelectItem>
+                  <SelectItem value="1m-5m">12 MNOK - 60 MNOK</SelectItem>
+                  <SelectItem value="5m+">Over 60 MNOK</SelectItem>
                 </SelectContent>
               </Select>
             </div>

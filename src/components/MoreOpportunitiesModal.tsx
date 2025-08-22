@@ -130,11 +130,11 @@ export const MoreOpportunitiesModal = ({ children }: MoreOpportunitiesModalProps
                     <SelectValue placeholder="Select investment range" />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="25k-50k">€25,000 - €50,000</SelectItem>
-                    <SelectItem value="50k-100k">€50,000 - €100,000</SelectItem>
-                    <SelectItem value="100k-250k">€100,000 - €250,000</SelectItem>
-                    <SelectItem value="250k-500k">€250,000 - €500,000</SelectItem>
-                    <SelectItem value="500k+">€500,000+</SelectItem>
+                    <SelectItem value="25k-50k">0.3 MNOK - 0.6 MNOK</SelectItem>
+                    <SelectItem value="50k-100k">0.6 MNOK - 1.2 MNOK</SelectItem>
+                    <SelectItem value="100k-250k">1.2 MNOK - 3 MNOK</SelectItem>
+                    <SelectItem value="250k-500k">3 MNOK - 6 MNOK</SelectItem>
+                    <SelectItem value="500k+">6 MNOK+</SelectItem>
                   </SelectContent>
                 </Select>
               </div>
