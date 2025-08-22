@@ -61,14 +61,14 @@ export const HeroSection = () => {
                 size="lg"
                 className="text-lg px-8 py-6 h-auto text-white border-white hover:bg-white hover:text-primary flex flex-col items-center"
               >
-                <div className="flex items-center gap-2">
+                <div className="flex items-center gap-3">
                   <span>Sell Your Power Plant</span>
-                  <div className="flex items-center gap-2 bg-white/20 px-3 py-1 rounded-full text-sm">
-                    <span className="line-through text-white/70">10,000 NOK</span>
-                    <span className="font-bold text-green-400">FREE</span>
+                  <div className="flex items-center gap-2 bg-black/30 backdrop-blur-sm px-4 py-2 rounded-full">
+                    <span className="line-through text-white/80 text-lg font-medium">10,000 NOK</span>
+                    <span className="font-bold text-green-300 text-xl">FREE</span>
                   </div>
                 </div>
-                <span className="text-sm font-normal mt-1 opacity-90">Free evaluation • No obligations</span>
+                <span className="text-base font-medium mt-2 opacity-95">Free evaluation • No obligations</span>
               </Button>
             </SellPowerPlantModal>
           </div>
