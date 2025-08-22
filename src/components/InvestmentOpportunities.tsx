@@ -230,7 +230,7 @@ export const InvestmentOpportunities = () => {
                   </div>
                   <div className="flex items-center gap-2 bg-hydro-green/10 px-4 py-2 rounded-full">
                     <TrendingUp className="h-4 w-4 text-hydro-green" />
-                    <span>ROI 5-18%</span>
+                    <span>ROI 5-10%</span>
                   </div>
                   <div className="flex items-center gap-2 bg-primary/10 px-4 py-2 rounded-full">
                     <Users className="h-4 w-4 text-primary" />
