@@ -180,6 +180,7 @@ export const RegistrationModal = ({ plantName, children }: RegistrationModalProp
                   <SelectItem value="no3">NO3 - Central Norway</SelectItem>
                   <SelectItem value="no4">NO4 - Northern Norway</SelectItem>
                   <SelectItem value="no5">NO5 - Western Norway</SelectItem>
+                  <SelectItem value="open-explore">Open to explore</SelectItem>
                 </SelectContent>
               </Select>
             </div>
