@@ -69,27 +69,27 @@ export const ComparisonSection = () => {
                 <Collapsible open={allDetailsOpen}>
                   <CollapsibleContent className="mt-4 p-4 bg-hydro-blue/5 rounded-lg border border-hydro-blue/20">
                     <div className="space-y-4 text-sm">
-                      <p className="font-semibold text-hydro-blue text-base mb-3">Why Norwegian Hydro Plants Are Superior:</p>
+                      <p className="font-semibold text-hydro-blue text-base mb-3">{t('detail.why_superior')}</p>
                       <div className="space-y-3">
                         <div className="flex gap-3">
                           <div className="w-2 h-2 rounded-full bg-hydro-blue mt-2 flex-shrink-0"></div>
                           <div>
-                            <span className="font-medium text-foreground">Real Asset Ownership:</span>
-                            <span className="text-muted-foreground ml-1">You own actual hydropower plants, not just certificates or promises.</span>
+                            <span className="font-medium text-foreground">{t('detail.real_ownership')}</span>
+                            <span className="text-muted-foreground ml-1">{t('detail.real_ownership_desc')}</span>
                           </div>
                         </div>
                         <div className="flex gap-3">
                           <div className="w-2 h-2 rounded-full bg-hydro-blue mt-2 flex-shrink-0"></div>
                           <div>
-                            <span className="font-medium text-foreground">Predictable Returns:</span>
-                            <span className="text-muted-foreground ml-1">Electricity demand is constant, and Norway has a regulated energy market ensuring stable pricing.</span>
+                            <span className="font-medium text-foreground">{t('detail.predictable_returns')}</span>
+                            <span className="text-muted-foreground ml-1">{t('detail.predictable_returns_desc')}</span>
                           </div>
                         </div>
                         <div className="flex gap-3">
                           <div className="w-2 h-2 rounded-full bg-hydro-blue mt-2 flex-shrink-0"></div>
                           <div>
-                            <span className="font-medium text-foreground">Direct Climate Impact:</span>
-                            <span className="text-muted-foreground ml-1">Every kWh produced directly displaces fossil fuel energy and creates measurable CO₂ reduction.</span>
+                            <span className="font-medium text-foreground">{t('detail.direct_impact')}</span>
+                            <span className="text-muted-foreground ml-1">{t('detail.direct_impact_desc')}</span>
                           </div>
                         </div>
                       </div>
@@ -138,27 +138,27 @@ export const ComparisonSection = () => {
                 <Collapsible open={allDetailsOpen}>
                   <CollapsibleContent className="mt-4 p-4 bg-warning/5 rounded-lg border border-warning/20">
                     <div className="space-y-4 text-sm">
-                      <p className="font-semibold text-warning text-base mb-3">Why Carbon Credits Often Fail:</p>
+                      <p className="font-semibold text-warning text-base mb-3">{t('detail.why_fail')}</p>
                       <div className="space-y-3">
                         <div className="flex gap-3">
                           <div className="w-2 h-2 rounded-full bg-warning mt-2 flex-shrink-0"></div>
                           <div>
-                            <span className="font-medium text-foreground">Additionality Problem:</span>
-                            <span className="text-muted-foreground ml-1">Many projects would have happened anyway, making the "offset" meaningless.</span>
+                            <span className="font-medium text-foreground">{t('detail.additionality')}</span>
+                            <span className="text-muted-foreground ml-1">{t('detail.additionality_desc')}</span>
                           </div>
                         </div>
                         <div className="flex gap-3">
                           <div className="w-2 h-2 rounded-full bg-warning mt-2 flex-shrink-0"></div>
                           <div>
-                            <span className="font-medium text-foreground">No Permanent Impact:</span>
-                            <span className="text-muted-foreground ml-1">Forests can burn down, projects can fail, but you've already paid for the credits.</span>
+                            <span className="font-medium text-foreground">{t('detail.no_permanent')}</span>
+                            <span className="text-muted-foreground ml-1">{t('detail.no_permanent_desc')}</span>
                           </div>
                         </div>
                         <div className="flex gap-3">
                           <div className="w-2 h-2 rounded-full bg-warning mt-2 flex-shrink-0"></div>
                           <div>
-                            <span className="font-medium text-foreground">No Asset Value:</span>
-                            <span className="text-muted-foreground ml-1">You own nothing tangible - just a digital certificate that can become worthless.</span>
+                            <span className="font-medium text-foreground">{t('detail.no_asset_value')}</span>
+                            <span className="text-muted-foreground ml-1">{t('detail.no_asset_value_desc')}</span>
                           </div>
                         </div>
                       </div>
@@ -207,27 +207,27 @@ export const ComparisonSection = () => {
                 <Collapsible open={allDetailsOpen}>
                   <CollapsibleContent className="mt-4 p-4 bg-muted/20 rounded-lg border border-muted/40">
                     <div className="space-y-4 text-sm">
-                      <p className="font-semibold text-muted-foreground text-base mb-3">Why ESG Funds Disappoint:</p>
+                      <p className="font-semibold text-muted-foreground text-base mb-3">{t('detail.why_disappoint')}</p>
                       <div className="space-y-3">
                         <div className="flex gap-3">
                           <div className="w-2 h-2 rounded-full bg-muted-foreground mt-2 flex-shrink-0"></div>
                           <div>
-                            <span className="font-medium text-foreground">Greenwashing:</span>
-                            <span className="text-muted-foreground ml-1">Many "ESG" funds still hold fossil fuel companies, weapons manufacturers, and other questionable investments.</span>
+                            <span className="font-medium text-foreground">{t('detail.greenwashing_detail')}</span>
+                            <span className="text-muted-foreground ml-1">{t('detail.greenwashing_desc')}</span>
                           </div>
                         </div>
                         <div className="flex gap-3">
                           <div className="w-2 h-2 rounded-full bg-muted-foreground mt-2 flex-shrink-0"></div>
                           <div>
-                            <span className="font-medium text-foreground">Fee Erosion:</span>
-                            <span className="text-muted-foreground ml-1">1-2% annual fees compound over time, significantly reducing your returns.</span>
+                            <span className="font-medium text-foreground">{t('detail.fee_erosion')}</span>
+                            <span className="text-muted-foreground ml-1">{t('detail.fee_erosion_desc')}</span>
                           </div>
                         </div>
                         <div className="flex gap-3">
                           <div className="w-2 h-2 rounded-full bg-muted-foreground mt-2 flex-shrink-0"></div>
                           <div>
-                            <span className="font-medium text-foreground">Diluted Impact:</span>
-                            <span className="text-muted-foreground ml-1">Your money is spread across hundreds of companies - minimal influence on any single environmental outcome.</span>
+                            <span className="font-medium text-foreground">{t('detail.diluted_impact')}</span>
+                            <span className="text-muted-foreground ml-1">{t('detail.diluted_impact_desc')}</span>
                           </div>
                         </div>
                       </div>

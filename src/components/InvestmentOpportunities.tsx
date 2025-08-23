@@ -30,8 +30,8 @@ const opportunities = [
     statusColor: "bg-gradient-to-r from-yellow-400 to-orange-500",
     buildYear: "1987",
     advantages: [
-      "High winter production (peak prices)",
-      "Recently renovated equipment"
+      "advantages.high_winter",
+      "advantages.renovated"
     ]
   },
   {
@@ -52,8 +52,8 @@ const opportunities = [
     statusColor: "bg-hydro-green",
     buildYear: "2025",
     advantages: [
-      "Fresh consent (December 2024)",
-      "High production, solid revenue"
+      "advantages.fresh_consent",
+      "advantages.high_production"
     ]
   },
   {
@@ -74,8 +74,8 @@ const opportunities = [
     statusColor: "bg-hydro-blue",
     buildYear: "2018",
     advantages: [
-      "High head height (132.4m)",
-      "Stable water intake (0.88 m³/s)"
+      "advantages.high_head",
+      "advantages.stable_intake"
     ]
   }
 ];
@@ -115,7 +115,7 @@ export const InvestmentOpportunities = () => {
                     alt={`${plant.name} hydropower plant`}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
-                  {/* Status Badge Overlay on Image */}
+                    {/* Status Badge Overlay on Image */}
                   <div className="absolute top-4 left-4">
                     <Badge 
                       variant="secondary"
@@ -125,7 +125,7 @@ export const InvestmentOpportunities = () => {
                           : 'bg-primary/90 text-white border-primary/20'
                       } px-3 py-1 text-xs font-medium backdrop-blur-sm`}
                     >
-                      {plant.operationalDate.includes("Operation") ? "In Operation" : "Consented Project"}
+                      {plant.operationalDate.includes("Operation") ? t('status.in_operation') : t('status.consented')}
                     </Badge>
                   </div>
                 </div>
@@ -178,7 +178,7 @@ export const InvestmentOpportunities = () => {
                     {plant.advantages.map((advantage, index) => (
                       <div key={index} className="flex items-start gap-2">
                         <div className="w-2 h-2 rounded-full bg-hydro-green mt-2 flex-shrink-0" />
-                        <span className="text-sm text-muted-foreground">{advantage}</span>
+                        <span className="text-sm text-muted-foreground">{t(advantage)}</span>
                       </div>
                     ))}
                   </div>
