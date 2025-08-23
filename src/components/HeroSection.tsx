@@ -68,7 +68,7 @@ export const HeroSection = () => {
                     <span className="font-bold whitespace-nowrap">Evaluate Your Hydro Plant</span>
                     <div className="flex items-center gap-1 bg-green-500 px-2 py-1 rounded text-xs font-bold text-white whitespace-nowrap">
                       <span className="line-through text-green-200">10k NOK</span>
-                      <span>FREE</span>
+                      <span>Free for a limited time</span>
                     </div>
                   </div>
                   <span className="text-sm opacity-90">Free evaluation • No obligations</span>
