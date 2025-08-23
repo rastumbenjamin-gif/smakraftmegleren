@@ -138,11 +138,11 @@ export const MoreOpportunitiesModal = ({ children }: MoreOpportunitiesModalProps
                     <SelectValue placeholder={t('form.placeholder.selectBudget')} />
                   </SelectTrigger>
                   <SelectContent className="bg-background border-border shadow-lg z-50">
-                    <SelectItem value="25k-50k">{t('more.budgetRange.0.5m')}</SelectItem>
-                    <SelectItem value="50k-100k">{t('more.budgetRange.1m')}</SelectItem>
-                    <SelectItem value="100k-250k">{t('more.budgetRange.2.5m')}</SelectItem>
-                    <SelectItem value="250k-500k">{t('more.budgetRange.5m')}</SelectItem>
-                    <SelectItem value="500k+">{t('more.budgetRange.10m')}</SelectItem>
+                    <SelectItem value="1-5">{t('form.budgetRange.1to5')}</SelectItem>
+                    <SelectItem value="5-10">{t('form.budgetRange.5to10')}</SelectItem>
+                    <SelectItem value="10-25">{t('form.budgetRange.10to25')}</SelectItem>
+                    <SelectItem value="25-50">{t('form.budgetRange.25to50')}</SelectItem>
+                    <SelectItem value="50+">{t('form.budgetRange.over50')}</SelectItem>
                   </SelectContent>
                 </Select>
               </div>
