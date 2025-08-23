@@ -175,6 +175,7 @@ export const MoreOpportunitiesModal = ({ children }: MoreOpportunitiesModalProps
                     <SelectItem value="6-10">6-10 GWh</SelectItem>
                     <SelectItem value="11-20">11-20 GWh</SelectItem>
                     <SelectItem value="over-20">Over 20 GWh</SelectItem>
+                    <SelectItem value="open-explore">Open to explore</SelectItem>
                   </SelectContent>
                 </Select>
               </div>
