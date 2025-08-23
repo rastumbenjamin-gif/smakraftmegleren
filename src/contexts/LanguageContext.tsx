@@ -179,6 +179,17 @@ const translations = {
     'sell.error_message': 'There was an issue sending your request. Please try again.',
     'sell.missing_consent': 'Please fill in all required fields and agree to the terms.',
     
+    // Sell form options
+    'sell.reason.negative_cash': 'Negative cash flow',
+    'sell.reason.generational': 'Generational change',
+    'sell.reason.better_returns': 'Desire for better returns',
+    'sell.reason.other': 'Other',
+    'sell.maintenance.continue': 'I am responsible and want to continue this after sale',
+    'sell.maintenance.no_continue': 'I am responsible but do not want this after sale',
+    'sell.water.no_lease': 'No water rights lease (I own both land and power plant)',
+    'sell.water.percentage': 'Percentage of gross revenue',
+    'sell.water.fixed': 'Fixed annual amount',
+    
     // Plant advantages
     'advantages.high_winter': 'High winter production (peak prices)',
     'advantages.renovated': 'Recently renovated equipment', 
@@ -382,6 +393,17 @@ const translations = {
     'sell.error_title': 'Innsendingsfeil',
     'sell.error_message': 'Det oppstod et problem med å sende forespørselen din. Vennligst prøv igjen.',
     'sell.missing_consent': 'Vennligst fyll ut alle obligatoriske felt og godta vilkårene.',
+    
+    // Sell form options
+    'sell.reason.negative_cash': 'Negativ kontantstrøm',
+    'sell.reason.generational': 'Generasjonsskifte',
+    'sell.reason.better_returns': 'Ønske om bedre avkastning',
+    'sell.reason.other': 'Annet',
+    'sell.maintenance.continue': 'Jeg er ansvarlig og ønsker å fortsette dette etter salg',
+    'sell.maintenance.no_continue': 'Jeg er ansvarlig men ønsker ikke dette etter salg',
+    'sell.water.no_lease': 'Ingen vannrettsleie (jeg eier både grunn og kraftverk)',
+    'sell.water.percentage': 'Prosentandel av bruttoinntekt',
+    'sell.water.fixed': 'Fast årlig beløp',
     
     // Plant advantages
     'advantages.high_winter': 'Høy vinterproduksjon (topppriser)',
