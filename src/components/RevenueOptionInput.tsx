@@ -99,7 +99,7 @@ export const RevenueOptionInput = ({
         
         {selectedType === 'percentage' && amount && (
           <p className="text-xs text-muted-foreground mt-2">
-            {amount}% of the gross revenue from the hydroelectric plant
+            {amount}% of the gross revenue from the hydropower plant
           </p>
         )}
         

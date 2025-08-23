@@ -20,8 +20,8 @@ const translations = {
     'header.contact': 'Contact',
     
     // Hero Section
-    'hero.title': 'Own Norwegian Hydroelectric Plants',
-    'hero.subtitle': 'Invest directly in renewable energy infrastructure and earn steady returns while making a real environmental impact',
+    'hero.title': 'Own Norwegian Hydropower Plants',
+    'hero.subtitle': 'Invest directly in hydropower plants and earn steady returns while making a real environmental impact',
     'hero.cta': 'Explore Opportunities',
     'hero.learn_more': 'Learn More',
     
@@ -47,7 +47,7 @@ const translations = {
     // Comparison Section
     'comparison.badge': 'Real Investment Comparison',
     'comparison.title': 'Hydro Plants vs Alternative Investments',
-    'comparison.description': 'See why owning actual renewable energy infrastructure delivers superior returns and genuine environmental impact compared to carbon credits and ESG funds.',
+    'comparison.description': 'See why owning actual hydropower plants delivers superior returns and genuine environmental impact compared to carbon credits and ESG funds.',
     'comparison.hydro_title': 'Norwegian Hydro Plants',
     'comparison.carbon_title': 'Carbon Credits',
     'comparison.esg_title': 'ESG Funds',
@@ -88,7 +88,7 @@ const translations = {
     
     // Hero Section
     'hero.title': 'Eie Norske Vannkraftverk',
-    'hero.subtitle': 'Invester direkte i fornybar energiinfrastruktur og tjen stabil avkastning samtidig som du gjør en reell miljøpåvirkning',
+    'hero.subtitle': 'Invester direkte i vannkraftverk og tjen stabil avkastning samtidig som du gjør en reell miljøpåvirkning',
     'hero.cta': 'Utforsk Muligheter',
     'hero.learn_more': 'Lær Mer',
     
@@ -114,7 +114,7 @@ const translations = {
     // Comparison Section
     'comparison.badge': 'Reell Investeringssammenligning',
     'comparison.title': 'Vannkraftverk vs Alternative Investeringer',
-    'comparison.description': 'Se hvorfor det å eie faktisk fornybar energiinfrastruktur gir overlegen avkastning og ekte miljøpåvirkning sammenlignet med karbonkreditter og ESG-fond.',
+    'comparison.description': 'Se hvorfor det å eie faktiske vannkraftverk gir overlegen avkastning og ekte miljøpåvirkning sammenlignet med karbonkreditter og ESG-fond.',
     'comparison.hydro_title': 'Norske Vannkraftverk',
     'comparison.carbon_title': 'Karbonkreditter',
     'comparison.esg_title': 'ESG-fond',

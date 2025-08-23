@@ -112,7 +112,7 @@ export const InvestmentOpportunities = () => {
                 <div className="relative h-48 overflow-hidden rounded-t-lg">
                   <img 
                     src={plant.image} 
-                    alt={`${plant.name} hydroelectric plant`}
+                    alt={`${plant.name} hydropower plant`}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                   {/* Status Badge Overlay on Image */}

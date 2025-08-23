@@ -75,7 +75,7 @@ export const ComparisonSection = () => {
                           <div className="w-2 h-2 rounded-full bg-hydro-blue mt-2 flex-shrink-0"></div>
                           <div>
                             <span className="font-medium text-foreground">Real Asset Ownership:</span>
-                            <span className="text-muted-foreground ml-1">You own actual renewable energy infrastructure, not just certificates or promises.</span>
+                            <span className="text-muted-foreground ml-1">You own actual hydropower plants, not just certificates or promises.</span>
                           </div>
                         </div>
                         <div className="flex gap-3">
