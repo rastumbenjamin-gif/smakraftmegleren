@@ -17,7 +17,7 @@ const opportunities = [
     location: "Mosvik, Trøndelag",
     capacity: "1.2 MW",
     annualProduction: "5.8 GWh/år",
-    roi: "11.2%",
+    roi: "6%",
     funded: 45,
     totalInvestment: "37 MNOK",
     minInvestment: "0.5 MNOK",
@@ -39,7 +39,7 @@ const opportunities = [
     location: "Voss, Vestland", 
     capacity: "2.8 MW",
     annualProduction: "12.5 GWh/år",
-    roi: "13.7%",
+    roi: "High ROI potential",
     funded: 0,
     totalInvestment: "82 MNOK",
     minInvestment: "0.5 MNOK",
@@ -61,7 +61,7 @@ const opportunities = [
     location: "Vindafjord, Rogaland",
     capacity: "0.99 MW",
     annualProduction: "3.718 GWh/år",
-    roi: "10.8%",
+    roi: "6%",
     funded: 0,
     totalInvestment: "32 MNOK",
     minInvestment: "0.5 MNOK",
@@ -142,14 +142,18 @@ export const InvestmentOpportunities = () => {
 
               <CardContent className="space-y-6">
                 {/* Key Metrics - Prominent Display */}
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="text-center p-4 bg-hydro-blue/5 rounded-lg border border-hydro-blue/10">
-                    <div className="text-2xl font-bold text-hydro-blue">{plant.capacity}</div>
+                <div className="grid grid-cols-3 gap-3">
+                  <div className="text-center p-3 bg-hydro-blue/5 rounded-lg border border-hydro-blue/10">
+                    <div className="text-lg font-bold text-hydro-blue">{plant.capacity}</div>
                     <div className="text-xs text-muted-foreground mt-1">Installed capacity</div>
                   </div>
-                  <div className="text-center p-4 bg-success/5 rounded-lg border border-success/10">
-                    <div className="text-2xl font-bold text-success">{plant.annualProduction.replace('år', 'year')}</div>
+                  <div className="text-center p-3 bg-success/5 rounded-lg border border-success/10">
+                    <div className="text-lg font-bold text-success">{plant.annualProduction.replace('år', 'year')}</div>
                     <div className="text-xs text-muted-foreground mt-1">Annual production</div>
+                  </div>
+                  <div className="text-center p-3 bg-orange-500/5 rounded-lg border border-orange-500/10">
+                    <div className="text-lg font-bold text-orange-600">{plant.roi}</div>
+                    <div className="text-xs text-muted-foreground mt-1">ROI</div>
                   </div>
                 </div>
 
