@@ -6,81 +6,83 @@ import { MapPin, Zap, Calendar, Users, TrendingUp } from "lucide-react";
 import { RegistrationModal } from "./RegistrationModal";
 import { MoreOpportunitiesModal } from "./MoreOpportunitiesModal";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import { useLanguage } from "@/contexts/LanguageContext";
 import hydroPlant1 from "@/assets/hydro-plant-1.jpg";
 import hydroPlant2 from "@/assets/hydro-plant-2.jpg";
 import hydroPlant3 from "@/assets/hydro-plant-3.jpg";
 
-const opportunities = [
-  {
-    id: 1,
-    name: "Hindbergelva kraftverk",
-    location: "Mosvik, Trøndelag",
-    capacity: "1.2 MW",
-    annualProduction: "5.8 GWh/år",
-    roi: "6%",
-    funded: 45,
-    totalInvestment: "37 MNOK",
-    minInvestment: "0.5 MNOK",
-    co2Reduction: "2,400",
-    operationalDate: "In Operation (1987)",
-    investors: 89,
-    image: hydroPlant1,
-    status: "Available investment",
-    statusColor: "bg-gradient-to-r from-yellow-400 to-orange-500",
-    buildYear: "1987",
-    advantages: [
-      "High winter production (peak prices)",
-      "Recently renovated equipment"
-    ]
-  },
-  {
-    id: 2,
-    name: "Bjørå kraftverk",
-    location: "Voss, Vestland", 
-    capacity: "2.8 MW",
-    annualProduction: "12.5 GWh/år",
-    roi: "High ROI potential",
-    funded: 0,
-    totalInvestment: "82 MNOK",
-    minInvestment: "0.5 MNOK",
-    co2Reduction: "5,150",
-    operationalDate: "2025",
-    investors: 0,
-    image: hydroPlant2,
-    status: "Consented project",
-    statusColor: "bg-hydro-green",
-    buildYear: "2025",
-    advantages: [
-      "Fresh consent (December 2024)",
-      "High production, solid revenue"
-    ]
-  },
-  {
-    id: 3,
-    name: "Sandvik",
-    location: "Vindafjord, Rogaland",
-    capacity: "0.99 MW",
-    annualProduction: "3.718 GWh/år",
-    roi: "6%",
-    funded: 0,
-    totalInvestment: "32 MNOK",
-    minInvestment: "0.5 MNOK",
-    co2Reduction: "1,530",
-    operationalDate: "In Operation (2018)",
-    investors: 0,
-    image: hydroPlant3,
-    status: "Available investment",
-    statusColor: "bg-hydro-blue",
-    buildYear: "2018",
-    advantages: [
-      "High head height (132.4m)",
-      "Stable water intake (0.88 m³/s)"
-    ]
-  }
-];
-
 export const InvestmentOpportunities = () => {
   const sectionRef = useScrollAnimation();
+  const { t } = useLanguage();
+
+  const opportunities = [
+    {
+      id: 1,
+      name: "Hindbergelva kraftverk",
+      location: "Mosvik, Trøndelag",
+      capacity: "1.2 MW",
+      annualProduction: "5.8 GWh/år",
+      roi: "6%",
+      funded: 45,
+      totalInvestment: "37 MNOK",
+      minInvestment: "0.5 MNOK",
+      co2Reduction: "2,400",
+      operationalDate: "In Operation (1987)",
+      investors: 89,
+      image: hydroPlant1,
+      status: "Available investment",
+      statusColor: "bg-gradient-to-r from-yellow-400 to-orange-500",
+      buildYear: "1987",
+      advantages: [
+        t('opportunities.hindbergelva.advantage1'),
+        t('opportunities.hindbergelva.advantage2')
+      ]
+    },
+    {
+      id: 2,
+      name: "Bjørå kraftverk",
+      location: "Voss, Vestland", 
+      capacity: "2.8 MW",
+      annualProduction: "12.5 GWh/år",
+      roi: "High ROI potential",
+      funded: 0,
+      totalInvestment: "82 MNOK",
+      minInvestment: "0.5 MNOK",
+      co2Reduction: "5,150",
+      operationalDate: "2025",
+      investors: 0,
+      image: hydroPlant2,
+      status: "Consented project",
+      statusColor: "bg-hydro-green",
+      buildYear: "2025",
+      advantages: [
+        t('opportunities.bjora.advantage1'),
+        t('opportunities.bjora.advantage2')
+      ]
+    },
+    {
+      id: 3,
+      name: "Sandvik",
+      location: "Vindafjord, Rogaland",
+      capacity: "0.99 MW",
+      annualProduction: "3.718 GWh/år",
+      roi: "6%",
+      funded: 0,
+      totalInvestment: "32 MNOK",
+      minInvestment: "0.5 MNOK",
+      co2Reduction: "1,530",
+      operationalDate: "In Operation (2018)",
+      investors: 0,
+      image: hydroPlant3,
+      status: "Available investment",
+      statusColor: "bg-hydro-blue",
+      buildYear: "2018",
+      advantages: [
+        t('opportunities.sandvik.advantage1'),
+        t('opportunities.sandvik.advantage2')
+      ]
+    }
+  ];
   
   return (
     <section 
@@ -90,11 +92,10 @@ export const InvestmentOpportunities = () => {
     >
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <Badge className="mb-4 bg-hydro-blue text-white">Current Opportunities</Badge>
-          <h2 className="text-4xl font-bold mb-6">Available Hydro Plant Investments</h2>
+          <Badge className="mb-4 bg-hydro-blue text-white">{t('opportunities.badge')}</Badge>
+          <h2 className="text-4xl font-bold mb-6">{t('opportunities.title')}</h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Invest in operational and under-construction hydro plants across Norway's 
-            most productive fjords and mountain regions.
+            {t('opportunities.subtitle')}
           </p>
         </div>
 
@@ -124,7 +125,7 @@ export const InvestmentOpportunities = () => {
                           : 'bg-primary/90 text-white border-primary/20'
                       } px-3 py-1 text-xs font-medium backdrop-blur-sm`}
                     >
-                      {plant.operationalDate.includes("Operation") ? "In Operation" : "Consented Project"}
+                      {plant.operationalDate.includes("Operation") ? t('opportunities.inOperation') : t('opportunities.consentedProject')}
                     </Badge>
                   </div>
                 </div>
@@ -145,11 +146,11 @@ export const InvestmentOpportunities = () => {
                 <div className="grid grid-cols-3 gap-3">
                   <div className="text-center p-3 bg-hydro-blue/5 rounded-lg border border-hydro-blue/10">
                     <div className="text-lg font-bold text-hydro-blue">{plant.capacity}</div>
-                    <div className="text-xs text-muted-foreground mt-1">Installed capacity</div>
+                    <div className="text-xs text-muted-foreground mt-1">{t('opportunities.capacity')}</div>
                   </div>
                   <div className="text-center p-3 bg-success/5 rounded-lg border border-success/10">
                     <div className="text-lg font-bold text-success">{plant.annualProduction.replace('år', 'year')}</div>
-                    <div className="text-xs text-muted-foreground mt-1">Annual production</div>
+                    <div className="text-xs text-muted-foreground mt-1">{t('opportunities.production')}</div>
                   </div>
                   <div className="text-center p-3 bg-primary/5 rounded-lg border border-primary/10">
                     <div className="text-xl font-extrabold text-primary">{plant.roi}</div>
@@ -170,14 +171,14 @@ export const InvestmentOpportunities = () => {
                     <Calendar className="h-4 w-4 text-muted-foreground" />
                     <div>
                       <div className="font-medium">{plant.buildYear}</div>
-                      <div className="text-xs text-muted-foreground">Build year</div>
+                      <div className="text-xs text-muted-foreground">{t('opportunities.buildYear')}</div>
                     </div>
                   </div>
                 </div>
 
                 {/* Unique Advantages */}
                 <div>
-                  <h4 className="font-semibold mb-3">Unique Advantages</h4>
+                  <h4 className="font-semibold mb-3">{t('opportunities.advantages')}</h4>
                   <div className="space-y-2">
                     {plant.advantages.map((advantage, index) => (
                       <div key={index} className="flex items-start gap-2">
@@ -194,7 +195,7 @@ export const InvestmentOpportunities = () => {
                     variant="default" 
                     className="w-full bg-primary hover:bg-primary/90 text-white group-hover:bg-gradient-to-r group-hover:from-hydro-blue group-hover:to-hydro-green transition-all duration-300 h-auto py-3 px-4 text-sm font-medium whitespace-normal"
                   >
-                    Register for pricing and info
+                    {t('opportunities.register')}
                   </Button>
                 </RegistrationModal>
               </CardContent>
@@ -212,26 +213,25 @@ export const InvestmentOpportunities = () => {
                   <div className="w-12 h-12 rounded-full bg-gradient-to-r from-hydro-blue to-hydro-green flex items-center justify-center">
                     <Zap className="h-6 w-6 text-white" />
                   </div>
-                  <h3 className="text-2xl font-bold">Discover More Opportunities</h3>
+                  <h3 className="text-2xl font-bold">{t('opportunities.more.title')}</h3>
                 </div>
                 
                 <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                  These are just our featured investments. We have <strong>additional hydropower plants</strong> across Norway, 
-                  ranging from small-scale community projects to larger commercial installations.
+                  {t('opportunities.more.subtitle')}
                 </p>
 
                 <div className="flex flex-wrap justify-center gap-4 text-sm">
                   <div className="flex items-center gap-2 bg-hydro-blue/10 px-4 py-2 rounded-full">
                     <MapPin className="h-4 w-4 text-hydro-blue" />
-                    <span>Nationwide coverage</span>
+                    <span>{t('opportunities.more.feature1')}</span>
                   </div>
                   <div className="flex items-center gap-2 bg-hydro-green/10 px-4 py-2 rounded-full">
                     <TrendingUp className="h-4 w-4 text-hydro-green" />
-                    <span>ROI 5-10%</span>
+                    <span>{t('opportunities.more.feature2')}</span>
                   </div>
                   <div className="flex items-center gap-2 bg-primary/10 px-4 py-2 rounded-full">
                     <Users className="h-4 w-4 text-primary" />
-                    <span>Various investment sizes</span>
+                    <span>{t('opportunities.more.feature3')}</span>
                   </div>
                 </div>
 
@@ -242,7 +242,7 @@ export const InvestmentOpportunities = () => {
                       size="lg"
                       className="bg-gradient-to-r from-hydro-blue to-hydro-green text-white px-8 py-6 h-auto text-lg w-full sm:w-auto"
                     >
-                      Request More Investment Opportunities
+                      {t('opportunities.more.cta')}
                     </Button>
                   </MoreOpportunitiesModal>
                 </div>

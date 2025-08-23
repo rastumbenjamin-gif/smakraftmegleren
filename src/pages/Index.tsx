@@ -4,11 +4,13 @@ import { HeroSection } from "@/components/HeroSection";
 import { ComparisonSection } from "@/components/ComparisonSection";
 import { InvestmentOpportunities } from "@/components/InvestmentOpportunities";
 import { Header } from "@/components/Header";
+import { LanguageToggle } from "@/components/LanguageToggle";
 
 const Index = () => {
   return (
     <div className="min-h-screen">
       <Header />
+      <LanguageToggle />
       <main>
         <section className="scroll-snap-start">
           <HeroSection />
