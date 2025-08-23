@@ -152,8 +152,8 @@ export const InvestmentOpportunities = () => {
                     <div className="text-xs text-muted-foreground mt-1">Annual production</div>
                   </div>
                   <div className="text-center p-3 bg-primary/5 rounded-lg border border-primary/10">
-                    <div className="text-lg font-bold text-primary">{plant.roi}</div>
-                    <div className="text-xs text-muted-foreground mt-1">ROI</div>
+                    <div className="text-xl font-extrabold text-primary">{plant.roi}</div>
+                    <div className="text-xs text-muted-foreground mt-1 font-medium">ROI</div>
                   </div>
                 </div>
 
