@@ -6,7 +6,6 @@ import { Textarea } from "@/components/ui/textarea";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { supabase } from "@/integrations/supabase/client";
-import { useLanguage } from "@/contexts/LanguageContext";
 import { toast } from "sonner";
 import { Loader2 } from "lucide-react";
 
@@ -17,7 +16,6 @@ interface MoreOpportunitiesModalProps {
 export const MoreOpportunitiesModal = ({ children }: MoreOpportunitiesModalProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
-  const { t } = useLanguage();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -81,17 +79,17 @@ export const MoreOpportunitiesModal = ({ children }: MoreOpportunitiesModalProps
         <DialogContent className="sm:max-w-[600px] max-h-[90vh] overflow-y-auto bg-background border-border">
           <DialogHeader>
             <DialogTitle className="text-2xl font-bold mb-2">
-              {t('more_opportunities.title')}
+              Register for more information
             </DialogTitle>
             <p className="text-muted-foreground">
-              {t('more_opportunities.subtitle')}
+              Request additional hydropower investment opportunities
             </p>
           </DialogHeader>
 
           <form onSubmit={handleSubmit} className="space-y-6 mt-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div className="space-y-2">
-                <Label htmlFor="name">{t('form.name')} {t('form.required')}</Label>
+                <Label htmlFor="name">Name *</Label>
                 <Input
                   id="name"
                   value={formData.name}
@@ -102,7 +100,7 @@ export const MoreOpportunitiesModal = ({ children }: MoreOpportunitiesModalProps
                 />
               </div>
               <div className="space-y-2">
-                <Label htmlFor="email">{t('form.email')} {t('form.required')}</Label>
+                <Label htmlFor="email">Email *</Label>
                 <Input
                   id="email"
                   type="email"
@@ -116,26 +114,26 @@ export const MoreOpportunitiesModal = ({ children }: MoreOpportunitiesModalProps
             </div>
 
             <div className="space-y-2">
-              <Label>{t('registration.investor_type')} {t('form.required')}</Label>
+              <Label>Investor type *</Label>
               <Select value={formData.experience} onValueChange={(value) => handleInputChange("experience", value)} required>
                 <SelectTrigger className="bg-background border-input">
-                  <SelectValue placeholder={t('registration.select_investor')} />
+                  <SelectValue placeholder="Select investor type" />
                 </SelectTrigger>
                 <SelectContent className="bg-background border-border shadow-lg z-50">
-                  <SelectItem value="private-person">{t('investor.private_person')}</SelectItem>
-                  <SelectItem value="company">{t('investor.company')}</SelectItem>
-                  <SelectItem value="investment-fund">{t('investor.investment_fund')}</SelectItem>
-                  <SelectItem value="institutional-investor">{t('investor.institutional_investor')}</SelectItem>
+                  <SelectItem value="private-person">Private person</SelectItem>
+                  <SelectItem value="company">Company</SelectItem>
+                  <SelectItem value="investment-fund">Investment fund</SelectItem>
+                  <SelectItem value="institutional-investor">Institutional investor</SelectItem>
                 </SelectContent>
               </Select>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div className="space-y-2">
-                <Label>{t('registration.budget_range')} {t('form.required')}</Label>
+                <Label>Budget range *</Label>
                 <Select value={formData.investmentAmount} onValueChange={(value) => handleInputChange("investmentAmount", value)} required>
                   <SelectTrigger className="bg-background border-input">
-                    <SelectValue placeholder={t('registration.select_budget')} />
+                    <SelectValue placeholder="Select budget" />
                   </SelectTrigger>
                   <SelectContent className="bg-background border-border shadow-lg z-50">
                     <SelectItem value="25k-50k">0.5 MNOK - 1 MNOK</SelectItem>
@@ -147,17 +145,17 @@ export const MoreOpportunitiesModal = ({ children }: MoreOpportunitiesModalProps
                 </Select>
               </div>
               <div className="space-y-2">
-                <Label>{t('registration.pricing_area')} {t('form.required')}</Label>
+                <Label>Pricing area *</Label>
                 <Select value={formData.phone} onValueChange={(value) => handleInputChange("phone", value)}>
                   <SelectTrigger className="bg-background border-input">
-                    <SelectValue placeholder={t('registration.select_area')} />
+                    <SelectValue placeholder="Select pricing area" />
                   </SelectTrigger>
                   <SelectContent className="bg-background border-border shadow-lg z-50">
-                    <SelectItem value="no1">{t('area.no1')}</SelectItem>
-                    <SelectItem value="no2">{t('area.no2')}</SelectItem>
-                    <SelectItem value="no3">{t('area.no3')}</SelectItem>
-                    <SelectItem value="no4">{t('area.no4')}</SelectItem>
-                    <SelectItem value="no5">{t('area.no5')}</SelectItem>
+                    <SelectItem value="no1">NO1 - Eastern Norway</SelectItem>
+                    <SelectItem value="no2">NO2 - Southern Norway</SelectItem>
+                    <SelectItem value="no3">NO3 - Central Norway</SelectItem>
+                    <SelectItem value="no4">NO4 - Northern Norway</SelectItem>
+                    <SelectItem value="no5">NO5 - Western Norway</SelectItem>
                   </SelectContent>
                 </Select>
               </div>
@@ -165,44 +163,44 @@ export const MoreOpportunitiesModal = ({ children }: MoreOpportunitiesModalProps
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div className="space-y-2">
-                <Label>{t('registration.production_range')} {t('form.required')}</Label>
+                <Label>Preferred production range *</Label>
                 <Select value={formData.interests} onValueChange={(value) => handleInputChange("interests", value)}>
                   <SelectTrigger className="bg-background border-input">
-                    <SelectValue placeholder={t('registration.select_production')} />
+                    <SelectValue placeholder="Select production range" />
                   </SelectTrigger>
                   <SelectContent className="bg-background border-border shadow-lg z-50">
-                    <SelectItem value="under-3">{t('production.under_3')}</SelectItem>
-                    <SelectItem value="3-5">{t('production.3_5')}</SelectItem>
-                    <SelectItem value="6-10">{t('production.6_10')}</SelectItem>
-                    <SelectItem value="11-20">{t('production.11_20')}</SelectItem>
-                    <SelectItem value="over-20">{t('production.over_20')}</SelectItem>
+                    <SelectItem value="under-3">Under 3 GWh</SelectItem>
+                    <SelectItem value="3-5">3-5 GWh</SelectItem>
+                    <SelectItem value="6-10">6-10 GWh</SelectItem>
+                    <SelectItem value="11-20">11-20 GWh</SelectItem>
+                    <SelectItem value="over-20">Over 20 GWh</SelectItem>
                   </SelectContent>
                 </Select>
               </div>
               <div className="space-y-2">
-                <Label>{t('registration.timeframe')} {t('form.required')}</Label>
+                <Label>Sales timeframe *</Label>
                 <Select value={formData.investmentTimeframe} onValueChange={(value) => handleInputChange("investmentTimeframe", value)} required>
                   <SelectTrigger className="bg-background border-input">
-                    <SelectValue placeholder={t('registration.select_timeframe')} />
+                    <SelectValue placeholder="Select timeframe" />
                   </SelectTrigger>
                   <SelectContent className="bg-background border-border shadow-lg z-50">
-                    <SelectItem value="immediate">{t('timeframe.immediate')}</SelectItem>
-                    <SelectItem value="short-term">{t('timeframe.short_term')}</SelectItem>
-                    <SelectItem value="medium-term">{t('timeframe.medium_term')}</SelectItem>
-                    <SelectItem value="long-term">{t('timeframe.long_term')}</SelectItem>
-                    <SelectItem value="exploring">{t('timeframe.exploring')}</SelectItem>
+                    <SelectItem value="immediate">Immediate (0-3 months)</SelectItem>
+                    <SelectItem value="short-term">Short term (3-6 months)</SelectItem>
+                    <SelectItem value="medium-term">Medium term (6-12 months)</SelectItem>
+                    <SelectItem value="long-term">Long term (12+ months)</SelectItem>
+                    <SelectItem value="exploring">Just exploring options</SelectItem>
                   </SelectContent>
                 </Select>
               </div>
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="additionalInfo">{t('registration.comments')}</Label>
+              <Label htmlFor="additionalInfo">Additional comments</Label>
               <Textarea
                 id="additionalInfo"
                 value={formData.additionalInfo}
                 onChange={(e) => handleInputChange("additionalInfo", e.target.value)}
-                placeholder={t('registration.comments_placeholder')}
+                placeholder="Describe your specific requirements or preferences..."
                 className="bg-background min-h-[100px] resize-none"
               />
             </div>
@@ -214,7 +212,7 @@ export const MoreOpportunitiesModal = ({ children }: MoreOpportunitiesModalProps
                 onClick={() => setIsOpen(false)}
                 className="flex-1"
               >
-                {t('form.cancel')}
+                Cancel
               </Button>
               <Button
                 type="submit"
@@ -227,7 +225,7 @@ export const MoreOpportunitiesModal = ({ children }: MoreOpportunitiesModalProps
                     Submitting...
                   </>
                 ) : (
-                  t('registration.register_button')
+                  "Register interest"
                 )}
               </Button>
             </div>

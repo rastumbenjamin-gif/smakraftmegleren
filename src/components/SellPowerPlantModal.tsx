@@ -10,7 +10,6 @@ import { useToast } from "@/hooks/use-toast";
 import { Search, Rocket } from "lucide-react";
 import { SearchKraftverkCombobox } from "./SearchKraftverkCombobox";
 import { RevenueOptionInput } from "./RevenueOptionInput";
-import { useLanguage } from "@/contexts/LanguageContext";
 import { supabase } from "@/integrations/supabase/client";
 
 
@@ -20,8 +19,6 @@ interface SellPowerPlantModalProps {
 
 export const SellPowerPlantModal = ({ children }: SellPowerPlantModalProps) => {
   const [open, setOpen] = useState(false);
-  const { toast } = useToast();
-  const { t } = useLanguage();
   const [formData, setFormData] = useState({
     // Contact Information
     name: "",
@@ -44,15 +41,16 @@ export const SellPowerPlantModal = ({ children }: SellPowerPlantModalProps) => {
     // Water rights lease details
     waterRightsDetails: null as { type: 'percentage' | 'fixed'; amount: string } | null
   });
-  
+  const { toast } = useToast();
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
     // Basic validation
     if (!formData.name || !formData.phone || !formData.email || !formData.plantName || !formData.consentAgreed) {
       toast({
-        title: t('sell.error_title'),
-        description: t('sell.missing_consent'),
+        title: "Missing Information",
+        description: "Please fill in all required fields and agree to the terms.",
         variant: "destructive"
       });
       return;
@@ -84,16 +82,16 @@ export const SellPowerPlantModal = ({ children }: SellPowerPlantModalProps) => {
       if (error) {
         console.error("Email notification error:", error);
         toast({
-          title: t('sell.error_title'),
-          description: t('sell.error_message'),
+          title: "Submission Error",
+          description: "There was an issue sending your request. Please try again.",
           variant: "destructive"
         });
         return;
       }
 
       toast({
-        title: t('sell.success_title'),
-        description: t('sell.success_message'),
+        title: "Evaluation Request Sent!",
+        description: "Thank you for your submission. We'll contact you within 24 hours with a free evaluation of your power plant.",
       });
       
       setOpen(false);
@@ -119,8 +117,8 @@ export const SellPowerPlantModal = ({ children }: SellPowerPlantModalProps) => {
     } catch (error) {
       console.error("Form submission error:", error);
       toast({
-        title: t('sell.error_title'),
-        description: t('sell.error_message'),
+        title: "Submission Error",
+        description: "There was an issue sending your request. Please try again.",
         variant: "destructive"
       });
     }
@@ -133,20 +131,20 @@ export const SellPowerPlantModal = ({ children }: SellPowerPlantModalProps) => {
       </DialogTrigger>
       <DialogContent className="sm:max-w-[700px] max-h-[90vh] overflow-y-auto bg-background border-border">
         <DialogHeader>
-          <DialogTitle className="text-2xl font-bold mb-2">{t('sell.title')}</DialogTitle>
+          <DialogTitle className="text-2xl font-bold mb-2">Evaluate Your Hydro Plant</DialogTitle>
           <p className="text-muted-foreground mb-4">
-            {t('sell.subtitle')}
+            Get a professional evaluation of your hydroelectric facility with detailed market analysis
           </p>
           <div className="bg-gradient-to-r from-green-50 to-blue-50 dark:from-green-950/20 dark:to-blue-950/20 border border-green-200 dark:border-green-800 rounded-lg p-4 text-center">
             <div className="flex items-center justify-center gap-3 mb-2">
-              <span className="text-2xl font-bold line-through text-muted-foreground">{t('sell.original_price')}</span>
-              <span className="text-3xl font-bold text-green-600">{t('sell.free_evaluation')}</span>
+              <span className="text-2xl font-bold line-through text-muted-foreground">10,000 NOK</span>
+              <span className="text-3xl font-bold text-green-600">Free</span>
             </div>
             <p className="text-sm text-muted-foreground">
-              {t('sell.professional_text')}
+              Professional evaluation • Market analysis • No obligations
             </p>
             <p className="text-xs text-muted-foreground mt-1 opacity-75">
-              {t('sell.limited_offer')}
+              Limited time offer
             </p>
           </div>
         </DialogHeader>
@@ -158,12 +156,12 @@ export const SellPowerPlantModal = ({ children }: SellPowerPlantModalProps) => {
               <div className="w-8 h-8 rounded-full bg-hydro-blue text-white flex items-center justify-center text-sm font-semibold">
                 1
               </div>
-              <h3 className="text-lg font-semibold">{t('sell.contact_info')}</h3>
+              <h3 className="text-lg font-semibold">Contact Information</h3>
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 ml-10">
               <div className="space-y-2">
-                <Label htmlFor="name">{t('form.name')} {t('form.required')}</Label>
+                <Label htmlFor="name">Name *</Label>
                 <Input
                   id="name"
                   value={formData.name}
@@ -173,7 +171,7 @@ export const SellPowerPlantModal = ({ children }: SellPowerPlantModalProps) => {
                 />
               </div>
               <div className="space-y-2">
-                <Label htmlFor="phone">{t('form.phone')} {t('form.required')}</Label>
+                <Label htmlFor="phone">Phone *</Label>
                 <Input
                   id="phone"
                   value={formData.phone}
@@ -186,7 +184,7 @@ export const SellPowerPlantModal = ({ children }: SellPowerPlantModalProps) => {
             
             <div className="ml-10">
               <div className="space-y-2">
-                <Label htmlFor="email">{t('form.email')} {t('form.required')}</Label>
+                <Label htmlFor="email">Email *</Label>
                 <Input
                   id="email"
                   type="email"
@@ -205,12 +203,12 @@ export const SellPowerPlantModal = ({ children }: SellPowerPlantModalProps) => {
               <div className="w-8 h-8 rounded-full bg-hydro-green text-white flex items-center justify-center text-sm font-semibold">
                 2
               </div>
-              <h3 className="text-lg font-semibold">{t('sell.plant_info')}</h3>
+              <h3 className="text-lg font-semibold">Power Plant Information</h3>
             </div>
             
             <div className="ml-10 space-y-4">
               <div className="space-y-2">
-                <Label htmlFor="plantName">{t('sell.plant_name')} {t('form.required')} <Search className="inline h-4 w-4 ml-1" /></Label>
+                <Label htmlFor="plantName">Power plant name * <Search className="inline h-4 w-4 ml-1" /></Label>
                 <SearchKraftverkCombobox
                   value={formData.plantName}
                   onChange={(v) => setFormData((prev) => ({ ...prev, plantName: v }))}
@@ -229,21 +227,21 @@ export const SellPowerPlantModal = ({ children }: SellPowerPlantModalProps) => {
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="space-y-2">
-                  <Label htmlFor="municipality">{t('sell.municipality')} {t('form.required')}</Label>
+                  <Label htmlFor="municipality">Municipality *</Label>
                   <Input
                     id="municipality"
                     value={formData.municipality}
                     onChange={(e) => setFormData(prev => ({ ...prev, municipality: e.target.value }))}
-                    placeholder={t('sell.municipality_placeholder')}
+                    placeholder="F.eks. Voss"
                     required
                     className="bg-background"
                   />
                 </div>
                 <div className="space-y-2">
-                  <Label>{t('sell.county')} {t('form.required')}</Label>
+                  <Label>County *</Label>
                   <Select value={formData.county} onValueChange={(value) => setFormData(prev => ({ ...prev, county: value }))}>
                     <SelectTrigger className="bg-background border-input">
-                      <SelectValue placeholder={t('sell.select_county')} />
+                      <SelectValue placeholder="Select county" />
                     </SelectTrigger>
                     <SelectContent className="bg-background border-border shadow-lg z-50">
                       <SelectItem value="Agder">Agder</SelectItem>
@@ -265,23 +263,23 @@ export const SellPowerPlantModal = ({ children }: SellPowerPlantModalProps) => {
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="space-y-2">
-                  <Label htmlFor="capacity">{t('sell.capacity')} {t('form.required')}</Label>
+                  <Label htmlFor="capacity">Installed capacity *</Label>
                   <Input
                     id="capacity"
                     value={formData.installedCapacity}
                     onChange={(e) => setFormData(prev => ({ ...prev, installedCapacity: e.target.value }))}
-                    placeholder={t('sell.capacity_placeholder')}
+                    placeholder="F.eks. 2.5"
                     required
                     className="bg-background"
                   />
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="production">{t('sell.production')} {t('form.required')}</Label>
+                  <Label htmlFor="production">Annual production (GWh, average last 5 years) *</Label>
                   <Input
                     id="production"
                     value={formData.annualProduction}
                     onChange={(e) => setFormData(prev => ({ ...prev, annualProduction: e.target.value }))}
-                    placeholder={t('sell.production_placeholder')}
+                    placeholder="F.eks. 12.5"
                     required
                     className="bg-background"
                   />
@@ -296,50 +294,50 @@ export const SellPowerPlantModal = ({ children }: SellPowerPlantModalProps) => {
               <div className="w-8 h-8 rounded-full bg-accent text-white flex items-center justify-center text-sm font-semibold">
                 3
               </div>
-              <h3 className="text-lg font-semibold">{t('sell.plant_details')}</h3>
+              <h3 className="text-lg font-semibold">Plant Details</h3>
             </div>
             
             <div className="ml-10 space-y-4">
               <div className="space-y-2">
-                <Label>{t('sell.main_reason')} {t('form.required')}</Label>
+                <Label>Main reason for sale *</Label>
                 <Select value={formData.mainReason} onValueChange={(value) => setFormData(prev => ({ ...prev, mainReason: value }))}>
                   <SelectTrigger className="bg-background border-input">
-                    <SelectValue placeholder={t('sell.select_reason')} />
+                    <SelectValue placeholder="Select main reason" />
                   </SelectTrigger>
                   <SelectContent className="bg-background border-border shadow-lg z-50">
-                    <SelectItem value="negative-cash-flow">{t('sell.reason.negative_cash')}</SelectItem>
-                    <SelectItem value="generational-change">{t('sell.reason.generational')}</SelectItem>
-                    <SelectItem value="better-returns">{t('sell.reason.better_returns')}</SelectItem>
-                    <SelectItem value="other">{t('sell.reason.other')}</SelectItem>
+                    <SelectItem value="negative-cash-flow">Negative cash flow</SelectItem>
+                    <SelectItem value="generational-change">Generational change</SelectItem>
+                    <SelectItem value="better-returns">Desire for better returns</SelectItem>
+                    <SelectItem value="other">Other</SelectItem>
                   </SelectContent>
                 </Select>
               </div>
 
               <div className="space-y-2">
-                <Label>{t('sell.maintenance')} {t('form.required')}</Label>
+                <Label>Who is responsible for regular maintenance of the power plant, including cleaning, oil changes, etc.? *</Label>
                 <Select value={formData.maintenanceResponsible} onValueChange={(value) => setFormData(prev => ({ ...prev, maintenanceResponsible: value }))}>
                   <SelectTrigger className="bg-background border-input">
-                    <SelectValue placeholder={t('sell.select_maintenance')} />
+                    <SelectValue placeholder="Select who is responsible" />
                   </SelectTrigger>
                   <SelectContent className="bg-background border-border shadow-lg z-50">
-                    <SelectItem value="continue-after-sale">{t('sell.maintenance.continue')}</SelectItem>
-                    <SelectItem value="no-continue-after-sale">{t('sell.maintenance.no_continue')}</SelectItem>
-                    <SelectItem value="other">{t('sell.reason.other')}</SelectItem>
+                    <SelectItem value="continue-after-sale">I am responsible and want to continue this after sale</SelectItem>
+                    <SelectItem value="no-continue-after-sale">I am responsible but do not want this after sale</SelectItem>
+                    <SelectItem value="other">Other</SelectItem>
                   </SelectContent>
                 </Select>
               </div>
 
               <div className="space-y-2">
-                <Label>{t('sell.water_rights')} {t('form.required')}</Label>
+                <Label>What are the terms for water rights lease (ground rent for waterfall)? *</Label>
                 <Select value={formData.waterRightsLease} onValueChange={(value) => setFormData(prev => ({ ...prev, waterRightsLease: value }))}>
                   <SelectTrigger className="bg-background border-input">
-                    <SelectValue placeholder={t('sell.select_water_rights')} />
+                    <SelectValue placeholder="Select type of water rights lease" />
                   </SelectTrigger>
                   <SelectContent className="bg-background border-border shadow-lg z-50">
-                    <SelectItem value="no-lease">{t('sell.water.no_lease')}</SelectItem>
-                    <SelectItem value="percentage-revenue">{t('sell.water.percentage')}</SelectItem>
-                    <SelectItem value="fixed-annual">{t('sell.water.fixed')}</SelectItem>
-                    <SelectItem value="other">{t('sell.reason.other')}</SelectItem>
+                    <SelectItem value="no-lease">No water rights lease (I own both land and power plant)</SelectItem>
+                    <SelectItem value="percentage-revenue">Percentage of gross revenue</SelectItem>
+                    <SelectItem value="fixed-annual">Fixed annual amount</SelectItem>
+                    <SelectItem value="other">Other</SelectItem>
                   </SelectContent>
                 </Select>
               </div>
@@ -350,35 +348,35 @@ export const SellPowerPlantModal = ({ children }: SellPowerPlantModalProps) => {
                   <RevenueOptionInput
                     value={formData.waterRightsDetails}
                     onChange={(value) => setFormData(prev => ({ ...prev, waterRightsDetails: value }))}
-                    label={t('sellForm.waterRightsDetails')}
+                    label="Water Rights Lease Details"
                     fixedType={formData.waterRightsLease === 'percentage-revenue' ? 'percentage' : 'fixed'}
                   />
                 </div>
               )}
 
               <div className="space-y-2">
-                <Label>{t('registration.timeframe')} {t('form.required')}</Label>
+                <Label>Sales timeframe *</Label>
                 <Select value={formData.salesTimeframe} onValueChange={(value) => setFormData(prev => ({ ...prev, salesTimeframe: value }))}>
                   <SelectTrigger className="bg-background border-input">
-                    <SelectValue placeholder={t('registration.select_timeframe')} />
+                    <SelectValue placeholder="Select timeframe" />
                   </SelectTrigger>
                   <SelectContent className="bg-background border-border shadow-lg z-50">
-                    <SelectItem value="immediate">{t('timeframe.immediate')}</SelectItem>
-                    <SelectItem value="short-term">{t('timeframe.short_term')}</SelectItem>
-                    <SelectItem value="medium-term">{t('timeframe.medium_term')}</SelectItem>
-                    <SelectItem value="long-term">{t('timeframe.long_term')}</SelectItem>
-                    <SelectItem value="exploring">{t('timeframe.exploring')}</SelectItem>
+                    <SelectItem value="immediate">Immediate (0-3 months)</SelectItem>
+                    <SelectItem value="short-term">Short term (3-6 months)</SelectItem>
+                    <SelectItem value="medium-term">Medium term (6-12 months)</SelectItem>
+                    <SelectItem value="long-term">Long term (12+ months)</SelectItem>
+                    <SelectItem value="exploring">Just exploring options</SelectItem>
                   </SelectContent>
                 </Select>
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="priceExpectation">{t('sell.price_expectation')}</Label>
+                <Label htmlFor="priceExpectation">Price expectation (optional)</Label>
                 <Input
                   id="priceExpectation"
                   value={formData.priceExpectation}
                   onChange={(e) => setFormData(prev => ({ ...prev, priceExpectation: e.target.value }))}
-                  placeholder={t('sell.price_placeholder')}
+                  placeholder="NOK - what do you think the facility is worth?"
                   className="bg-background"
                 />
               </div>
@@ -387,12 +385,12 @@ export const SellPowerPlantModal = ({ children }: SellPowerPlantModalProps) => {
 
           {/* Additional Comments */}
           <div className="space-y-2">
-            <Label htmlFor="comments">{t('registration.comments')}</Label>
+            <Label htmlFor="comments">Additional comments</Label>
             <Textarea
               id="comments"
               value={formData.additionalComments}
               onChange={(e) => setFormData(prev => ({ ...prev, additionalComments: e.target.value }))}
-              placeholder={t('registration.comments_placeholder')}
+              placeholder="Describe your specific requirements or preferences..."
               className="bg-background min-h-[100px] resize-none"
             />
           </div>
@@ -407,7 +405,7 @@ export const SellPowerPlantModal = ({ children }: SellPowerPlantModalProps) => {
                 className="mt-1"
               />
               <Label htmlFor="consent" className="text-sm leading-relaxed">
-                {t('sell.consent_text')}
+                I consent to my information being processed in accordance with privacy regulations, and that Småkraftmeglerne may contact me regarding the valuation of my power plant. *
               </Label>
             </div>
           </div>
@@ -418,7 +416,7 @@ export const SellPowerPlantModal = ({ children }: SellPowerPlantModalProps) => {
             className="w-full bg-gradient-to-r from-hydro-green to-hydro-blue text-white hover:opacity-90 py-6 text-lg"
           >
             <Rocket className="h-5 w-5 mr-2" />
-            {t('sell.submit_button')}
+            Send free evaluation
           </Button>
         </form>
       </DialogContent>

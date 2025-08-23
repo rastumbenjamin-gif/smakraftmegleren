@@ -2,7 +2,6 @@ import { useEffect, useMemo, useState } from "react";
 import { Input } from "@/components/ui/input";
 import { searchKraftverkByName, type NVEKraftverk } from "@/lib/nve";
 import { Loader2, MapPin, Search } from "lucide-react";
-import { useLanguage } from "@/contexts/LanguageContext";
 
 interface Props {
   value: string;
@@ -12,7 +11,6 @@ interface Props {
 }
 
 export const SearchKraftverkCombobox = ({ value, kommuneHint, onChange, onSelect }: Props) => {
-  const { t } = useLanguage();
   const [open, setOpen] = useState(false);
   const [query, setQuery] = useState(value);
   const [loading, setLoading] = useState(false);
@@ -56,7 +54,7 @@ export const SearchKraftverkCombobox = ({ value, kommuneHint, onChange, onSelect
           onChange(e.target.value);
         }}
         onFocus={() => setOpen(true)}
-        placeholder={t('sellForm.plantSearchPlaceholder')}
+        placeholder="Start typing the power plant name..."
         className="bg-background pr-10 focus-visible:ring-2"
         aria-autocomplete="list"
         role="combobox"
@@ -70,7 +68,7 @@ export const SearchKraftverkCombobox = ({ value, kommuneHint, onChange, onSelect
           className="absolute left-0 right-0 mt-1 max-h-72 overflow-auto rounded-md border bg-background shadow-xl z-50"
         >
           {items.length === 0 && (
-            <div className="px-3 py-2 text-sm text-muted-foreground">{t('sellForm.noResults')}</div>
+            <div className="px-3 py-2 text-sm text-muted-foreground">No results</div>
           )}
           {items.map((k) => (
             <button

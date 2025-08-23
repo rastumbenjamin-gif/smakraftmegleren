@@ -6,7 +6,6 @@ import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
-import { useLanguage } from "@/contexts/LanguageContext";
 import { supabase } from "@/integrations/supabase/client";
 
 interface RegistrationModalProps {
@@ -16,8 +15,6 @@ interface RegistrationModalProps {
 
 export const RegistrationModal = ({ plantName, children }: RegistrationModalProps) => {
   const [open, setOpen] = useState(false);
-  const { toast } = useToast();
-  const { t } = useLanguage();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -28,6 +25,7 @@ export const RegistrationModal = ({ plantName, children }: RegistrationModalProp
     timeframe: "",
     comments: ""
   });
+  const { toast } = useToast();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -35,8 +33,8 @@ export const RegistrationModal = ({ plantName, children }: RegistrationModalProp
     // Basic validation
     if (!formData.name || !formData.email || !formData.investorType) {
       toast({
-        title: t('registration.missing_info'),
-        description: t('registration.missing_info_message'),
+        title: "Missing Information",
+        description: "Please fill in all required fields.",
         variant: "destructive"
       });
       return;
@@ -64,16 +62,16 @@ export const RegistrationModal = ({ plantName, children }: RegistrationModalProp
       if (error) {
         console.error("Email notification error:", error);
         toast({
-          title: t('registration.error_title'),
-          description: t('registration.error_message'),
+          title: "Registration Error",
+          description: "There was an issue sending your registration. Please try again.",
           variant: "destructive"
         });
         return;
       }
 
       toast({
-        title: t('registration.success_title'),
-        description: t('registration.success_message').replace('{plantName}', plantName),
+        title: "Registration Successful!",
+        description: `Thank you for your interest in ${plantName}. We will be in touch soon with more information.`,
       });
       
       setOpen(false);
@@ -91,8 +89,8 @@ export const RegistrationModal = ({ plantName, children }: RegistrationModalProp
     } catch (error) {
       console.error("Form submission error:", error);
       toast({
-        title: t('registration.error_title'),
-        description: t('registration.error_message'),
+        title: "Registration Error", 
+        description: "There was an issue sending your registration. Please try again.",
         variant: "destructive"
       });
     }
@@ -105,9 +103,9 @@ export const RegistrationModal = ({ plantName, children }: RegistrationModalProp
       </DialogTrigger>
       <DialogContent className="sm:max-w-[600px] max-h-[90vh] overflow-y-auto bg-background border-border">
         <DialogHeader>
-          <DialogTitle className="text-2xl font-bold mb-2">{t('registration.title')}</DialogTitle>
+          <DialogTitle className="text-2xl font-bold mb-2">Register for more information</DialogTitle>
           <p className="text-muted-foreground">
-            {t('registration.subtitle').replace('{plantName}', plantName)}
+            Register din interesse for {plantName}
           </p>
         </DialogHeader>
 
@@ -115,7 +113,7 @@ export const RegistrationModal = ({ plantName, children }: RegistrationModalProp
           {/* ... keep existing form code */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="space-y-2">
-              <Label htmlFor="name">{t('form.name')} {t('form.required')}</Label>
+              <Label htmlFor="name">Name *</Label>
               <Input
                 id="name"
                 value={formData.name}
@@ -126,7 +124,7 @@ export const RegistrationModal = ({ plantName, children }: RegistrationModalProp
               />
             </div>
             <div className="space-y-2">
-              <Label htmlFor="email">{t('form.email')} {t('form.required')}</Label>
+              <Label htmlFor="email">Email *</Label>
               <Input
                 id="email"
                 type="email"
@@ -140,48 +138,48 @@ export const RegistrationModal = ({ plantName, children }: RegistrationModalProp
           </div>
 
           <div className="space-y-2">
-            <Label>{t('registration.investor_type')} {t('form.required')}</Label>
+            <Label>Investor type *</Label>
             <Select value={formData.investorType} onValueChange={(value) => setFormData(prev => ({ ...prev, investorType: value }))}>
               <SelectTrigger className="bg-background border-input">
-                <SelectValue placeholder={t('registration.select_investor')} />
+                <SelectValue placeholder="Select investor type" />
               </SelectTrigger>
               <SelectContent className="bg-background border-border shadow-lg z-50">
-                <SelectItem value="private-person">{t('investor.private_person')}</SelectItem>
-                <SelectItem value="company">{t('investor.company')}</SelectItem>
-                <SelectItem value="investment-fund">{t('investor.investment_fund')}</SelectItem>
-                <SelectItem value="institutional-investor">{t('investor.institutional_investor')}</SelectItem>
+                <SelectItem value="private-person">Private person</SelectItem>
+                <SelectItem value="company">Company</SelectItem>
+                <SelectItem value="investment-fund">Investment fund</SelectItem>
+                <SelectItem value="institutional-investor">Institutional investor</SelectItem>
               </SelectContent>
             </Select>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="space-y-2">
-              <Label>{t('registration.budget_range')} {t('form.required')}</Label>
+              <Label>Budget range *</Label>
               <Select value={formData.budgetRange} onValueChange={(value) => setFormData(prev => ({ ...prev, budgetRange: value }))}>
                 <SelectTrigger className="bg-background border-input">
-                  <SelectValue placeholder={t('registration.select_budget')} />
+                  <SelectValue placeholder="Select budget" />
                 </SelectTrigger>
                 <SelectContent className="bg-background border-border shadow-lg z-50">
-                  <SelectItem value="25k-100k">{t('budget.1_5')}</SelectItem>
-                  <SelectItem value="100k-500k">{t('budget.5_10')}</SelectItem>
-                  <SelectItem value="500k-1m">{t('budget.10_25')}</SelectItem>
-                  <SelectItem value="1m-5m">{t('budget.25_50')}</SelectItem>
-                  <SelectItem value="5m+">{t('budget.50_plus')}</SelectItem>
+                  <SelectItem value="25k-100k">1 MNOK - 5 MNOK</SelectItem>
+                  <SelectItem value="100k-500k">5 MNOK - 10 MNOK</SelectItem>
+                  <SelectItem value="500k-1m">10 MNOK - 25 MNOK</SelectItem>
+                  <SelectItem value="1m-5m">25 MNOK - 50 MNOK</SelectItem>
+                  <SelectItem value="5m+">Over 50 MNOK</SelectItem>
                 </SelectContent>
               </Select>
             </div>
             <div className="space-y-2">
-              <Label>{t('registration.pricing_area')} {t('form.required')}</Label>
+              <Label>Pricing area *</Label>
               <Select value={formData.pricingArea} onValueChange={(value) => setFormData(prev => ({ ...prev, pricingArea: value }))}>
                 <SelectTrigger className="bg-background border-input">
-                  <SelectValue placeholder={t('registration.select_area')} />
+                  <SelectValue placeholder="Select pricing area" />
                 </SelectTrigger>
                 <SelectContent className="bg-background border-border shadow-lg z-50">
-                  <SelectItem value="no1">{t('area.no1')}</SelectItem>
-                  <SelectItem value="no2">{t('area.no2')}</SelectItem>
-                  <SelectItem value="no3">{t('area.no3')}</SelectItem>
-                  <SelectItem value="no4">{t('area.no4')}</SelectItem>
-                  <SelectItem value="no5">{t('area.no5')}</SelectItem>
+                  <SelectItem value="no1">NO1 - Eastern Norway</SelectItem>
+                  <SelectItem value="no2">NO2 - Southern Norway</SelectItem>
+                  <SelectItem value="no3">NO3 - Central Norway</SelectItem>
+                  <SelectItem value="no4">NO4 - Northern Norway</SelectItem>
+                  <SelectItem value="no5">NO5 - Western Norway</SelectItem>
                 </SelectContent>
               </Select>
             </div>
@@ -189,44 +187,44 @@ export const RegistrationModal = ({ plantName, children }: RegistrationModalProp
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="space-y-2">
-              <Label>{t('registration.production_range')} {t('form.required')}</Label>
+              <Label>Preferred production range *</Label>
               <Select value={formData.productionRange} onValueChange={(value) => setFormData(prev => ({ ...prev, productionRange: value }))}>
                 <SelectTrigger className="bg-background border-input">
-                  <SelectValue placeholder={t('registration.select_production')} />
+                  <SelectValue placeholder="Select production range" />
                 </SelectTrigger>
                 <SelectContent className="bg-background border-border shadow-lg z-50">
-                  <SelectItem value="under-3">{t('production.under_3')}</SelectItem>
-                  <SelectItem value="3-5">{t('production.3_5')}</SelectItem>
-                  <SelectItem value="6-10">{t('production.6_10')}</SelectItem>
-                  <SelectItem value="11-20">{t('production.11_20')}</SelectItem>
-                  <SelectItem value="over-20">{t('production.over_20')}</SelectItem>
+                  <SelectItem value="under-3">Under 3 GWh</SelectItem>
+                  <SelectItem value="3-5">3-5 GWh</SelectItem>
+                  <SelectItem value="6-10">6-10 GWh</SelectItem>
+                  <SelectItem value="11-20">11-20 GWh</SelectItem>
+                  <SelectItem value="over-20">Over 20 GWh</SelectItem>
                 </SelectContent>
               </Select>
             </div>
             <div className="space-y-2">
-              <Label>{t('registration.timeframe')} {t('form.required')}</Label>
+              <Label>Sales timeframe *</Label>
               <Select value={formData.timeframe} onValueChange={(value) => setFormData(prev => ({ ...prev, timeframe: value }))}>
                 <SelectTrigger className="bg-background border-input">
-                  <SelectValue placeholder={t('registration.select_timeframe')} />
+                  <SelectValue placeholder="Select timeframe" />
                 </SelectTrigger>
                 <SelectContent className="bg-background border-border shadow-lg z-50">
-                  <SelectItem value="immediate">{t('timeframe.immediate')}</SelectItem>
-                  <SelectItem value="short-term">{t('timeframe.short_term')}</SelectItem>
-                  <SelectItem value="medium-term">{t('timeframe.medium_term')}</SelectItem>
-                  <SelectItem value="long-term">{t('timeframe.long_term')}</SelectItem>
-                  <SelectItem value="exploring">{t('timeframe.exploring')}</SelectItem>
+                  <SelectItem value="immediate">Immediate (0-3 months)</SelectItem>
+                  <SelectItem value="short-term">Short term (3-6 months)</SelectItem>
+                  <SelectItem value="medium-term">Medium term (6-12 months)</SelectItem>
+                  <SelectItem value="long-term">Long term (12+ months)</SelectItem>
+                  <SelectItem value="exploring">Just exploring options</SelectItem>
                 </SelectContent>
               </Select>
             </div>
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="comments">{t('registration.comments')}</Label>
+            <Label htmlFor="comments">Additional comments</Label>
             <Textarea
               id="comments"
               value={formData.comments}
               onChange={(e) => setFormData(prev => ({ ...prev, comments: e.target.value }))}
-              placeholder={t('registration.comments_placeholder')}
+              placeholder="Describe your specific requirements or preferences..."
               className="bg-background min-h-[100px] resize-none"
             />
           </div>
@@ -238,13 +236,13 @@ export const RegistrationModal = ({ plantName, children }: RegistrationModalProp
               onClick={() => setOpen(false)}
               className="flex-1"
             >
-              {t('form.cancel')}
+              Cancel
             </Button>
             <Button 
               type="submit" 
               className="flex-1 bg-gradient-to-r from-hydro-blue to-hydro-green text-white hover:opacity-90"
             >
-              {t('registration.register_button')}
+              Register interest
             </Button>
           </div>
         </form>

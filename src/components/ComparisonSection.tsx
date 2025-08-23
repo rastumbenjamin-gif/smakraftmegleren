@@ -5,12 +5,10 @@ import { Collapsible, CollapsibleContent } from "@/components/ui/collapsible";
 import { CheckCircle, XCircle, TrendingUp, Target, ChevronDown, Info } from "lucide-react";
 import { useState } from "react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import { useLanguage } from "@/contexts/LanguageContext";
 
 export const ComparisonSection = () => {
   const [allDetailsOpen, setAllDetailsOpen] = useState(false);
   const sectionRef = useScrollAnimation();
-  const { t } = useLanguage();
 
   const toggleAllDetails = () => {
     setAllDetailsOpen(!allDetailsOpen);
@@ -23,10 +21,11 @@ export const ComparisonSection = () => {
     >
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <Badge className="mb-4">{t('comparison.badge')}</Badge>
-          <h2 className="text-4xl font-bold mb-6">{t('comparison.title')}</h2>
+          <Badge className="mb-4">Real Investment Comparison</Badge>
+          <h2 className="text-4xl font-bold mb-6">Hydro Plants vs Alternative Investments</h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            {t('comparison.description')}
+            See why owning actual renewable energy infrastructure delivers superior 
+            returns and genuine environmental impact compared to carbon credits and ESG funds.
           </p>
         </div>
 
@@ -37,59 +36,59 @@ export const ComparisonSection = () => {
               <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-gradient-to-r from-hydro-blue to-hydro-green flex items-center justify-center shadow-lg animate-pulse">
                 <TrendingUp className="h-10 w-10 text-white" />
               </div>
-              <CardTitle className="text-2xl text-hydro-blue font-bold">{t('comparison.hydro_title')}</CardTitle>
+              <CardTitle className="text-2xl text-hydro-blue font-bold">Norwegian Hydro Plants</CardTitle>
             </CardHeader>
             <CardContent className="space-y-4 flex-grow flex flex-col">
               <div className="flex items-center justify-between">
-                <span className="text-sm font-medium">{t('comparison.annual_roi')}</span>
+                <span className="text-sm font-medium">Annual ROI</span>
                 <Badge className="bg-success text-white">5-10%</Badge>
               </div>
               <div className="flex items-center gap-2">
                 <CheckCircle className="h-4 w-4 text-success" />
-                <span className="text-sm">{t('comparison.asset_ownership')}</span>
+                <span className="text-sm">Tangible asset ownership</span>
               </div>
               <div className="flex items-center gap-2">
                 <CheckCircle className="h-4 w-4 text-success" />
-                <span className="text-sm">{t('comparison.direct_energy')}</span>
+                <span className="text-sm">Direct energy production</span>
               </div>
               <div className="flex items-center gap-2">
                 <CheckCircle className="h-4 w-4 text-success" />
-                <span className="text-sm">{t('comparison.co2_reduction')}</span>
+                <span className="text-sm">Measurable CO₂ reduction</span>
               </div>
               <div className="flex items-center gap-2">
                 <CheckCircle className="h-4 w-4 text-success" />
-                <span className="text-sm">{t('comparison.regulated')}</span>
+                <span className="text-sm">Regulated by Norwegian authorities</span>
               </div>
               <div className="flex items-center gap-2">
                 <CheckCircle className="h-4 w-4 text-success" />
-                <span className="text-sm">{t('comparison.inflation_protected')}</span>
+                <span className="text-sm">Inflation-protected revenue</span>
               </div>
               
               <div className="mt-auto">
                 <Collapsible open={allDetailsOpen}>
                   <CollapsibleContent className="mt-4 p-4 bg-hydro-blue/5 rounded-lg border border-hydro-blue/20">
                     <div className="space-y-4 text-sm">
-                      <p className="font-semibold text-hydro-blue text-base mb-3">{t('detail.why_superior')}</p>
+                      <p className="font-semibold text-hydro-blue text-base mb-3">Why Norwegian Hydro Plants Are Superior:</p>
                       <div className="space-y-3">
                         <div className="flex gap-3">
                           <div className="w-2 h-2 rounded-full bg-hydro-blue mt-2 flex-shrink-0"></div>
                           <div>
-                            <span className="font-medium text-foreground">{t('detail.real_ownership')}</span>
-                            <span className="text-muted-foreground ml-1">{t('detail.real_ownership_desc')}</span>
+                            <span className="font-medium text-foreground">Real Asset Ownership:</span>
+                            <span className="text-muted-foreground ml-1">You own actual renewable energy infrastructure, not just certificates or promises.</span>
                           </div>
                         </div>
                         <div className="flex gap-3">
                           <div className="w-2 h-2 rounded-full bg-hydro-blue mt-2 flex-shrink-0"></div>
                           <div>
-                            <span className="font-medium text-foreground">{t('detail.predictable_returns')}</span>
-                            <span className="text-muted-foreground ml-1">{t('detail.predictable_returns_desc')}</span>
+                            <span className="font-medium text-foreground">Predictable Returns:</span>
+                            <span className="text-muted-foreground ml-1">Electricity demand is constant, and Norway has a regulated energy market ensuring stable pricing.</span>
                           </div>
                         </div>
                         <div className="flex gap-3">
                           <div className="w-2 h-2 rounded-full bg-hydro-blue mt-2 flex-shrink-0"></div>
                           <div>
-                            <span className="font-medium text-foreground">{t('detail.direct_impact')}</span>
-                            <span className="text-muted-foreground ml-1">{t('detail.direct_impact_desc')}</span>
+                            <span className="font-medium text-foreground">Direct Climate Impact:</span>
+                            <span className="text-muted-foreground ml-1">Every kWh produced directly displaces fossil fuel energy and creates measurable CO₂ reduction.</span>
                           </div>
                         </div>
                       </div>
@@ -106,59 +105,59 @@ export const ComparisonSection = () => {
               <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-warning/10 flex items-center justify-center">
                 <Target className="h-8 w-8 text-warning" />
               </div>
-              <CardTitle className="text-2xl text-warning">{t('comparison.carbon_title')}</CardTitle>
+              <CardTitle className="text-2xl text-warning">Carbon Credits</CardTitle>
             </CardHeader>
             <CardContent className="space-y-4 flex-grow flex flex-col">
               <div className="flex items-center justify-between">
-                <span className="text-sm font-medium">{t('comparison.annual_roi')}</span>
+                <span className="text-sm font-medium">Annual ROI</span>
                 <Badge variant="outline" className="text-warning border-warning">Highly volatile</Badge>
               </div>
               <div className="flex items-center gap-2">
                 <XCircle className="h-4 w-4 text-destructive" />
-                <span className="text-sm">{t('comparison.no_asset')}</span>
+                <span className="text-sm">No asset ownership</span>
               </div>
               <div className="flex items-center gap-2">
                 <XCircle className="h-4 w-4 text-destructive" />
-                <span className="text-sm">{t('comparison.questionable')}</span>
+                <span className="text-sm">Often questionable additionality</span>
               </div>
               <div className="flex items-center gap-2">
                 <CheckCircle className="h-4 w-4 text-success" />
-                <span className="text-sm">{t('comparison.immediate_offset')}</span>
+                <span className="text-sm">Immediate offset credits</span>
               </div>
               <div className="flex items-center gap-2">
                 <XCircle className="h-4 w-4 text-destructive" />
-                <span className="text-sm">{t('comparison.limited_oversight')}</span>
+                <span className="text-sm">Limited regulatory oversight</span>
               </div>
               <div className="flex items-center gap-2">
                 <XCircle className="h-4 w-4 text-destructive" />
-                <span className="text-sm">{t('comparison.price_volatility')}</span>
+                <span className="text-sm">Price volatility risk</span>
               </div>
               
               <div className="mt-auto">
                 <Collapsible open={allDetailsOpen}>
                   <CollapsibleContent className="mt-4 p-4 bg-warning/5 rounded-lg border border-warning/20">
                     <div className="space-y-4 text-sm">
-                      <p className="font-semibold text-warning text-base mb-3">{t('detail.why_fail')}</p>
+                      <p className="font-semibold text-warning text-base mb-3">Why Carbon Credits Often Fail:</p>
                       <div className="space-y-3">
                         <div className="flex gap-3">
                           <div className="w-2 h-2 rounded-full bg-warning mt-2 flex-shrink-0"></div>
                           <div>
-                            <span className="font-medium text-foreground">{t('detail.additionality')}</span>
-                            <span className="text-muted-foreground ml-1">{t('detail.additionality_desc')}</span>
+                            <span className="font-medium text-foreground">Additionality Problem:</span>
+                            <span className="text-muted-foreground ml-1">Many projects would have happened anyway, making the "offset" meaningless.</span>
                           </div>
                         </div>
                         <div className="flex gap-3">
                           <div className="w-2 h-2 rounded-full bg-warning mt-2 flex-shrink-0"></div>
                           <div>
-                            <span className="font-medium text-foreground">{t('detail.no_permanent')}</span>
-                            <span className="text-muted-foreground ml-1">{t('detail.no_permanent_desc')}</span>
+                            <span className="font-medium text-foreground">No Permanent Impact:</span>
+                            <span className="text-muted-foreground ml-1">Forests can burn down, projects can fail, but you've already paid for the credits.</span>
                           </div>
                         </div>
                         <div className="flex gap-3">
                           <div className="w-2 h-2 rounded-full bg-warning mt-2 flex-shrink-0"></div>
                           <div>
-                            <span className="font-medium text-foreground">{t('detail.no_asset_value')}</span>
-                            <span className="text-muted-foreground ml-1">{t('detail.no_asset_value_desc')}</span>
+                            <span className="font-medium text-foreground">No Asset Value:</span>
+                            <span className="text-muted-foreground ml-1">You own nothing tangible - just a digital certificate that can become worthless.</span>
                           </div>
                         </div>
                       </div>
@@ -175,59 +174,59 @@ export const ComparisonSection = () => {
               <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-muted flex items-center justify-center">
                 <TrendingUp className="h-8 w-8 text-muted-foreground" />
               </div>
-              <CardTitle className="text-2xl text-muted-foreground">{t('comparison.esg_title')}</CardTitle>
+              <CardTitle className="text-2xl text-muted-foreground">ESG Funds</CardTitle>
             </CardHeader>
             <CardContent className="space-y-4 flex-grow flex flex-col">
               <div className="flex items-center justify-between">
-                <span className="text-sm font-medium">{t('comparison.annual_roi')}</span>
+                <span className="text-sm font-medium">Annual ROI</span>
                 <Badge variant="outline" className="text-muted-foreground">4-7%</Badge>
               </div>
               <div className="flex items-center gap-2">
                 <XCircle className="h-4 w-4 text-destructive" />
-                <span className="text-sm">{t('comparison.indirect_impact')}</span>
+                <span className="text-sm">Indirect impact only</span>
               </div>
               <div className="flex items-center gap-2">
                 <XCircle className="h-4 w-4 text-destructive" />
-                <span className="text-sm">{t('comparison.greenwashing')}</span>
+                <span className="text-sm">Greenwashing concerns</span>
               </div>
               <div className="flex items-center gap-2">
                 <CheckCircle className="h-4 w-4 text-success" />
-                <span className="text-sm">{t('comparison.diversified')}</span>
+                <span className="text-sm">Diversified portfolio</span>
               </div>
               <div className="flex items-center gap-2">
                 <XCircle className="h-4 w-4 text-destructive" />
-                <span className="text-sm">{t('comparison.management_fees')}</span>
+                <span className="text-sm">Management fees 1-2%</span>
               </div>
               <div className="flex items-center gap-2">
                 <XCircle className="h-4 w-4 text-destructive" />
-                <span className="text-sm">{t('comparison.unclear_impact')}</span>
+                <span className="text-sm">Unclear impact measurement</span>
               </div>
               
               <div className="mt-auto">
                 <Collapsible open={allDetailsOpen}>
                   <CollapsibleContent className="mt-4 p-4 bg-muted/20 rounded-lg border border-muted/40">
                     <div className="space-y-4 text-sm">
-                      <p className="font-semibold text-muted-foreground text-base mb-3">{t('detail.why_disappoint')}</p>
+                      <p className="font-semibold text-muted-foreground text-base mb-3">Why ESG Funds Disappoint:</p>
                       <div className="space-y-3">
                         <div className="flex gap-3">
                           <div className="w-2 h-2 rounded-full bg-muted-foreground mt-2 flex-shrink-0"></div>
                           <div>
-                            <span className="font-medium text-foreground">{t('detail.greenwashing_detail')}</span>
-                            <span className="text-muted-foreground ml-1">{t('detail.greenwashing_desc')}</span>
+                            <span className="font-medium text-foreground">Greenwashing:</span>
+                            <span className="text-muted-foreground ml-1">Many "ESG" funds still hold fossil fuel companies, weapons manufacturers, and other questionable investments.</span>
                           </div>
                         </div>
                         <div className="flex gap-3">
                           <div className="w-2 h-2 rounded-full bg-muted-foreground mt-2 flex-shrink-0"></div>
                           <div>
-                            <span className="font-medium text-foreground">{t('detail.fee_erosion')}</span>
-                            <span className="text-muted-foreground ml-1">{t('detail.fee_erosion_desc')}</span>
+                            <span className="font-medium text-foreground">Fee Erosion:</span>
+                            <span className="text-muted-foreground ml-1">1-2% annual fees compound over time, significantly reducing your returns.</span>
                           </div>
                         </div>
                         <div className="flex gap-3">
                           <div className="w-2 h-2 rounded-full bg-muted-foreground mt-2 flex-shrink-0"></div>
                           <div>
-                            <span className="font-medium text-foreground">{t('detail.diluted_impact')}</span>
-                            <span className="text-muted-foreground ml-1">{t('detail.diluted_impact_desc')}</span>
+                            <span className="font-medium text-foreground">Diluted Impact:</span>
+                            <span className="text-muted-foreground ml-1">Your money is spread across hundreds of companies - minimal influence on any single environmental outcome.</span>
                           </div>
                         </div>
                       </div>
@@ -248,7 +247,7 @@ export const ComparisonSection = () => {
             className="px-8 py-3 border-2 hover:bg-primary hover:text-white transition-all duration-300"
           >
             <Info className="h-5 w-5 mr-2" />
-            {allDetailsOpen ? t('comparison.show_less') : t('comparison.read_more')}
+            {allDetailsOpen ? 'Show Less Details' : 'Read More Details'}
             <ChevronDown className={`h-5 w-5 ml-2 transition-transform duration-300 ${allDetailsOpen ? 'rotate-180' : ''}`} />
           </Button>
         </div>
