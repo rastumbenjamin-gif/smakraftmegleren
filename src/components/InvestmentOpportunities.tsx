@@ -6,6 +6,7 @@ import { MapPin, Zap, Calendar, Users, TrendingUp } from "lucide-react";
 import { RegistrationModal } from "./RegistrationModal";
 import { MoreOpportunitiesModal } from "./MoreOpportunitiesModal";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import { useLanguage } from "@/contexts/LanguageContext";
 import hydroPlant1 from "@/assets/hydro-plant-1.jpg";
 import hydroPlant2 from "@/assets/hydro-plant-2.jpg";
 import hydroPlant3 from "@/assets/hydro-plant-3.jpg";
@@ -81,6 +82,7 @@ const opportunities = [
 
 export const InvestmentOpportunities = () => {
   const sectionRef = useScrollAnimation();
+  const { t } = useLanguage();
   
   return (
     <section 
@@ -90,11 +92,10 @@ export const InvestmentOpportunities = () => {
     >
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <Badge className="mb-4 bg-hydro-blue text-white">Current Opportunities</Badge>
-          <h2 className="text-4xl font-bold mb-6">Available Hydro Plant Investments</h2>
+          <Badge className="mb-4 bg-hydro-blue text-white">{t('opportunities.badge')}</Badge>
+          <h2 className="text-4xl font-bold mb-6">{t('opportunities.title')}</h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Invest in operational and under-construction hydro plants across Norway's 
-            most productive fjords and mountain regions.
+            {t('opportunities.description')}
           </p>
         </div>
 
@@ -141,15 +142,14 @@ export const InvestmentOpportunities = () => {
                 </CardHeader>
 
               <CardContent className="space-y-6">
-                {/* Key Metrics - Prominent Display */}
-                <div className="grid grid-cols-2 gap-4">
+                  <div className="grid grid-cols-2 gap-4">
                   <div className="text-center p-4 bg-hydro-blue/5 rounded-lg border border-hydro-blue/10">
                     <div className="text-2xl font-bold text-hydro-blue">{plant.capacity}</div>
-                    <div className="text-xs text-muted-foreground mt-1">Power</div>
+                    <div className="text-xs text-muted-foreground mt-1">{t('opportunities.power')}</div>
                   </div>
                   <div className="text-center p-4 bg-success/5 rounded-lg border border-success/10">
                     <div className="text-2xl font-bold text-success">{plant.annualProduction.replace('år', 'year')}</div>
-                    <div className="text-xs text-muted-foreground mt-1">Annual production</div>
+                    <div className="text-xs text-muted-foreground mt-1">{t('opportunities.annual_production')}</div>
                   </div>
                 </div>
 
@@ -162,18 +162,18 @@ export const InvestmentOpportunities = () => {
                       <div className="text-xs text-muted-foreground">{plant.location.split(',')[1]}</div>
                     </div>
                   </div>
-                  <div className="flex items-center gap-2">
+                    <div className="flex items-center gap-2">
                     <Calendar className="h-4 w-4 text-muted-foreground" />
                     <div>
                       <div className="font-medium">{plant.buildYear}</div>
-                      <div className="text-xs text-muted-foreground">Build year</div>
+                      <div className="text-xs text-muted-foreground">{t('opportunities.build_year')}</div>
                     </div>
                   </div>
                 </div>
 
                 {/* Unique Advantages */}
                 <div>
-                  <h4 className="font-semibold mb-3">Unique Advantages</h4>
+                  <h4 className="font-semibold mb-3">{t('opportunities.unique_advantages')}</h4>
                   <div className="space-y-2">
                     {plant.advantages.map((advantage, index) => (
                       <div key={index} className="flex items-start gap-2">
@@ -190,7 +190,7 @@ export const InvestmentOpportunities = () => {
                     variant="default" 
                     className="w-full bg-primary hover:bg-primary/90 text-white group-hover:bg-gradient-to-r group-hover:from-hydro-blue group-hover:to-hydro-green transition-all duration-300 h-auto py-3 px-4 text-sm font-medium whitespace-normal"
                   >
-                    Register for pricing and info
+                    {t('opportunities.register_button')}
                   </Button>
                 </RegistrationModal>
               </CardContent>
@@ -208,26 +208,25 @@ export const InvestmentOpportunities = () => {
                   <div className="w-12 h-12 rounded-full bg-gradient-to-r from-hydro-blue to-hydro-green flex items-center justify-center">
                     <Zap className="h-6 w-6 text-white" />
                   </div>
-                  <h3 className="text-2xl font-bold">Discover More Opportunities</h3>
+                  <h3 className="text-2xl font-bold">{t('opportunities.more_title')}</h3>
                 </div>
                 
                 <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                  These are just our featured investments. We have <strong>additional hydropower plants</strong> across Norway, 
-                  ranging from small-scale community projects to larger commercial installations.
+                  {t('opportunities.more_description')}
                 </p>
 
                 <div className="flex flex-wrap justify-center gap-4 text-sm">
                   <div className="flex items-center gap-2 bg-hydro-blue/10 px-4 py-2 rounded-full">
                     <MapPin className="h-4 w-4 text-hydro-blue" />
-                    <span>Nationwide coverage</span>
+                    <span>{t('opportunities.nationwide')}</span>
                   </div>
                   <div className="flex items-center gap-2 bg-hydro-green/10 px-4 py-2 rounded-full">
                     <TrendingUp className="h-4 w-4 text-hydro-green" />
-                    <span>ROI 5-10%</span>
+                    <span>{t('opportunities.roi_range')}</span>
                   </div>
                   <div className="flex items-center gap-2 bg-primary/10 px-4 py-2 rounded-full">
                     <Users className="h-4 w-4 text-primary" />
-                    <span>Various investment sizes</span>
+                    <span>{t('opportunities.investment_sizes')}</span>
                   </div>
                 </div>
 
@@ -238,7 +237,7 @@ export const InvestmentOpportunities = () => {
                       size="lg"
                       className="bg-gradient-to-r from-hydro-blue to-hydro-green text-white px-8 py-6 h-auto text-lg w-full sm:w-auto"
                     >
-                      Request More Investment Opportunities
+                      {t('opportunities.more_button')}
                     </Button>
                   </MoreOpportunitiesModal>
                 </div>

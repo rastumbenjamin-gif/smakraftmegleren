@@ -1,3 +1,5 @@
+import { LanguageSwitcher } from "./LanguageSwitcher";
+
 export const Header = () => {
   return (
     <header className="absolute top-0 left-0 right-0 z-50 bg-transparent">
@@ -8,9 +10,9 @@ export const Header = () => {
             <span className="text-hydro-green">megleren</span>
           </div>
           
-          {/* Navigation placeholder for future use */}
-          <nav className="hidden md:flex items-center space-x-8">
-            {/* Add navigation items here if needed */}
+          {/* Navigation and Language Switcher */}
+          <nav className="flex items-center space-x-4">
+            <LanguageSwitcher />
           </nav>
         </div>
       </div>
