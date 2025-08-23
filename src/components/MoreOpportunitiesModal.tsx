@@ -180,7 +180,7 @@ export const MoreOpportunitiesModal = ({ children }: MoreOpportunitiesModalProps
                 </Select>
               </div>
               <div className="space-y-2">
-                <Label>Sales timeframe *</Label>
+                <Label>Purchase timeframe *</Label>
                 <Select value={formData.investmentTimeframe} onValueChange={(value) => handleInputChange("investmentTimeframe", value)} required>
                   <SelectTrigger className="bg-background border-input">
                     <SelectValue placeholder="Select timeframe" />

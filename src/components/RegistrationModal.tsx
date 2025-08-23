@@ -204,7 +204,7 @@ export const RegistrationModal = ({ plantName, children }: RegistrationModalProp
               </Select>
             </div>
             <div className="space-y-2">
-              <Label>Sales timeframe *</Label>
+              <Label>Purchase timeframe *</Label>
               <Select value={formData.timeframe} onValueChange={(value) => setFormData(prev => ({ ...prev, timeframe: value }))}>
                 <SelectTrigger className="bg-background border-input">
                   <SelectValue placeholder="Select timeframe" />
