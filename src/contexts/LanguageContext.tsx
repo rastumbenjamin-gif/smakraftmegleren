@@ -189,6 +189,61 @@ const translations = {
     'sell.water.no_lease': 'No water rights lease (I own both land and power plant)',
     'sell.water.percentage': 'Percentage of gross revenue',
     'sell.water.fixed': 'Fixed annual amount',
+
+    sellForm: {
+      personalInfo: 'Personal Information',
+      name: 'Full Name',
+      phone: 'Phone Number',
+      email: 'Email Address',
+      plantInfo: 'Power Plant Information',
+      plantName: 'Power Plant Name',
+      plantSearchPlaceholder: 'Start typing the power plant name...',
+      location: 'Location (Municipality/County)',
+      annualProduction: 'Annual Production (GWh)',
+      salesDetails: 'Sales Details',
+      mainReason: 'Main Reason for Sale',
+      maintenanceResponsible: 'Who is responsible for maintenance?',
+      waterRightsLease: 'Water Rights Lease',
+      waterRightsDetails: 'Water Rights Lease Details',
+      timeframe: 'Desired Sales Timeframe',
+      priceExpectation: 'Price Expectation (NOK)',
+      additionalComments: 'Additional Comments',
+      consentAgreement: 'I consent to Kraftmarkedet.no contacting me regarding the sale of my power plant',
+      submitButton: 'Submit Evaluation Request',
+      successMessage: 'Your request has been sent successfully!',
+      errorMessage: 'An error occurred while sending your request. Please try again.',
+      noResults: 'No results',
+      percentageRevenue: 'Percentage of gross revenue',
+      fixedAnnual: 'Fixed annual amount',
+      enterPercentage: 'Enter percentage (e.g., 5.5)',
+      enterAmount: 'Enter amount in NOK',
+      percentageDescription: '% of the gross revenue from the hydropower plant',
+      fixedDescription: 'Fixed annual payment of {amount} NOK',
+      reasonOptions: {
+        financial: 'Financial considerations',
+        ownership: 'Ownership change',
+        maintenance: 'Maintenance burden',
+        other: 'Other reasons'
+      },
+      maintenanceOptions: {
+        owner: 'Current owner',
+        local: 'Local company',
+        large: 'Large maintenance company',
+        unsure: 'Not sure yet'
+      },
+      waterRightsOptions: {
+        owned: 'We own the water rights',
+        percentage: 'Percentage of revenue',
+        fixed: 'Fixed annual payment',
+        unsure: 'Not sure about arrangement'
+      },
+      timeframeOptions: {
+        immediate: 'As soon as possible',
+        months6: 'Within 6 months',
+        year1: 'Within 1 year',
+        flexible: 'Flexible timing'
+      }
+    },
     
     // Plant advantages
     'advantages.high_winter': 'High winter production (peak prices)',
@@ -404,6 +459,61 @@ const translations = {
     'sell.water.no_lease': 'Ingen vannrettsleie (jeg eier både grunn og kraftverk)',
     'sell.water.percentage': 'Prosentandel av bruttoinntekt',
     'sell.water.fixed': 'Fast årlig beløp',
+
+    sellForm: {
+      personalInfo: 'Personlig informasjon',
+      name: 'Fullt navn',
+      phone: 'Telefonnummer',
+      email: 'E-postadresse',
+      plantInfo: 'Kraftverksinformasjon',
+      plantName: 'Navn på kraftverk',
+      plantSearchPlaceholder: 'Begynn å skrive kraftverkets navn...',
+      location: 'Plassering (Kommune/Fylke)',
+      annualProduction: 'Årlig produksjon (GWh)',
+      salesDetails: 'Salgsdetaljer',
+      mainReason: 'Hovedårsak til salg',
+      maintenanceResponsible: 'Hvem er ansvarlig for vedlikehold?',
+      waterRightsLease: 'Vannrettigheter',
+      waterRightsDetails: 'Detaljer om vannrettigheter',
+      timeframe: 'Ønsket salgstidspunkt',
+      priceExpectation: 'Prisforventning (NOK)',
+      additionalComments: 'Tilleggskommentarer',
+      consentAgreement: 'Jeg samtykker til at Kraftmarkedet.no kontakter meg angående salg av kraftverket mitt',
+      submitButton: 'Send evalueringsforespørsel',
+      successMessage: 'Din forespørsel har blitt sendt!',
+      errorMessage: 'Det oppstod en feil ved sending av forespørselen. Vennligst prøv igjen.',
+      noResults: 'Ingen resultater',
+      percentageRevenue: 'Prosent av brutto inntekt',
+      fixedAnnual: 'Fast årlig beløp',
+      enterPercentage: 'Skriv inn prosent (f.eks. 5,5)',
+      enterAmount: 'Skriv inn beløp i NOK',
+      percentageDescription: '% av brutto inntekt fra kraftverket',
+      fixedDescription: 'Fast årlig betaling på {amount} NOK',
+      reasonOptions: {
+        financial: 'Økonomiske hensyn',
+        ownership: 'Eierskapsendring',
+        maintenance: 'Vedlikeholdsbyrde',
+        other: 'Andre årsaker'
+      },
+      maintenanceOptions: {
+        owner: 'Nåværende eier',
+        local: 'Lokalt selskap',
+        large: 'Stort vedlikeholdsselskap',
+        unsure: 'Ikke sikker ennå'
+      },
+      waterRightsOptions: {
+        owned: 'Vi eier vannrettighetene',
+        percentage: 'Prosent av inntekt',
+        fixed: 'Fast årlig betaling',
+        unsure: 'Ikke sikker på ordningen'
+      },
+      timeframeOptions: {
+        immediate: 'Så snart som mulig',
+        months6: 'Innen 6 måneder',
+        year1: 'Innen 1 år',
+        flexible: 'Fleksibel timing'
+      }
+    },
     
     // Plant advantages
     'advantages.high_winter': 'Høy vinterproduksjon (topppriser)',

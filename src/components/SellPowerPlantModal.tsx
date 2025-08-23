@@ -350,7 +350,7 @@ export const SellPowerPlantModal = ({ children }: SellPowerPlantModalProps) => {
                   <RevenueOptionInput
                     value={formData.waterRightsDetails}
                     onChange={(value) => setFormData(prev => ({ ...prev, waterRightsDetails: value }))}
-                    label="Water Rights Lease Details"
+                    label={t('sellForm.waterRightsDetails')}
                     fixedType={formData.waterRightsLease === 'percentage-revenue' ? 'percentage' : 'fixed'}
                   />
                 </div>

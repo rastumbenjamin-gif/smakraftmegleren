@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 interface RevenueOptionInputProps {
   value?: {
@@ -21,6 +22,7 @@ export const RevenueOptionInput = ({
   placeholder,
   fixedType
 }: RevenueOptionInputProps) => {
+  const { t } = useLanguage();
   const [selectedType, setSelectedType] = useState<'percentage' | 'fixed'>(
     fixedType || value?.type || 'percentage'
   );
@@ -63,7 +65,7 @@ export const RevenueOptionInput = ({
               htmlFor="percentage" 
               className="flex-1 cursor-pointer text-sm font-medium text-success"
             >
-              Percentage of gross revenue
+              {t('sellForm.percentageRevenue')}
             </Label>
           </div>
           
@@ -73,7 +75,7 @@ export const RevenueOptionInput = ({
               htmlFor="fixed" 
               className="flex-1 cursor-pointer text-sm font-medium text-muted-foreground"
             >
-              Fixed annual amount
+              {t('sellForm.fixedAnnual')}
             </Label>
           </div>
         </RadioGroup>
@@ -86,7 +88,7 @@ export const RevenueOptionInput = ({
             type="number"
             placeholder={
               placeholder || 
-              (selectedType === 'percentage' ? 'Enter percentage (e.g., 5.5)' : 'Enter amount in NOK')
+              (selectedType === 'percentage' ? t('sellForm.enterPercentage') : t('sellForm.enterAmount'))
             }
             value={amount}
             onChange={(e) => handleAmountChange(e.target.value)}
@@ -99,13 +101,13 @@ export const RevenueOptionInput = ({
         
         {selectedType === 'percentage' && amount && (
           <p className="text-xs text-muted-foreground mt-2">
-            {amount}% of the gross revenue from the hydropower plant
+            {amount}{t('sellForm.percentageDescription')}
           </p>
         )}
         
         {selectedType === 'fixed' && amount && (
           <p className="text-xs text-muted-foreground mt-2">
-            Fixed annual payment of {parseInt(amount).toLocaleString('no-NO')} NOK
+            {t('sellForm.fixedDescription').replace('{amount}', parseInt(amount).toLocaleString('no-NO'))}
           </p>
         )}
       </div>
