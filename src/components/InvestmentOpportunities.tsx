@@ -82,7 +82,15 @@ const opportunities = [
 
 export const InvestmentOpportunities = () => {
   const sectionRef = useScrollAnimation();
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
+  
+  const formatAnnualProduction = (production: string) => {
+    if (language === 'no') {
+      return production; // Keep original Norwegian format (e.g., "5.8 GWh/år")
+    } else {
+      return production.replace(/\/år$/, '/year').replace(/år$/, 'year');
+    }
+  };
   
   return (
     <section 
@@ -148,7 +156,9 @@ export const InvestmentOpportunities = () => {
                     <div className="text-xs text-muted-foreground mt-1">{t('opportunities.power')}</div>
                   </div>
                   <div className="text-center p-4 bg-success/5 rounded-lg border border-success/10">
-                    <div className="text-2xl font-bold text-success">{plant.annualProduction.replace('år', 'year')}</div>
+                    <div className="text-2xl font-bold text-success">
+                      {formatAnnualProduction(plant.annualProduction)}
+                    </div>
                     <div className="text-xs text-muted-foreground mt-1">{t('opportunities.annual_production')}</div>
                   </div>
                 </div>

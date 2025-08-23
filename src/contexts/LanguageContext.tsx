@@ -19,11 +19,14 @@ const translations = {
     'header.about': 'About',
     'header.contact': 'Contact',
     
-    // Hero Section
     'hero.title': 'Own Norwegian Hydropower Plants',
     'hero.subtitle': 'Invest directly in hydropower plants and earn steady returns while making a real environmental impact',
     'hero.cta': 'Explore Opportunities',
+    'hero.cta_subtitle': 'Start investing today',
     'hero.learn_more': 'Learn More',
+    'hero.evaluate_button': 'Evaluate Your Hydro Plant',
+    'hero.evaluate_subtitle': 'Free evaluation • No obligations',
+    'hero.free_badge': 'FREE',
     
     // Investment Opportunities
     'opportunities.badge': 'Current Opportunities',
@@ -223,7 +226,11 @@ const translations = {
     'hero.title': 'Eie Norske Vannkraftverk',
     'hero.subtitle': 'Invester direkte i vannkraftverk og tjen stabil avkastning samtidig som du gjør en reell miljøpåvirkning',
     'hero.cta': 'Utforsk Muligheter',
+    'hero.cta_subtitle': 'Start å investere i dag',
     'hero.learn_more': 'Lær Mer',
+    'hero.evaluate_button': 'Evaluer Ditt Vannkraftverk',
+    'hero.evaluate_subtitle': 'Gratis evaluering • Ingen forpliktelser',
+    'hero.free_badge': 'GRATIS',
     
     // Investment Opportunities
     'opportunities.badge': 'Nåværende Muligheter',
