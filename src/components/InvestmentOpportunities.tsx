@@ -151,8 +151,8 @@ export const InvestmentOpportunities = () => {
                     <div className="text-lg font-bold text-success">{plant.annualProduction.replace('år', 'year')}</div>
                     <div className="text-xs text-muted-foreground mt-1">Annual production</div>
                   </div>
-                  <div className="text-center p-3 bg-orange-500/5 rounded-lg border border-orange-500/10">
-                    <div className="text-lg font-bold text-orange-600">{plant.roi}</div>
+                  <div className="text-center p-3 bg-primary/5 rounded-lg border border-primary/10">
+                    <div className="text-lg font-bold text-primary">{plant.roi}</div>
                     <div className="text-xs text-muted-foreground mt-1">ROI</div>
                   </div>
                 </div>
