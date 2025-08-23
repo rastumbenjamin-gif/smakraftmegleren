@@ -7,6 +7,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 interface RegistrationModalProps {
   plantName: string;
@@ -15,6 +16,7 @@ interface RegistrationModalProps {
 
 export const RegistrationModal = ({ plantName, children }: RegistrationModalProps) => {
   const [open, setOpen] = useState(false);
+  const { t } = useLanguage();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -33,8 +35,8 @@ export const RegistrationModal = ({ plantName, children }: RegistrationModalProp
     // Basic validation
     if (!formData.name || !formData.email || !formData.investorType) {
       toast({
-        title: "Missing Information",
-        description: "Please fill in all required fields.",
+        title: t('toast.missingInfo'),
+        description: t('toast.missingInfoDesc'),
         variant: "destructive"
       });
       return;
@@ -62,16 +64,16 @@ export const RegistrationModal = ({ plantName, children }: RegistrationModalProp
       if (error) {
         console.error("Email notification error:", error);
         toast({
-          title: "Registration Error",
-          description: "There was an issue sending your registration. Please try again.",
+          title: t('toast.registrationError'),
+          description: t('toast.registrationErrorDesc'),
           variant: "destructive"
         });
         return;
       }
 
       toast({
-        title: "Registration Successful!",
-        description: `Thank you for your interest in ${plantName}. We will be in touch soon with more information.`,
+        title: t('toast.registrationSuccess'),
+        description: t('toast.registrationSuccessDesc').replace('{plantName}', plantName),
       });
       
       setOpen(false);
@@ -89,8 +91,8 @@ export const RegistrationModal = ({ plantName, children }: RegistrationModalProp
     } catch (error) {
       console.error("Form submission error:", error);
       toast({
-        title: "Registration Error", 
-        description: "There was an issue sending your registration. Please try again.",
+        title: t('toast.registrationError'), 
+        description: t('toast.registrationErrorDesc'),
         variant: "destructive"
       });
     }
@@ -103,34 +105,31 @@ export const RegistrationModal = ({ plantName, children }: RegistrationModalProp
       </DialogTrigger>
       <DialogContent className="sm:max-w-[600px] max-h-[90vh] overflow-y-auto bg-background border-border">
         <DialogHeader>
-          <DialogTitle className="text-2xl font-bold mb-2">Register for more information</DialogTitle>
+          <DialogTitle className="text-2xl font-bold mb-2">{t('form.register.title')}</DialogTitle>
           <p className="text-muted-foreground">
-            Register din interesse for {plantName}
+            {t('form.register.subtitle')} {plantName}
           </p>
         </DialogHeader>
 
         <form onSubmit={handleSubmit} className="space-y-6 mt-6">
-          {/* ... keep existing form code */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="space-y-2">
-              <Label htmlFor="name">Name *</Label>
+              <Label htmlFor="name">{t('form.name')}</Label>
               <Input
                 id="name"
                 value={formData.name}
                 onChange={(e) => setFormData(prev => ({ ...prev, name: e.target.value }))}
-                placeholder=""
                 required
                 className="bg-background"
               />
             </div>
             <div className="space-y-2">
-              <Label htmlFor="email">Email *</Label>
+              <Label htmlFor="email">{t('form.email')}</Label>
               <Input
                 id="email"
                 type="email"
                 value={formData.email}
                 onChange={(e) => setFormData(prev => ({ ...prev, email: e.target.value }))}
-                placeholder=""
                 required
                 className="bg-background"
               />
@@ -138,49 +137,49 @@ export const RegistrationModal = ({ plantName, children }: RegistrationModalProp
           </div>
 
           <div className="space-y-2">
-            <Label>Investor type *</Label>
+            <Label>{t('form.investorType')}</Label>
             <Select value={formData.investorType} onValueChange={(value) => setFormData(prev => ({ ...prev, investorType: value }))}>
               <SelectTrigger className="bg-background border-input">
-                <SelectValue placeholder="Select investor type" />
+                <SelectValue placeholder={t('form.placeholder.selectInvestorType')} />
               </SelectTrigger>
               <SelectContent className="bg-background border-border shadow-lg z-50">
-                <SelectItem value="private-person">Private person</SelectItem>
-                <SelectItem value="company">Company</SelectItem>
-                <SelectItem value="investment-fund">Investment fund</SelectItem>
-                <SelectItem value="institutional-investor">Institutional investor</SelectItem>
+                <SelectItem value="private-person">{t('form.investorType.private')}</SelectItem>
+                <SelectItem value="company">{t('form.investorType.company')}</SelectItem>
+                <SelectItem value="investment-fund">{t('form.investorType.fund')}</SelectItem>
+                <SelectItem value="institutional-investor">{t('form.investorType.institutional')}</SelectItem>
               </SelectContent>
             </Select>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="space-y-2">
-              <Label>Budget range *</Label>
+              <Label>{t('form.budgetRange')}</Label>
               <Select value={formData.budgetRange} onValueChange={(value) => setFormData(prev => ({ ...prev, budgetRange: value }))}>
                 <SelectTrigger className="bg-background border-input">
-                  <SelectValue placeholder="Select budget" />
+                  <SelectValue placeholder={t('form.placeholder.selectBudget')} />
                 </SelectTrigger>
                 <SelectContent className="bg-background border-border shadow-lg z-50">
-                  <SelectItem value="25k-100k">1 MNOK - 5 MNOK</SelectItem>
-                  <SelectItem value="100k-500k">5 MNOK - 10 MNOK</SelectItem>
-                  <SelectItem value="500k-1m">10 MNOK - 25 MNOK</SelectItem>
-                  <SelectItem value="1m-5m">25 MNOK - 50 MNOK</SelectItem>
-                  <SelectItem value="5m+">Over 50 MNOK</SelectItem>
+                  <SelectItem value="25k-100k">{t('form.budgetRange.1m')}</SelectItem>
+                  <SelectItem value="100k-500k">{t('form.budgetRange.5m')}</SelectItem>
+                  <SelectItem value="500k-1m">{t('form.budgetRange.10m')}</SelectItem>
+                  <SelectItem value="1m-5m">{t('form.budgetRange.25m')}</SelectItem>
+                  <SelectItem value="5m+">{t('form.budgetRange.50m')}</SelectItem>
                 </SelectContent>
               </Select>
             </div>
             <div className="space-y-2">
-              <Label>Pricing area *</Label>
+              <Label>{t('form.pricingArea')}</Label>
               <Select value={formData.pricingArea} onValueChange={(value) => setFormData(prev => ({ ...prev, pricingArea: value }))}>
                 <SelectTrigger className="bg-background border-input">
-                  <SelectValue placeholder="Select pricing area" />
+                  <SelectValue placeholder={t('form.placeholder.selectPricingArea')} />
                 </SelectTrigger>
                 <SelectContent className="bg-background border-border shadow-lg z-50">
-                  <SelectItem value="no1">NO1 - Eastern Norway</SelectItem>
-                  <SelectItem value="no2">NO2 - Southern Norway</SelectItem>
-                  <SelectItem value="no3">NO3 - Central Norway</SelectItem>
-                  <SelectItem value="no4">NO4 - Northern Norway</SelectItem>
-                  <SelectItem value="no5">NO5 - Western Norway</SelectItem>
-                  <SelectItem value="open-explore">Open to explore</SelectItem>
+                  <SelectItem value="no1">{t('form.pricingArea.no1')}</SelectItem>
+                  <SelectItem value="no2">{t('form.pricingArea.no2')}</SelectItem>
+                  <SelectItem value="no3">{t('form.pricingArea.no3')}</SelectItem>
+                  <SelectItem value="no4">{t('form.pricingArea.no4')}</SelectItem>
+                  <SelectItem value="no5">{t('form.pricingArea.no5')}</SelectItem>
+                  <SelectItem value="open-explore">{t('form.pricingArea.open')}</SelectItem>
                 </SelectContent>
               </Select>
             </div>
@@ -188,45 +187,45 @@ export const RegistrationModal = ({ plantName, children }: RegistrationModalProp
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="space-y-2">
-              <Label>Preferred production range *</Label>
+              <Label>{t('form.productionRange')}</Label>
               <Select value={formData.productionRange} onValueChange={(value) => setFormData(prev => ({ ...prev, productionRange: value }))}>
                 <SelectTrigger className="bg-background border-input">
-                  <SelectValue placeholder="Select production range" />
+                  <SelectValue placeholder={t('form.placeholder.selectProductionRange')} />
                 </SelectTrigger>
                 <SelectContent className="bg-background border-border shadow-lg z-50">
-                  <SelectItem value="under-3">Under 3 GWh</SelectItem>
-                  <SelectItem value="3-5">3-5 GWh</SelectItem>
-                  <SelectItem value="6-10">6-10 GWh</SelectItem>
-                  <SelectItem value="11-20">11-20 GWh</SelectItem>
-                  <SelectItem value="over-20">Over 20 GWh</SelectItem>
-                  <SelectItem value="open-explore">Open to explore</SelectItem>
+                  <SelectItem value="under-3">{t('form.productionRange.under3')}</SelectItem>
+                  <SelectItem value="3-5">{t('form.productionRange.3to5')}</SelectItem>
+                  <SelectItem value="6-10">{t('form.productionRange.6to10')}</SelectItem>
+                  <SelectItem value="11-20">{t('form.productionRange.11to20')}</SelectItem>
+                  <SelectItem value="over-20">{t('form.productionRange.over20')}</SelectItem>
+                  <SelectItem value="open-explore">{t('form.productionRange.open')}</SelectItem>
                 </SelectContent>
               </Select>
             </div>
             <div className="space-y-2">
-              <Label>Purchase timeframe *</Label>
+              <Label>{t('form.timeframe')}</Label>
               <Select value={formData.timeframe} onValueChange={(value) => setFormData(prev => ({ ...prev, timeframe: value }))}>
                 <SelectTrigger className="bg-background border-input">
-                  <SelectValue placeholder="Select timeframe" />
+                  <SelectValue placeholder={t('form.placeholder.selectTimeframe')} />
                 </SelectTrigger>
                 <SelectContent className="bg-background border-border shadow-lg z-50">
-                  <SelectItem value="immediate">Immediate (0-3 months)</SelectItem>
-                  <SelectItem value="short-term">Short term (3-6 months)</SelectItem>
-                  <SelectItem value="medium-term">Medium term (6-12 months)</SelectItem>
-                  <SelectItem value="long-term">Long term (12+ months)</SelectItem>
-                  <SelectItem value="exploring">Just exploring options</SelectItem>
+                  <SelectItem value="immediate">{t('form.timeframe.immediate')}</SelectItem>
+                  <SelectItem value="short-term">{t('form.timeframe.short')}</SelectItem>
+                  <SelectItem value="medium-term">{t('form.timeframe.medium')}</SelectItem>
+                  <SelectItem value="long-term">{t('form.timeframe.long')}</SelectItem>
+                  <SelectItem value="exploring">{t('form.timeframe.exploring')}</SelectItem>
                 </SelectContent>
               </Select>
             </div>
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="comments">Additional comments</Label>
+            <Label htmlFor="comments">{t('form.comments')}</Label>
             <Textarea
               id="comments"
               value={formData.comments}
               onChange={(e) => setFormData(prev => ({ ...prev, comments: e.target.value }))}
-              placeholder="Describe your specific requirements or preferences..."
+              placeholder={t('form.commentsPlaceholder')}
               className="bg-background min-h-[100px] resize-none"
             />
           </div>
@@ -238,13 +237,13 @@ export const RegistrationModal = ({ plantName, children }: RegistrationModalProp
               onClick={() => setOpen(false)}
               className="flex-1"
             >
-              Cancel
+              {t('form.cancel')}
             </Button>
             <Button 
               type="submit" 
               className="flex-1 bg-gradient-to-r from-hydro-blue to-hydro-green text-white hover:opacity-90"
             >
-              Register interest
+              {t('form.submit')}
             </Button>
           </div>
         </form>

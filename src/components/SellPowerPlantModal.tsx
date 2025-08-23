@@ -11,6 +11,7 @@ import { Search, Rocket } from "lucide-react";
 import { SearchKraftverkCombobox } from "./SearchKraftverkCombobox";
 import { RevenueOptionInput } from "./RevenueOptionInput";
 import { supabase } from "@/integrations/supabase/client";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 
 interface SellPowerPlantModalProps {
@@ -19,6 +20,7 @@ interface SellPowerPlantModalProps {
 
 export const SellPowerPlantModal = ({ children }: SellPowerPlantModalProps) => {
   const [open, setOpen] = useState(false);
+  const { t } = useLanguage();
   const [formData, setFormData] = useState({
     // Contact Information
     name: "",
@@ -49,8 +51,8 @@ export const SellPowerPlantModal = ({ children }: SellPowerPlantModalProps) => {
     // Basic validation
     if (!formData.name || !formData.phone || !formData.email || !formData.plantName || !formData.consentAgreed) {
       toast({
-        title: "Missing Information",
-        description: "Please fill in all required fields and agree to the terms.",
+        title: t('toast.missingInfo'),
+        description: t('toast.missingInfoConsent'),
         variant: "destructive"
       });
       return;
@@ -82,16 +84,16 @@ export const SellPowerPlantModal = ({ children }: SellPowerPlantModalProps) => {
       if (error) {
         console.error("Email notification error:", error);
         toast({
-          title: "Submission Error",
-          description: "There was an issue sending your request. Please try again.",
+          title: t('toast.submissionError'),
+          description: t('toast.submissionErrorDesc'),
           variant: "destructive"
         });
         return;
       }
 
       toast({
-        title: "Evaluation Request Sent!",
-        description: "Thank you for your submission. We'll contact you within 24 hours with a free evaluation of your power plant.",
+        title: t('toast.evaluationSuccess'),
+        description: t('toast.evaluationSuccessDesc'),
       });
       
       setOpen(false);
@@ -117,8 +119,8 @@ export const SellPowerPlantModal = ({ children }: SellPowerPlantModalProps) => {
     } catch (error) {
       console.error("Form submission error:", error);
       toast({
-        title: "Submission Error",
-        description: "There was an issue sending your request. Please try again.",
+        title: t('toast.submissionError'),
+        description: t('toast.submissionErrorDesc'),
         variant: "destructive"
       });
     }
@@ -131,17 +133,17 @@ export const SellPowerPlantModal = ({ children }: SellPowerPlantModalProps) => {
       </DialogTrigger>
       <DialogContent className="sm:max-w-[700px] max-h-[90vh] overflow-y-auto bg-background border-border">
         <DialogHeader>
-          <DialogTitle className="text-2xl font-bold mb-2">Evaluate Your Hydro Plant</DialogTitle>
+          <DialogTitle className="text-2xl font-bold mb-2">{t('sell.title')}</DialogTitle>
           <p className="text-muted-foreground mb-4">
-            Get a professional evaluation of your hydroelectric facility with detailed market analysis
+            {t('sell.subtitle')}
           </p>
           <div className="bg-gradient-to-r from-green-50 to-blue-50 dark:from-green-950/20 dark:to-blue-950/20 border border-green-200 dark:border-green-800 rounded-lg p-4 text-center">
             <div className="flex items-center justify-center gap-3 mb-2">
               <span className="text-2xl font-bold line-through text-muted-foreground">10,000 NOK</span>
-              <span className="text-3xl font-bold text-green-600">Free for a limited time</span>
+              <span className="text-3xl font-bold text-green-600">{t('sell.freeOffer')}</span>
             </div>
             <p className="text-sm text-muted-foreground">
-              Professional evaluation • Market analysis • No obligations
+              {t('sell.offerDetails')}
             </p>
           </div>
         </DialogHeader>
@@ -153,12 +155,12 @@ export const SellPowerPlantModal = ({ children }: SellPowerPlantModalProps) => {
               <div className="w-8 h-8 rounded-full bg-hydro-blue text-white flex items-center justify-center text-sm font-semibold">
                 1
               </div>
-              <h3 className="text-lg font-semibold">Contact Information</h3>
+              <h3 className="text-lg font-semibold">{t('sell.section1')}</h3>
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 ml-10">
               <div className="space-y-2">
-                <Label htmlFor="name">Name *</Label>
+                <Label htmlFor="name">{t('form.name')}</Label>
                 <Input
                   id="name"
                   value={formData.name}
@@ -168,7 +170,7 @@ export const SellPowerPlantModal = ({ children }: SellPowerPlantModalProps) => {
                 />
               </div>
               <div className="space-y-2">
-                <Label htmlFor="phone">Phone *</Label>
+                <Label htmlFor="phone">{t('form.phone')}</Label>
                 <Input
                   id="phone"
                   value={formData.phone}
@@ -181,7 +183,7 @@ export const SellPowerPlantModal = ({ children }: SellPowerPlantModalProps) => {
             
             <div className="ml-10">
               <div className="space-y-2">
-                <Label htmlFor="email">Email *</Label>
+                <Label htmlFor="email">{t('form.email')}</Label>
                 <Input
                   id="email"
                   type="email"
@@ -200,12 +202,12 @@ export const SellPowerPlantModal = ({ children }: SellPowerPlantModalProps) => {
               <div className="w-8 h-8 rounded-full bg-hydro-green text-white flex items-center justify-center text-sm font-semibold">
                 2
               </div>
-              <h3 className="text-lg font-semibold">Power Plant Information</h3>
+              <h3 className="text-lg font-semibold">{t('sell.section2')}</h3>
             </div>
             
             <div className="ml-10 space-y-4">
               <div className="space-y-2">
-                <Label htmlFor="plantName">Power plant name * <Search className="inline h-4 w-4 ml-1" /></Label>
+                <Label htmlFor="plantName">{t('sell.plantName')} <Search className="inline h-4 w-4 ml-1" /></Label>
                 <SearchKraftverkCombobox
                   value={formData.plantName}
                   onChange={(v) => setFormData((prev) => ({ ...prev, plantName: v }))}
