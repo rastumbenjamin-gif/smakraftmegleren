@@ -113,7 +113,7 @@ const handler = async (req: Request): Promise<Response> => {
 
     const emailResponse = await resend.emails.send({
       from: "Småkraftmeglerne <onboarding@resend.dev>",
-      to: [Deno.env.get("NOTIFY_TO_EMAIL") || "your-email@example.com"],
+      to: [Deno.env.get("NOTIFY_TO_EMAIL") || "rastum.benjamin@gmail.com"],
       subject: subject,
       html: htmlContent,
     });
