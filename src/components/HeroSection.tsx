@@ -12,7 +12,7 @@ export const HeroSection = () => {
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image with Parallax Effect */}
       <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat bg-fixed"
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: `url(${heroImage})` }}
       >
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70" />
@@ -22,12 +22,12 @@ export const HeroSection = () => {
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 text-center text-white">
         <div className="max-w-4xl mx-auto space-y-8 animate-fade-in">
-          <h1 className="text-5xl md:text-7xl font-bold leading-tight animate-fade-in [animation-delay:400ms] text-white drop-shadow-2xl [text-shadow:_2px_2px_8px_rgb(0_0_0_/_0.8)]">
+          <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold leading-tight animate-fade-in [animation-delay:400ms] text-white drop-shadow-2xl [text-shadow:_2px_2px_8px_rgb(0_0_0_/_0.8)]">
             {t('hero.title')}
           </h1>
           
           <div className="bg-black/30 backdrop-blur-sm rounded-xl p-6 mx-auto max-w-3xl border border-white/20 shadow-2xl">
-            <p className="text-xl md:text-2xl text-white leading-relaxed animate-fade-in [animation-delay:600ms] font-medium">
+            <p className="text-lg sm:text-xl md:text-2xl text-white leading-relaxed animate-fade-in [animation-delay:600ms] font-medium">
               {t('hero.subtitle')}
             </p>
           </div>
@@ -51,7 +51,7 @@ export const HeroSection = () => {
             <Button 
               variant="invest" 
               size="lg" 
-              className="w-full sm:min-w-[400px] text-lg px-6 py-6 h-auto bg-gradient-to-r from-hydro-blue to-hydro-green hover:opacity-90 shadow-2xl border-2 border-white/20"
+              className="w-full sm:w-auto sm:min-w-[300px] lg:min-w-[400px] text-base sm:text-lg px-4 sm:px-6 py-4 sm:py-6 h-auto bg-gradient-to-r from-hydro-blue to-hydro-green hover:opacity-90 shadow-2xl border-2 border-white/20"
               onClick={() => document.getElementById('investment-opportunities')?.scrollIntoView({ behavior: 'smooth' })}
             >
               <div className="flex flex-col items-center text-center">
@@ -63,7 +63,7 @@ export const HeroSection = () => {
               <Button 
                 variant="outline" 
                 size="lg"
-                className="w-full sm:min-w-[400px] text-lg px-6 py-6 h-auto bg-black/30 backdrop-blur-sm text-white border-2 border-white hover:bg-white hover:text-primary shadow-2xl"
+                className="w-full sm:w-auto sm:min-w-[300px] lg:min-w-[400px] text-base sm:text-lg px-4 sm:px-6 py-4 sm:py-6 h-auto bg-black/30 backdrop-blur-sm text-white border-2 border-white hover:bg-white hover:text-primary shadow-2xl"
               >
                 <div className="flex flex-col items-center text-center w-full">
                   <div className="flex flex-wrap items-center justify-center gap-2 mb-1">
