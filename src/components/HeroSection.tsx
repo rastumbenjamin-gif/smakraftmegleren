@@ -20,8 +20,8 @@ export const HeroSection = () => {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 container mx-auto px-4 text-center text-white">
-        <div className="max-w-4xl mx-auto space-y-8 animate-fade-in">
+      <div className="relative z-10 container mx-auto px-4 text-center text-white pt-20 sm:pt-24">
+        <div className="max-w-4xl mx-auto space-y-6 sm:space-y-8 animate-fade-in">
           <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold leading-tight animate-fade-in [animation-delay:400ms] text-white drop-shadow-2xl [text-shadow:_2px_2px_8px_rgb(0_0_0_/_0.8)]">
             {t('hero.title')}
           </h1>
