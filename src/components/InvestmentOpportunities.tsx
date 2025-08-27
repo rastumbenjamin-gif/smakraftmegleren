@@ -59,28 +59,6 @@ export const InvestmentOpportunities = () => {
         t('opportunities.bjora.advantage1'),
         t('opportunities.bjora.advantage2')
       ]
-    },
-    {
-      id: 3,
-      name: "Sandvik",
-      location: "Vindafjord, Rogaland",
-      capacity: "0.99 MW",
-      annualProduction: "3.718 GWh/år",
-      roi: "6%",
-      funded: 0,
-      totalInvestment: "32 MNOK",
-      minInvestment: "0.5 MNOK",
-      co2Reduction: "1,530",
-      operationalDate: "In Operation (2018)",
-      investors: 0,
-      image: hydroPlant3,
-      status: "Available investment",
-      statusColor: "bg-hydro-blue",
-      buildYear: "2018",
-      advantages: [
-        t('opportunities.sandvik.advantage1'),
-        t('opportunities.sandvik.advantage2')
-      ]
     }
   ];
   
