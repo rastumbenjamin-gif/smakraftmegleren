@@ -108,7 +108,7 @@ export const InvestmentOpportunities = () => {
                     {plant.operationalDate.includes("Operation") 
                       ? t('opportunities.inOperation') 
                       : plant.operationalDate.includes("construction")
-                      ? "Under Construction"
+                      ? "Consented project - not built"
                       : t('opportunities.consentedProject')}
                   </Badge>
                   </div>
