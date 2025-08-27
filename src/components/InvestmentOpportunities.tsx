@@ -95,16 +95,22 @@ export const InvestmentOpportunities = () => {
                   />
                   {/* Status Badge Overlay on Image */}
                   <div className="absolute top-4 left-4">
-                    <Badge 
-                      variant="secondary"
-                      className={`${
-                        plant.operationalDate.includes("Operation") 
-                          ? 'bg-success/90 text-white border-success/20' 
-                          : 'bg-primary/90 text-white border-primary/20'
-                      } px-3 py-1 text-xs font-medium backdrop-blur-sm`}
-                    >
-                      {plant.operationalDate.includes("Operation") ? t('opportunities.inOperation') : t('opportunities.consentedProject')}
-                    </Badge>
+                  <Badge 
+                    variant="secondary"
+                    className={`${
+                      plant.operationalDate.includes("Operation") 
+                        ? 'bg-success/90 text-white border-success/20' 
+                        : plant.operationalDate.includes("construction")
+                        ? 'bg-orange-500/90 text-white border-orange-500/20'
+                        : 'bg-primary/90 text-white border-primary/20'
+                    } px-3 py-1 text-xs font-medium backdrop-blur-sm`}
+                  >
+                    {plant.operationalDate.includes("Operation") 
+                      ? t('opportunities.inOperation') 
+                      : plant.operationalDate.includes("construction")
+                      ? "Under Construction"
+                      : t('opportunities.consentedProject')}
+                  </Badge>
                   </div>
                 </div>
 
