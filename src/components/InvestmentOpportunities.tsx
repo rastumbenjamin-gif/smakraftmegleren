@@ -77,7 +77,7 @@ export const InvestmentOpportunities = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-8 max-w-7xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto justify-items-center">
           {opportunities.map((plant) => (
             <Card key={plant.id} className="group relative overflow-hidden border-0 shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-[1.02] bg-gradient-to-br from-white to-muted/20">
               {/* Gradient Border Effect */}
