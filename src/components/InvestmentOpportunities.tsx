@@ -21,7 +21,7 @@ export const InvestmentOpportunities = () => {
       name: "Hindbergelva kraftverk",
       location: "Mosvik, Trøndelag",
       capacity: "530 kW",
-      annualProduction: "1.43 GWh",
+      annualProduction: "1.43 GWh/år",
       roi: "6%",
       funded: 45,
       totalInvestment: "37 MNOK",
