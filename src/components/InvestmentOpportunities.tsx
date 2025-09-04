@@ -42,7 +42,6 @@ export const InvestmentOpportunities = () => {
       id: 2,
       name: "Bjøråa kraftverk",
       location: "Høylandet, Trøndelag", 
-      capacity: "2.8 MW",
       annualProduction: "7.2 GWh/år",
       roi: "High ROI potential",
       funded: 0,
