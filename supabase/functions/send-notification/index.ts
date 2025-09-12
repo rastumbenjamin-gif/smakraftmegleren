@@ -111,9 +111,22 @@ const handler = async (req: Request): Promise<Response> => {
       `;
     }
 
+    // Resolve and sanitize recipient(s)
+    const rawTo = (Deno.env.get("NOTIFY_TO_EMAIL") || "rastum.benjamin@gmail.com").trim();
+    const toList = rawTo
+      .split(/[\,\s;]+/)
+      .map((s) => s.trim())
+      .filter((s) => s.length > 0);
+    // Basic email syntax validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const validRecipients = toList.filter((e) => emailRegex.test(e));
+    const recipients = validRecipients.length > 0 ? validRecipients : ["rastum.benjamin@gmail.com"];
+
+    console.log("send-notification resolved recipients:", { rawTo, recipients });
+
     const emailResponse = await resend.emails.send({
-      from: "Småkraftmeglerne <onboarding@resend.dev>",
-      to: [Deno.env.get("NOTIFY_TO_EMAIL") || "rastum.benjamin@gmail.com"],
+      from: "Smaakraftmeglerne <onboarding@resend.dev>",
+      to: recipients,
       subject: subject,
       html: htmlContent,
     });
