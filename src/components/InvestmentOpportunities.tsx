@@ -66,7 +66,7 @@ export const InvestmentOpportunities = () => {
       location: "Indre Fosen, Trøndelag",
       capacity: "0.99 MW",
       annualProduction: "2.95 GWh/år",
-      roi: "7-8%",
+      roi: "6%",
       funded: 0,
       totalInvestment: "28 MNOK",
       minInvestment: "0.5 MNOK",
