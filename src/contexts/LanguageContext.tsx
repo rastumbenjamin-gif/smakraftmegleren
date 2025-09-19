@@ -136,6 +136,9 @@ const translations = {
     'opportunities.bjora.advantage2': 'High production, solid revenue',
     'opportunities.sandvik.advantage1': 'High head height (132.4m)',
     'opportunities.sandvik.advantage2': 'Stable water intake (0.88 m³/s)',
+    'opportunities.vollabekken.advantage1': 'Stable winter-heavy output: 610 MWh average in Jan–Feb–Dec, with natural hydrological buffering',
+    'opportunities.vollabekken.advantage2': 'Proven operations: Commissioned 2012, no major issues, high-quality construction and equipment',
+    'opportunities.vollabekken.advantage3': 'Attractive economics: Exempt from high-price levy (<1 MW capacity)',
     
     // More opportunities
     'opportunities.more.title': 'Discover More Opportunities',
@@ -351,6 +354,9 @@ const translations = {
     'opportunities.bjora.advantage2': 'Høy produksjon, solid inntekt',
     'opportunities.sandvik.advantage1': 'Høy fallhøyde (132,4m)',
     'opportunities.sandvik.advantage2': 'Stabil vanninntak (0,88 m³/s)',
+    'opportunities.vollabekken.advantage1': 'Stabil vinterdominert produksjon: 610 MWh gjennomsnitt jan–feb–des, med naturlig hydrologisk bufring',
+    'opportunities.vollabekken.advantage2': 'Bevist drift: Idriftsatt 2012, ingen større problemer, høykvalitets konstruksjon og utstyr',
+    'opportunities.vollabekken.advantage3': 'Attraktiv økonomi: Fritatt for høyprisavgift (<1 MW kapasitet)',
     
     // More opportunities
     'opportunities.more.title': 'Oppdag Flere Muligheter',

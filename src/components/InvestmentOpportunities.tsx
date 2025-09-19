@@ -10,6 +10,7 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import hydroPlant1 from "@/assets/hydro-plant-1.jpg";
 import hydroPlant2 from "@/assets/hydro-plant-2.jpg";
 import hydroPlant3 from "@/assets/hydro-plant-3.jpg";
+import vollabekkenKraftverk from "@/assets/vollabekken-kraftverk.jpg";
 
 export const InvestmentOpportunities = () => {
   const sectionRef = useScrollAnimation();
@@ -57,6 +58,29 @@ export const InvestmentOpportunities = () => {
       advantages: [
         t('opportunities.bjora.advantage1'),
         t('opportunities.bjora.advantage2')
+      ]
+    },
+    {
+      id: 3,
+      name: "Vollabekken kraftverk",
+      location: "Indre Fosen, Trøndelag",
+      capacity: "0.99 MW",
+      annualProduction: "2.95 GWh/år",
+      roi: "7-8%",
+      funded: 0,
+      totalInvestment: "28 MNOK",
+      minInvestment: "0.5 MNOK",
+      co2Reduction: "1,200",
+      operationalDate: "In Operation (2012)",
+      investors: 0,
+      image: vollabekkenKraftverk,
+      status: "Available investment",
+      statusColor: "bg-success",
+      buildYear: "2012",
+      advantages: [
+        t('opportunities.vollabekken.advantage1'),
+        t('opportunities.vollabekken.advantage2'),
+        t('opportunities.vollabekken.advantage3')
       ]
     }
   ];
