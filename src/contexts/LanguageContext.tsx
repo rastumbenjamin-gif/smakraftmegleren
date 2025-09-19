@@ -130,8 +130,9 @@ const translations = {
     'opportunities.consentedProject': 'Consented Project',
     
     // Plant specific data
-    'opportunities.hindbergelva.advantage1': 'High winter production (peak prices)',
-    'opportunities.hindbergelva.advantage2': 'Recently renovated equipment',
+    'opportunities.hindbergelva.advantage1': 'Winter-peaked output: 44% of annual production in Nov–Feb, capturing higher prices.',
+    'opportunities.hindbergelva.advantage2': 'Upside potential: Renovated turbine, 10–20% yield increase possible + 20 kW license application (+100 MWh/year).',
+    'opportunities.hindbergelva.advantage3': 'Price leverage: NO03 area expected to rise with new grid connections to southern Norway',
     'opportunities.bjora.advantage1': 'Fresh consent (December 2024)',
     'opportunities.bjora.advantage2': 'High production, solid revenue',
     'opportunities.sandvik.advantage1': 'High head height (132.4m)',
@@ -348,8 +349,9 @@ const translations = {
     'opportunities.consentedProject': 'Konsesjonert Prosjekt',
     
     // Plant specific data
-    'opportunities.hindbergelva.advantage1': 'Høy vinterproduksjon (topppriser)',
-    'opportunities.hindbergelva.advantage2': 'Nylig renovert utstyr',
+    'opportunities.hindbergelva.advantage1': 'Vintertopp produksjon: 44% av årlig produksjon i nov–feb, fanger høyere priser.',
+    'opportunities.hindbergelva.advantage2': 'Oppside potensial: Renovert turbin, 10–20% avkastningsøkning mulig + 20 kW lisens søknad (+100 MWh/år).',
+    'opportunities.hindbergelva.advantage3': 'Prispress: NO03-området forventes å stige med nye nettforbindelser til Sør-Norge',
     'opportunities.bjora.advantage1': 'Fersk konsesjon (desember 2024)',
     'opportunities.bjora.advantage2': 'Høy produksjon, solid inntekt',
     'opportunities.sandvik.advantage1': 'Høy fallhøyde (132,4m)',
