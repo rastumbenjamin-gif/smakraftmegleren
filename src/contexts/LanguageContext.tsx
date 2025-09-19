@@ -349,16 +349,16 @@ const translations = {
     'opportunities.consentedProject': 'Konsesjonert Prosjekt',
     
     // Plant specific data
-    'opportunities.hindbergelva.advantage1': 'Vintertopp produksjon: 44% av årlig produksjon i nov–feb, fanger høyere priser.',
-    'opportunities.hindbergelva.advantage2': 'Oppside potensial: Renovert turbin, 10–20% avkastningsøkning mulig + 20 kW lisens søknad (+100 MWh/år).',
-    'opportunities.hindbergelva.advantage3': 'Prispress: NO03-området forventes å stige med nye nettforbindelser til Sør-Norge',
+    'opportunities.hindbergelva.advantage1': 'Vintertoppet produksjon: 44 % av årsproduksjonen i nov–feb, gir høyere snittpris.',
+    'opportunities.hindbergelva.advantage2': 'Oppsidepotensial: Renovert turbin, 10–20 % mer produksjon mulig + 20 kW konsesjonssøknad (+100 MWh/år).',
+    'opportunities.hindbergelva.advantage3': 'Prisvekst: NO03-området forventes å stige med nye linjer til Sør-Norge.',
     'opportunities.bjora.advantage1': 'Fersk konsesjon (desember 2024)',
     'opportunities.bjora.advantage2': 'Høy produksjon, solid inntekt',
     'opportunities.sandvik.advantage1': 'Høy fallhøyde (132,4m)',
     'opportunities.sandvik.advantage2': 'Stabil vanninntak (0,88 m³/s)',
-    'opportunities.vollabekken.advantage1': 'Stabil vinterdominert produksjon: 610 MWh gjennomsnitt jan–feb–des, med naturlig hydrologisk bufring',
-    'opportunities.vollabekken.advantage2': 'Bevist drift: Idriftsatt 2012, ingen større problemer, høykvalitets konstruksjon og utstyr',
-    'opportunities.vollabekken.advantage3': 'Attraktiv økonomi: Fritatt for høyprisavgift (<1 MW kapasitet)',
+    'opportunities.vollabekken.advantage1': 'Stabil vinterproduksjon: 610 MWh gj.snitt i jan–feb–des, med naturlig hydrologisk demping.',
+    'opportunities.vollabekken.advantage2': 'Dokumentert drift: Satt i drift 2012, ingen større problemer, solid bygg og utstyr.',
+    'opportunities.vollabekken.advantage3': 'Gunstig økonomi: Fritatt fra høyprisbidraget (<1 MW installert effekt).',
     
     // More opportunities
     'opportunities.more.title': 'Oppdag Flere Muligheter',
