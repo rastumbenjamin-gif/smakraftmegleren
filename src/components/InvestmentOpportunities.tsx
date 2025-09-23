@@ -208,9 +208,9 @@ export const InvestmentOpportunities = () => {
                   </div>
                 </div>
 
-                {/* Unique Advantages */}
+                {/* Key Information */}
                 <div>
-                  <h4 className="font-semibold mb-3">{t('opportunities.advantages')}</h4>
+                  <h4 className="font-semibold mb-3">{t('opportunities.keyInformation')}</h4>
                   <div className="space-y-2">
                     {plant.advantages.map((advantage, index) => (
                       <div key={index} className="flex items-start gap-2">
