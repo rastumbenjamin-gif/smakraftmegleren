@@ -124,13 +124,13 @@ export const InvestmentOpportunities = () => {
 
         <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto justify-items-center">
           {opportunities.map((plant) => (
-            <Card key={plant.id} className="group relative overflow-hidden border-0 shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-[1.02] bg-gradient-to-br from-white to-muted/20">
+            <Card key={plant.id} className="group relative overflow-hidden border-0 shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-[1.02] bg-gradient-to-br from-white to-muted/20 h-full flex flex-col">
               {/* Gradient Border Effect */}
               <div className="absolute inset-0 bg-gradient-to-r from-hydro-blue via-hydro-green to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-[2px] rounded-lg">
                 <div className="w-full h-full bg-background rounded-[6px]" />
               </div>
               
-              <div className="relative z-10">
+              <div className="relative z-10 h-full flex flex-col">
                 {/* Plant Image */}
                 <div className="relative h-48 overflow-hidden rounded-t-lg">
                   <img 
@@ -170,7 +170,8 @@ export const InvestmentOpportunities = () => {
                   </div>
                 </CardHeader>
 
-              <CardContent className="space-y-6">
+              <CardContent className="space-y-6 flex-1 flex flex-col">
+                <div className="flex-1 space-y-6">
                 {/* Key Metrics - Prominent Display */}
                 <div className="grid grid-cols-3 gap-3">
                   <div className="text-center p-3 bg-hydro-blue/5 rounded-lg border border-hydro-blue/10">
@@ -217,12 +218,13 @@ export const InvestmentOpportunities = () => {
                     ))}
                   </div>
                 </div>
+                </div>
 
                 {/* CTA Button */}
                 <RegistrationModal plantName={plant.name}>
                   <Button 
                     variant="default" 
-                    className="w-full bg-primary hover:bg-primary/90 text-white group-hover:bg-gradient-to-r group-hover:from-hydro-blue group-hover:to-hydro-green transition-all duration-300 h-auto py-3 px-4 text-sm font-medium whitespace-normal"
+                    className="w-full bg-primary hover:bg-primary/90 text-white group-hover:bg-gradient-to-r group-hover:from-hydro-blue group-hover:to-hydro-green transition-all duration-300 h-auto py-3 px-4 text-sm font-medium whitespace-normal mt-auto"
                   >
                     {t('opportunities.register')}
                   </Button>
