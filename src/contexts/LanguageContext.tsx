@@ -237,9 +237,12 @@ const translations = {
     'sell.placeholder.selectReason': 'Select main reason',
     'sell.placeholder.selectResponsible': 'Select who is responsible',
     'sell.placeholder.selectWaterRights': 'Select type of water rights lease',
+    'sell.placeholder.selectTimeframe': 'Select timeframe',
+    'sell.placeholder.plantName': 'Start typing the power plant name...',
     'sell.placeholder.municipalityExample': 'F.eks. Voss',
     'sell.placeholder.capacityExample': 'F.eks. 2.5',
     'sell.placeholder.productionExample': 'F.eks. 12.5',
+    'sell.placeholder.comments': 'Describe your specific requirements or preferences...',
     
     // More opportunities modal
     'more.title': 'Register for more information',
@@ -457,9 +460,12 @@ const translations = {
     'sell.placeholder.selectReason': 'Velg hovedgrunn',
     'sell.placeholder.selectResponsible': 'Velg hvem som er ansvarlig',
     'sell.placeholder.selectWaterRights': 'Velg type vannrettsleie',
+    'sell.placeholder.selectTimeframe': 'Velg tidsramme',
+    'sell.placeholder.plantName': 'Begynn å skrive kraftverkets navn...',
     'sell.placeholder.municipalityExample': 'F.eks. Voss',
     'sell.placeholder.capacityExample': 'F.eks. 2,5',
     'sell.placeholder.productionExample': 'F.eks. 12,5',
+    'sell.placeholder.comments': 'Beskriv dine spesifikke krav eller preferanser...',
     
     // More opportunities modal
     'more.title': 'Registrer for mer informasjon',

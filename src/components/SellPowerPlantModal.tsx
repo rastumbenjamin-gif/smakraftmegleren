@@ -211,6 +211,7 @@ export const SellPowerPlantModal = ({ children }: SellPowerPlantModalProps) => {
                 <SearchKraftverkCombobox
                   value={formData.plantName}
                   onChange={(v) => setFormData((prev) => ({ ...prev, plantName: v }))}
+                  placeholder={t('sell.placeholder.plantName')}
                   onSelect={(k) => {
                     setFormData((prev) => ({
                       ...prev,
@@ -226,21 +227,21 @@ export const SellPowerPlantModal = ({ children }: SellPowerPlantModalProps) => {
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="space-y-2">
-                  <Label htmlFor="municipality">Municipality *</Label>
+                  <Label htmlFor="municipality">{t('sell.municipality')}</Label>
                   <Input
                     id="municipality"
                     value={formData.municipality}
                     onChange={(e) => setFormData(prev => ({ ...prev, municipality: e.target.value }))}
-                    placeholder="F.eks. Voss"
+                    placeholder={t('sell.placeholder.municipalityExample')}
                     required
                     className="bg-background"
                   />
                 </div>
                 <div className="space-y-2">
-                  <Label>County *</Label>
+                  <Label>{t('sell.county')}</Label>
                   <Select value={formData.county} onValueChange={(value) => setFormData(prev => ({ ...prev, county: value }))}>
                     <SelectTrigger className="bg-background border-input">
-                      <SelectValue placeholder="Select county" />
+                      <SelectValue placeholder={t('sell.placeholder.selectCounty')} />
                     </SelectTrigger>
                     <SelectContent className="bg-background border-border shadow-lg z-50">
                       <SelectItem value="Agder">Agder</SelectItem>
@@ -262,23 +263,23 @@ export const SellPowerPlantModal = ({ children }: SellPowerPlantModalProps) => {
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="space-y-2">
-                  <Label htmlFor="capacity">Installed capacity *</Label>
+                  <Label htmlFor="capacity">{t('sell.capacity')}</Label>
                   <Input
                     id="capacity"
                     value={formData.installedCapacity}
                     onChange={(e) => setFormData(prev => ({ ...prev, installedCapacity: e.target.value }))}
-                    placeholder="F.eks. 2.5"
+                    placeholder={t('sell.placeholder.capacityExample')}
                     required
                     className="bg-background"
                   />
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="production">Annual production (GWh, average last 5 years) *</Label>
+                  <Label htmlFor="production">{t('sell.production')}</Label>
                   <Input
                     id="production"
                     value={formData.annualProduction}
                     onChange={(e) => setFormData(prev => ({ ...prev, annualProduction: e.target.value }))}
-                    placeholder="F.eks. 12.5"
+                    placeholder={t('sell.placeholder.productionExample')}
                     required
                     className="bg-background"
                   />
@@ -293,50 +294,50 @@ export const SellPowerPlantModal = ({ children }: SellPowerPlantModalProps) => {
               <div className="w-8 h-8 rounded-full bg-accent text-white flex items-center justify-center text-sm font-semibold">
                 3
               </div>
-              <h3 className="text-lg font-semibold">Plant Details</h3>
+              <h3 className="text-lg font-semibold">{t('sell.section3')}</h3>
             </div>
             
             <div className="ml-10 space-y-4">
               <div className="space-y-2">
-                <Label>Main reason for sale *</Label>
+                <Label>{t('sell.mainReason')}</Label>
                 <Select value={formData.mainReason} onValueChange={(value) => setFormData(prev => ({ ...prev, mainReason: value }))}>
                   <SelectTrigger className="bg-background border-input">
-                    <SelectValue placeholder="Select main reason" />
+                    <SelectValue placeholder={t('sell.placeholder.selectReason')} />
                   </SelectTrigger>
                   <SelectContent className="bg-background border-border shadow-lg z-50">
-                    <SelectItem value="negative-cash-flow">Negative cash flow</SelectItem>
-                    <SelectItem value="generational-change">Generational change</SelectItem>
-                    <SelectItem value="better-returns">Desire for better returns</SelectItem>
-                    <SelectItem value="other">Other</SelectItem>
+                    <SelectItem value="negative-cash-flow">{t('sell.mainReason.negative')}</SelectItem>
+                    <SelectItem value="generational-change">{t('sell.mainReason.generational')}</SelectItem>
+                    <SelectItem value="better-returns">{t('sell.mainReason.returns')}</SelectItem>
+                    <SelectItem value="other">{t('sell.mainReason.other')}</SelectItem>
                   </SelectContent>
                 </Select>
               </div>
 
               <div className="space-y-2">
-                <Label>Who is responsible for regular maintenance of the power plant, including cleaning, oil changes, etc.? *</Label>
+                <Label>{t('sell.maintenance')}</Label>
                 <Select value={formData.maintenanceResponsible} onValueChange={(value) => setFormData(prev => ({ ...prev, maintenanceResponsible: value }))}>
                   <SelectTrigger className="bg-background border-input">
-                    <SelectValue placeholder="Select who is responsible" />
+                    <SelectValue placeholder={t('sell.placeholder.selectResponsible')} />
                   </SelectTrigger>
                   <SelectContent className="bg-background border-border shadow-lg z-50">
-                    <SelectItem value="continue-after-sale">I am responsible and want to continue this after sale</SelectItem>
-                    <SelectItem value="no-continue-after-sale">I am responsible but do not want this after sale</SelectItem>
-                    <SelectItem value="other">Other</SelectItem>
+                    <SelectItem value="continue-after-sale">{t('sell.maintenance.continue')}</SelectItem>
+                    <SelectItem value="no-continue-after-sale">{t('sell.maintenance.noContinue')}</SelectItem>
+                    <SelectItem value="other">{t('sell.maintenance.other')}</SelectItem>
                   </SelectContent>
                 </Select>
               </div>
 
               <div className="space-y-2">
-                <Label>What are the terms for water rights lease (ground rent for waterfall)? *</Label>
+                <Label>{t('sell.waterRights')}</Label>
                 <Select value={formData.waterRightsLease} onValueChange={(value) => setFormData(prev => ({ ...prev, waterRightsLease: value }))}>
                   <SelectTrigger className="bg-background border-input">
-                    <SelectValue placeholder="Select type of water rights lease" />
+                    <SelectValue placeholder={t('sell.placeholder.selectWaterRights')} />
                   </SelectTrigger>
                   <SelectContent className="bg-background border-border shadow-lg z-50">
-                    <SelectItem value="no-lease">No water rights lease (I own both land and power plant)</SelectItem>
-                    <SelectItem value="percentage-revenue">Percentage of gross revenue</SelectItem>
-                    <SelectItem value="fixed-annual">Fixed annual amount</SelectItem>
-                    <SelectItem value="other">Other</SelectItem>
+                    <SelectItem value="no-lease">{t('sell.waterRights.noLease')}</SelectItem>
+                    <SelectItem value="percentage-revenue">{t('sell.waterRights.percentage')}</SelectItem>
+                    <SelectItem value="fixed-annual">{t('sell.waterRights.fixed')}</SelectItem>
+                    <SelectItem value="other">{t('sell.waterRights.other')}</SelectItem>
                   </SelectContent>
                 </Select>
               </div>
@@ -354,28 +355,28 @@ export const SellPowerPlantModal = ({ children }: SellPowerPlantModalProps) => {
               )}
 
               <div className="space-y-2">
-                <Label>Sales timeframe *</Label>
+                <Label>{t('sell.salesTimeframe')}</Label>
                 <Select value={formData.salesTimeframe} onValueChange={(value) => setFormData(prev => ({ ...prev, salesTimeframe: value }))}>
                   <SelectTrigger className="bg-background border-input">
-                    <SelectValue placeholder="Select timeframe" />
+                    <SelectValue placeholder={t('sell.placeholder.selectTimeframe')} />
                   </SelectTrigger>
                   <SelectContent className="bg-background border-border shadow-lg z-50">
-                    <SelectItem value="immediate">Immediate (0-3 months)</SelectItem>
-                    <SelectItem value="short-term">Short term (3-6 months)</SelectItem>
-                    <SelectItem value="medium-term">Medium term (6-12 months)</SelectItem>
-                    <SelectItem value="long-term">Long term (12+ months)</SelectItem>
-                    <SelectItem value="exploring">Just exploring options</SelectItem>
+                    <SelectItem value="immediate">{t('form.timeframe.immediate')}</SelectItem>
+                    <SelectItem value="short-term">{t('form.timeframe.short')}</SelectItem>
+                    <SelectItem value="medium-term">{t('form.timeframe.medium')}</SelectItem>
+                    <SelectItem value="long-term">{t('form.timeframe.long')}</SelectItem>
+                    <SelectItem value="exploring">{t('form.timeframe.exploring')}</SelectItem>
                   </SelectContent>
                 </Select>
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="priceExpectation">Price expectation (optional)</Label>
+                <Label htmlFor="priceExpectation">{t('sell.priceExpectation')}</Label>
                 <Input
                   id="priceExpectation"
                   value={formData.priceExpectation}
                   onChange={(e) => setFormData(prev => ({ ...prev, priceExpectation: e.target.value }))}
-                  placeholder="NOK - what do you think the facility is worth?"
+                  placeholder={t('sell.priceExpectationPlaceholder')}
                   className="bg-background"
                 />
               </div>
@@ -384,12 +385,12 @@ export const SellPowerPlantModal = ({ children }: SellPowerPlantModalProps) => {
 
           {/* Additional Comments */}
           <div className="space-y-2">
-            <Label htmlFor="comments">Additional comments</Label>
+            <Label htmlFor="comments">{t('form.comments')}</Label>
             <Textarea
               id="comments"
               value={formData.additionalComments}
               onChange={(e) => setFormData(prev => ({ ...prev, additionalComments: e.target.value }))}
-              placeholder="Describe your specific requirements or preferences..."
+              placeholder={t('sell.placeholder.comments')}
               className="bg-background min-h-[100px] resize-none"
             />
           </div>

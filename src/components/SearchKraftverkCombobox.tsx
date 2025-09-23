@@ -8,9 +8,10 @@ interface Props {
   kommuneHint?: string;
   onChange: (value: string) => void;
   onSelect: (kraftverk: NVEKraftverk) => void;
+  placeholder?: string;
 }
 
-export const SearchKraftverkCombobox = ({ value, kommuneHint, onChange, onSelect }: Props) => {
+export const SearchKraftverkCombobox = ({ value, kommuneHint, onChange, onSelect, placeholder = "Start typing the power plant name..." }: Props) => {
   const [open, setOpen] = useState(false);
   const [query, setQuery] = useState(value);
   const [loading, setLoading] = useState(false);
@@ -54,7 +55,7 @@ export const SearchKraftverkCombobox = ({ value, kommuneHint, onChange, onSelect
           onChange(e.target.value);
         }}
         onFocus={() => setOpen(true)}
-        placeholder="Start typing the power plant name..."
+        placeholder={placeholder}
         className="bg-background pr-10 focus-visible:ring-2"
         aria-autocomplete="list"
         role="combobox"
