@@ -37,8 +37,7 @@ export const InvestmentOpportunities = () => {
       buildYear: "1987",
       advantages: [
         t('opportunities.hindbergelva.advantage1'),
-        t('opportunities.hindbergelva.advantage2'),
-        t('opportunities.hindbergelva.advantage3')
+        t('opportunities.hindbergelva.advantage2')
       ]
     },
     {
