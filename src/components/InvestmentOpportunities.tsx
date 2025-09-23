@@ -91,7 +91,7 @@ export const InvestmentOpportunities = () => {
       location: "Vindafjord, Rogaland",
       capacity: "1 MW",
       annualProduction: "3 GWh/år",
-      roi: "8%",
+      roi: "6%",
       funded: 0,
       totalInvestment: "35 MNOK",
       minInvestment: "0.5 MNOK",
