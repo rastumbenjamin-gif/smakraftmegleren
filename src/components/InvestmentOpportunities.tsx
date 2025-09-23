@@ -80,8 +80,7 @@ export const InvestmentOpportunities = () => {
       buildYear: "2012",
       advantages: [
         t('opportunities.vollabekken.advantage1'),
-        t('opportunities.vollabekken.advantage2'),
-        t('opportunities.vollabekken.advantage3')
+        t('opportunities.vollabekken.advantage2')
       ]
     },
     {
@@ -103,8 +102,7 @@ export const InvestmentOpportunities = () => {
       buildYear: "2018",
       advantages: [
         t('opportunities.sandvik.advantage1'),
-        t('opportunities.sandvik.advantage2'),
-        t('opportunities.sandvik.advantage3')
+        t('opportunities.sandvik.advantage2')
       ]
     }
   ];
