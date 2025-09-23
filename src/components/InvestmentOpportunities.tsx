@@ -11,6 +11,7 @@ import hydroPlant1 from "@/assets/hydro-plant-1.jpg";
 import hydroPlant2 from "@/assets/hydro-plant-2.jpg";
 import hydroPlant3 from "@/assets/hydro-plant-3.jpg";
 import vollabekkenKraftverk from "@/assets/vollabekken-kraftverk.jpg";
+import sandvikEnergi from "@/assets/sandvik-energi.jpg";
 
 export const InvestmentOpportunities = () => {
   const sectionRef = useScrollAnimation();
@@ -82,6 +83,29 @@ export const InvestmentOpportunities = () => {
         t('opportunities.vollabekken.advantage1'),
         t('opportunities.vollabekken.advantage2'),
         t('opportunities.vollabekken.advantage3')
+      ]
+    },
+    {
+      id: 4,
+      name: "Sandvik Energi",
+      location: "Vindafjord, Rogaland",
+      capacity: "1 MW",
+      annualProduction: "3 GWh/år",
+      roi: "8%",
+      funded: 0,
+      totalInvestment: "35 MNOK",
+      minInvestment: "0.5 MNOK",
+      co2Reduction: "1,500",
+      operationalDate: "In Operation (2018)",
+      investors: 0,
+      image: sandvikEnergi,
+      status: "Available investment",
+      statusColor: "bg-success",
+      buildYear: "2018",
+      advantages: [
+        t('opportunities.sandvik.advantage1'),
+        t('opportunities.sandvik.advantage2'),
+        t('opportunities.sandvik.advantage3')
       ]
     }
   ];
