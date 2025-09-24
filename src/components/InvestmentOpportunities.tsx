@@ -13,6 +13,7 @@ import hydroPlant3 from "@/assets/hydro-plant-3.jpg";
 import vollabekkenKraftverk from "@/assets/vollabekken-kraftverk.jpg";
 import sandvikEnergi from "@/assets/sandvik-energi.jpg";
 import hindbergelvaKraftverk from "@/assets/hindbergelva-kraftverk.jpg";
+import vollabekkenKraftverkNew from "@/assets/vollabekken-kraftverk-new.jpg";
 
 export const InvestmentOpportunities = () => {
   const sectionRef = useScrollAnimation();
@@ -54,7 +55,7 @@ export const InvestmentOpportunities = () => {
       co2Reduction: "1,200",
       operationalDate: "In Operation (2012)",
       investors: 0,
-      image: hydroPlant2,
+      image: vollabekkenKraftverkNew,
       status: "Available investment",
       statusColor: "bg-success",
       buildYear: "2012",
