@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import heroImage from "@/assets/hydro-hero.jpg";
+import heroImage from "@/assets/hydro-hero-new.jpg";
 import { Zap, Droplet, TrendingUp } from "lucide-react";
 import { SellPowerPlantModal } from "./SellPowerPlantModal";
 import { useLanguage } from "@/contexts/LanguageContext";
