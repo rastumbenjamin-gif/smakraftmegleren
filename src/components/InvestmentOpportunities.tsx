@@ -41,27 +41,6 @@ export const InvestmentOpportunities = () => {
       ]
     },
     {
-      id: 2,
-      name: "Bjøråa kraftverk",
-      location: "Høylandet, Trøndelag", 
-      annualProduction: "7.2 GWh/år",
-      roi: "High ROI potential",
-      funded: 0,
-      totalInvestment: "82 MNOK",
-      minInvestment: "0.5 MNOK",
-      co2Reduction: "2,970",
-      operationalDate: "Under construction (2024)",
-      investors: 0,
-      image: vollabekkenKraftverk,
-      status: "Under construction",
-      statusColor: "bg-primary",
-      buildYear: "2024-2025",
-      advantages: [
-        t('opportunities.bjora.advantage1'),
-        t('opportunities.bjora.advantage2')
-      ]
-    },
-    {
       id: 3,
       name: "Vollabekken kraftverk",
       location: "Indre Fosen, Trøndelag",
@@ -81,28 +60,6 @@ export const InvestmentOpportunities = () => {
       advantages: [
         t('opportunities.vollabekken.advantage1'),
         t('opportunities.vollabekken.advantage2')
-      ]
-    },
-    {
-      id: 4,
-      name: "Sandvik Energi",
-      location: "Vindafjord, Rogaland",
-      capacity: "1 MW",
-      annualProduction: "3 GWh/år",
-      roi: "6%",
-      funded: 0,
-      totalInvestment: "35 MNOK",
-      minInvestment: "0.5 MNOK",
-      co2Reduction: "1,500",
-      operationalDate: "In Operation (2018)",
-      investors: 0,
-      image: hydroPlant1,
-      status: "Available investment",
-      statusColor: "bg-success",
-      buildYear: "2018",
-      advantages: [
-        t('opportunities.sandvik.advantage1'),
-        t('opportunities.sandvik.advantage2')
       ]
     }
   ];
