@@ -12,6 +12,7 @@ import hydroPlant2 from "@/assets/hydro-plant-2.jpg";
 import hydroPlant3 from "@/assets/hydro-plant-3.jpg";
 import vollabekkenKraftverk from "@/assets/vollabekken-kraftverk.jpg";
 import sandvikEnergi from "@/assets/sandvik-energi.jpg";
+import hindbergelvaKraftverk from "@/assets/hindbergelva-kraftverk.jpg";
 
 export const InvestmentOpportunities = () => {
   const sectionRef = useScrollAnimation();
@@ -31,7 +32,7 @@ export const InvestmentOpportunities = () => {
       co2Reduction: "2,400",
       operationalDate: "In Operation (1987)",
       investors: 89,
-      image: sandvikEnergi,
+      image: hindbergelvaKraftverk,
       status: "Available investment",
       statusColor: "bg-gradient-to-r from-yellow-400 to-orange-500",
       buildYear: "1987",
