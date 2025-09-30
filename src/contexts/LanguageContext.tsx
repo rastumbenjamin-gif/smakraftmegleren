@@ -141,6 +141,8 @@ const translations = {
     'opportunities.vollabekken.advantage1': 'Stable winter-heavy output: 610 MWh average in Jan–Feb–Dec, with natural hydrological buffering',
     'opportunities.vollabekken.advantage2': 'Proven operations: Commissioned 2012, no major issues, high-quality construction and equipment',
     'opportunities.vollabekken.advantage3': 'Attractive economics: Exempt from high-price levy (<1 MW capacity)',
+    'opportunities.molnelva.advantage1': 'Modern, low-risk asset – Commissioned in 2008, avoiding the refurbishment risk of older small hydro plants.',
+    'opportunities.molnelva.advantage2': 'Solid performance profile ~3.8 GWh annual production with strong 99 m head, ensuring efficient energy conversion and stable revenues.',
     
     // More opportunities
     'opportunities.more.title': 'Discover More Opportunities',
@@ -364,6 +366,8 @@ const translations = {
     'opportunities.vollabekken.advantage1': 'Stabil vinterproduksjon: 610 MWh gj.snitt i jan–feb–des, med naturlig hydrologisk demping.',
     'opportunities.vollabekken.advantage2': 'Dokumentert drift: Satt i drift 2012, ingen større problemer, solid bygg og utstyr.',
     'opportunities.vollabekken.advantage3': 'Gunstig økonomi: Fritatt fra høyprisbidraget (<1 MW installert effekt).',
+    'opportunities.molnelva.advantage1': 'Moderne, lavrisiko anlegg – Satt i drift i 2008, og unngår dermed oppgraderingsrisikoen som eldre småkraftverk har.',
+    'opportunities.molnelva.advantage2': 'Solid ytelsesprofil ~3,8 GWh årlig produksjon med sterk fallhøyde på 99 meter, som sikrer effektiv energikonvertering og stabile inntekter.',
     
     // More opportunities
     'opportunities.more.title': 'Oppdag Flere Muligheter',

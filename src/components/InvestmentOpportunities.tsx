@@ -14,6 +14,7 @@ import vollabekkenKraftverk from "@/assets/vollabekken-kraftverk.jpg";
 import sandvikEnergi from "@/assets/sandvik-energi.jpg";
 import hindbergelvaKraftverk from "@/assets/hindbergelva-kraftverk.jpg";
 import vollabekkenKraftverkNew from "@/assets/vollabekken-kraftverk-new.jpg";
+import molnelvaKraftverk from "@/assets/molnelva-kraftverk.jpg";
 
 export const InvestmentOpportunities = () => {
   const sectionRef = useScrollAnimation();
@@ -63,6 +64,28 @@ export const InvestmentOpportunities = () => {
         t('opportunities.vollabekken.advantage1'),
         t('opportunities.vollabekken.advantage2')
       ]
+    },
+    {
+      id: 4,
+      name: "Mølnelva kraftverk",
+      location: "Dyrøy, Troms",
+      capacity: "1.2 MW",
+      annualProduction: "3.8 GWh/år",
+      roi: "6%",
+      funded: 0,
+      totalInvestment: "TBD",
+      minInvestment: "0.5 MNOK",
+      co2Reduction: "1,500",
+      operationalDate: "In Operation (2008)",
+      investors: 0,
+      image: molnelvaKraftverk,
+      status: "Available investment",
+      statusColor: "bg-success",
+      buildYear: "2008",
+      advantages: [
+        t('opportunities.molnelva.advantage1'),
+        t('opportunities.molnelva.advantage2')
+      ]
     }
   ];
   
@@ -81,7 +104,7 @@ export const InvestmentOpportunities = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto justify-items-center">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto justify-items-center">
           {opportunities.map((plant) => (
             <Card key={plant.id} className="group relative overflow-hidden border-0 shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-[1.02] bg-gradient-to-br from-white to-muted/20 h-full flex flex-col">
               {/* Gradient Border Effect */}
