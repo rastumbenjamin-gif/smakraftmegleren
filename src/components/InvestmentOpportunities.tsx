@@ -213,42 +213,42 @@ export const InvestmentOpportunities = () => {
         </div>
 
         {/* More Opportunities CTA Section */}
-        <div className="mt-20 text-center animate-fade-in [animation-delay:600ms]">
-          <Card className="max-w-4xl mx-auto bg-white/98 backdrop-blur-sm border-2 border-slate-200/80 shadow-xl rounded-3xl">
-            <CardContent className="p-10">
-              <div className="space-y-6">
-                <div className="flex items-center justify-center gap-3 mb-4">
-                  <div className="w-14 h-14 rounded-2xl bg-emerald-600 flex items-center justify-center shadow-lg">
-                    <Zap className="h-7 w-7 text-white" />
+        <div className="mt-12 text-center animate-fade-in [animation-delay:600ms]">
+          <Card className="max-w-3xl mx-auto bg-white/98 backdrop-blur-sm border-2 border-slate-200/80 shadow-lg rounded-2xl">
+            <CardContent className="p-6">
+              <div className="space-y-4">
+                <div className="flex items-center justify-center gap-2 mb-3">
+                  <div className="w-10 h-10 rounded-xl bg-emerald-600 flex items-center justify-center shadow-lg">
+                    <Zap className="h-5 w-5 text-white" />
                   </div>
-                  <h3 className="text-3xl font-bold text-slate-900">{t('opportunities.more.title')}</h3>
+                  <h3 className="text-xl font-bold text-slate-900">{t('opportunities.more.title')}</h3>
                 </div>
                 
-                <p className="text-lg text-slate-600 max-w-2xl mx-auto font-light">
+                <p className="text-sm text-slate-600 max-w-xl mx-auto font-light">
                   {t('opportunities.more.subtitle')}
                 </p>
 
-                <div className="flex flex-wrap justify-center gap-4 text-sm">
-                  <div className="flex items-center gap-2 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full border border-slate-200 shadow-sm">
-                    <MapPin className="h-4 w-4 text-emerald-600" />
+                <div className="flex flex-wrap justify-center gap-2 text-xs">
+                  <div className="flex items-center gap-1.5 bg-white/90 backdrop-blur-sm px-3 py-1.5 rounded-full border border-slate-200 shadow-sm">
+                    <MapPin className="h-3.5 w-3.5 text-emerald-600" />
                     <span className="text-slate-700">{t('opportunities.more.feature1')}</span>
                   </div>
-                  <div className="flex items-center gap-2 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full border border-slate-200 shadow-sm">
-                    <TrendingUp className="h-4 w-4 text-blue-600" />
+                  <div className="flex items-center gap-1.5 bg-white/90 backdrop-blur-sm px-3 py-1.5 rounded-full border border-slate-200 shadow-sm">
+                    <TrendingUp className="h-3.5 w-3.5 text-blue-600" />
                     <span className="text-slate-700">{t('opportunities.more.feature2')}</span>
                   </div>
-                  <div className="flex items-center gap-2 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full border border-slate-200 shadow-sm">
-                    <Users className="h-4 w-4 text-slate-600" />
+                  <div className="flex items-center gap-1.5 bg-white/90 backdrop-blur-sm px-3 py-1.5 rounded-full border border-slate-200 shadow-sm">
+                    <Users className="h-3.5 w-3.5 text-slate-600" />
                     <span className="text-slate-700">{t('opportunities.more.feature3')}</span>
                   </div>
                 </div>
 
-                <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
+                <div className="flex flex-col sm:flex-row gap-3 justify-center pt-3">
                   <MoreOpportunitiesModal>
                     <Button 
                       variant="default"
                       size="lg"
-                      className="bg-emerald-600 hover:bg-emerald-700 text-white px-10 py-7 h-auto text-lg w-full sm:w-auto rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
+                      className="bg-emerald-600 hover:bg-emerald-700 text-white px-6 py-4 h-auto text-base w-full sm:w-auto rounded-lg shadow-md hover:shadow-lg transition-all duration-300"
                     >
                       {t('opportunities.more.cta')}
                     </Button>
