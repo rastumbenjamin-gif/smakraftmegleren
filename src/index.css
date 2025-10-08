@@ -128,6 +128,7 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
     scroll-snap-type: y proximity;
   }
 
