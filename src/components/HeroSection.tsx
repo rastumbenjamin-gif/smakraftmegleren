@@ -9,7 +9,7 @@ import { useTypewriter } from "@/hooks/useTypewriter";
 export const HeroSection = () => {
   const { t } = useLanguage();
   const titleText = t('hero.title');
-  const typedTitle = useTypewriter(titleText, 15, 200);
+  const typedTitle = useTypewriter(titleText, 8, 150);
 
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden bg-slate-50">
