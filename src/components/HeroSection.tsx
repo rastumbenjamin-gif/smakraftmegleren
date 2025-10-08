@@ -51,24 +51,24 @@ export const HeroSection = () => {
             <Button 
               variant="outline" 
               size="lg" 
-              className="flex-1 sm:flex-1 sm:max-w-[400px] text-base sm:text-lg px-4 sm:px-6 py-6 sm:py-8 h-auto bg-black/30 backdrop-blur-sm text-white border-2 border-white hover:bg-white hover:text-primary shadow-2xl"
+              className="group flex-1 sm:flex-1 sm:max-w-[400px] text-base sm:text-lg px-4 sm:px-6 py-6 sm:py-8 h-auto bg-gradient-to-br from-white/20 to-white/5 backdrop-blur-md text-white border-2 border-white/40 hover:border-white hover:bg-gradient-to-br hover:from-white hover:to-white/95 hover:shadow-[0_0_30px_rgba(255,255,255,0.3)] transition-all duration-300 hover:scale-105"
               onClick={() => document.getElementById('investment-opportunities')?.scrollIntoView({ behavior: 'smooth' })}
             >
               <div className="flex flex-col items-center justify-center text-center h-full gap-1">
-                <span className="font-bold text-white text-lg">{t('hero.cta1')}</span>
-                <span className="text-sm opacity-90 text-white">{t('hero.cta1.line1')}</span>
-                <span className="text-sm opacity-90 text-white">{t('hero.cta1.line2')}</span>
+                <span className="font-bold text-white group-hover:text-primary text-lg transition-colors">{t('hero.cta1')}</span>
+                <span className="text-sm opacity-90 text-white group-hover:text-primary/80 transition-colors">{t('hero.cta1.line1')}</span>
+                <span className="text-sm opacity-90 text-white group-hover:text-primary/80 transition-colors">{t('hero.cta1.line2')}</span>
               </div>
             </Button>
             <SellPowerPlantModal>
               <Button 
                 variant="outline" 
                 size="lg"
-                className="flex-1 sm:flex-1 sm:max-w-[400px] text-base sm:text-lg px-4 sm:px-6 py-6 sm:py-8 h-auto bg-black/30 backdrop-blur-sm text-white border-2 border-white hover:bg-white hover:text-primary shadow-2xl"
+                className="group flex-1 sm:flex-1 sm:max-w-[400px] text-base sm:text-lg px-4 sm:px-6 py-6 sm:py-8 h-auto bg-gradient-to-br from-white/20 to-white/5 backdrop-blur-md text-white border-2 border-white/40 hover:border-white hover:bg-gradient-to-br hover:from-white hover:to-white/95 hover:shadow-[0_0_30px_rgba(255,255,255,0.3)] transition-all duration-300 hover:scale-105"
               >
                 <div className="flex flex-col items-center justify-center text-center w-full h-full gap-1">
-                  <span className="font-bold text-white text-lg">{t('hero.cta2')}</span>
-                  <span className="text-sm opacity-90 text-white">{t('hero.cta2.subtitle')}</span>
+                  <span className="font-bold text-white group-hover:text-primary text-lg transition-colors">{t('hero.cta2')}</span>
+                  <span className="text-sm opacity-90 text-white group-hover:text-primary/80 transition-colors">{t('hero.cta2.subtitle')}</span>
                 </div>
               </Button>
             </SellPowerPlantModal>
