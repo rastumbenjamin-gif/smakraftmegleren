@@ -24,21 +24,21 @@ export const HeroSection = () => {
           <div className="grid lg:grid-cols-[1.2fr_auto] gap-20 items-center max-w-[1400px] mx-auto">
             
             {/* Left Column - Main Content */}
-            <div className="space-y-12 animate-fade-in max-w-2xl">
+            <div className="space-y-12 max-w-3xl">
               <div className="space-y-8">
-                <h1 className="text-5xl md:text-6xl lg:text-[4.5rem] font-bold leading-[1.1] text-slate-900 tracking-tight">
+                <h1 className="text-5xl md:text-6xl lg:text-[5rem] font-bold leading-[1.15] text-slate-900 tracking-tight animate-fade-in [animation-delay:200ms]">
                   {t('hero.title')}
                 </h1>
-                <p className="text-xl md:text-2xl text-slate-600 leading-relaxed font-light max-w-xl">
+                <p className="text-xl md:text-2xl text-slate-600 leading-[1.7] font-light max-w-2xl animate-fade-in [animation-delay:400ms]">
                   {t('hero.subtitle')}
                 </p>
               </div>
 
               {/* Mobile CTA Buttons */}
-              <div className="lg:hidden space-y-4 pt-6 animate-fade-in [animation-delay:400ms]">
+              <div className="lg:hidden space-y-4 pt-6">
                 <Button 
                   size="lg"
-                  className="group w-full text-lg px-10 py-7 h-auto bg-emerald-600 hover:bg-emerald-700 text-white border-0 shadow-lg hover:shadow-xl hover:shadow-emerald-600/30 transition-all duration-300 hover:scale-[1.02] rounded-xl font-semibold"
+                  className="group w-full text-lg px-10 py-7 h-auto bg-emerald-600 hover:bg-emerald-700 text-white border-0 shadow-lg hover:shadow-xl hover:shadow-emerald-600/30 transition-all duration-300 hover:scale-[1.02] rounded-xl font-semibold animate-fade-in [animation-delay:600ms]"
                   onClick={() => document.getElementById('investment-opportunities')?.scrollIntoView({ behavior: 'smooth' })}
                 >
                   <div className="flex items-center gap-3">
@@ -51,7 +51,7 @@ export const HeroSection = () => {
                   <Button 
                     variant="outline"
                     size="lg"
-                    className="group w-full text-lg px-10 py-7 h-auto bg-white hover:bg-slate-50 text-slate-900 border-2 border-slate-300 hover:border-emerald-600 shadow-lg transition-all duration-300 hover:scale-[1.02] rounded-xl font-semibold"
+                    className="group w-full text-lg px-10 py-7 h-auto bg-white hover:bg-slate-50 text-slate-900 border-2 border-slate-300 hover:border-emerald-600 shadow-lg transition-all duration-300 hover:scale-[1.02] rounded-xl font-semibold animate-fade-in [animation-delay:800ms]"
                   >
                     <div className="flex items-center gap-3">
                       <span>{t('hero.cta2')}</span>
@@ -63,14 +63,14 @@ export const HeroSection = () => {
             </div>
 
             {/* Right Column - CTA Cards */}
-            <div className="hidden lg:flex flex-col gap-6 animate-fade-in [animation-delay:400ms] min-w-[480px]">
+            <div className="hidden lg:flex flex-col gap-6 min-w-[480px]">
               {/* Card 1 - Invest CTA */}
               <div 
-                className="bg-white/98 backdrop-blur-sm rounded-3xl shadow-xl p-8 border-2 border-slate-200/80 hover:shadow-2xl hover:border-emerald-600 transition-all duration-300 hover:-translate-y-1 cursor-pointer group"
+                className="bg-white/98 backdrop-blur-sm rounded-3xl shadow-xl p-8 border-2 border-slate-200/80 hover:shadow-2xl hover:border-emerald-600 transition-all duration-300 hover:-translate-y-1 cursor-pointer group animate-fade-in [animation-delay:600ms]"
                 onClick={() => document.getElementById('investment-opportunities')?.scrollIntoView({ behavior: 'smooth' })}
               >
                 <div className="flex items-start gap-6">
-                  <div className="w-16 h-16 rounded-2xl bg-emerald-600 flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-transform shadow-xl shadow-emerald-600/30">
+                  <div className="w-16 h-16 rounded-2xl bg-emerald-600 flex items-center justify-center flex-shrink-0 group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 shadow-xl shadow-emerald-600/30">
                     <TrendingUp className="h-8 w-8 text-white" />
                   </div>
                   <div className="flex-1 pt-1">
@@ -84,9 +84,9 @@ export const HeroSection = () => {
 
               {/* Card 2 - Sell CTA */}
               <SellPowerPlantModal>
-                <div className="bg-white/98 backdrop-blur-sm rounded-3xl shadow-xl p-8 border-2 border-slate-200/80 hover:shadow-2xl hover:border-emerald-600 transition-all duration-300 hover:-translate-y-1 cursor-pointer group">
+                <div className="bg-white/98 backdrop-blur-sm rounded-3xl shadow-xl p-8 border-2 border-slate-200/80 hover:shadow-2xl hover:border-emerald-600 transition-all duration-300 hover:-translate-y-1 cursor-pointer group animate-fade-in [animation-delay:800ms]">
                   <div className="flex items-start gap-6">
-                    <div className="w-16 h-16 rounded-2xl bg-emerald-600 flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-transform shadow-xl shadow-emerald-600/30">
+                    <div className="w-16 h-16 rounded-2xl bg-emerald-600 flex items-center justify-center flex-shrink-0 group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 shadow-xl shadow-emerald-600/30">
                       <Droplet className="h-8 w-8 text-white" />
                     </div>
                     <div className="flex-1 pt-1">
