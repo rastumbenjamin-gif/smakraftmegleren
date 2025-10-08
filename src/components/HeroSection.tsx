@@ -4,9 +4,12 @@ import heroImage from "@/assets/hydro-hero-new.jpg";
 import { Zap, Droplet, TrendingUp } from "lucide-react";
 import { SellPowerPlantModal } from "./SellPowerPlantModal";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { useTypewriter } from "@/hooks/useTypewriter";
 
 export const HeroSection = () => {
   const { t } = useLanguage();
+  const titleText = t('hero.title');
+  const typedTitle = useTypewriter(titleText, 40, 300);
 
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden bg-slate-50">
@@ -26,8 +29,9 @@ export const HeroSection = () => {
             {/* Left Column - Main Content */}
             <div className="space-y-12 max-w-3xl">
               <div className="space-y-8">
-                <h1 className="text-5xl md:text-6xl lg:text-[5rem] font-bold leading-[1.15] text-slate-900 tracking-tight animate-fade-in [animation-delay:200ms]">
-                  {t('hero.title')}
+                <h1 className="text-5xl md:text-6xl lg:text-[5rem] font-bold leading-[1.15] text-slate-900 tracking-tight animate-fade-in [animation-delay:200ms] min-h-[1.15em]">
+                  {typedTitle}
+                  <span className="inline-block w-1 h-[0.9em] bg-emerald-600 ml-1 animate-pulse" style={{ verticalAlign: 'text-bottom' }}></span>
                 </h1>
                 <p className="text-xl md:text-2xl text-slate-600 leading-[1.7] font-light max-w-2xl animate-fade-in [animation-delay:400ms]">
                   {t('hero.subtitle')}
