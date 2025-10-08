@@ -19,25 +19,25 @@ export const ComparisonSection = () => {
   return (
     <section 
       ref={sectionRef}
-      className="py-20 bg-gradient-to-b from-background to-muted/30 opacity-0 translate-y-8 transition-all duration-1000 ease-out"
+      className="py-20 bg-slate-50 opacity-0 translate-y-8 transition-all duration-1000 ease-out"
     >
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <Badge className="mb-4">{t('comparison.badge')}</Badge>
-          <h2 className="text-4xl font-bold mb-6">{t('comparison.title')}</h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+        <div className="text-center mb-16 animate-fade-in">
+          <Badge className="mb-4 bg-emerald-600 text-white border-0">{t('comparison.badge')}</Badge>
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-slate-900">{t('comparison.title')}</h2>
+          <p className="text-xl text-slate-600 max-w-3xl mx-auto font-light">
             {t('comparison.subtitle')}
           </p>
         </div>
 
         <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {/* Hydro Plants - Featured */}
-          <Card className="border-2 border-hydro-blue/40 shadow-2xl hover:shadow-3xl transition-all duration-300 bg-gradient-to-br from-hydro-blue/5 to-hydro-green/5 md:scale-105 md:-translate-y-4 flex flex-col min-h-[600px]">
-            <CardHeader className="text-center pb-4">
-              <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-gradient-to-r from-hydro-blue to-hydro-green flex items-center justify-center shadow-lg animate-pulse">
+          <Card className="bg-white/98 backdrop-blur-sm border-2 border-emerald-200/80 shadow-xl hover:shadow-2xl hover:border-emerald-400 transition-all duration-300 md:scale-105 md:-translate-y-4 flex flex-col min-h-[600px] rounded-3xl overflow-hidden">
+            <CardHeader className="text-center pb-4 bg-gradient-to-br from-emerald-50/50 to-transparent">
+              <div className="w-20 h-20 mx-auto mb-4 rounded-2xl bg-emerald-600 flex items-center justify-center shadow-lg">
                 <TrendingUp className="h-10 w-10 text-white" />
               </div>
-              <CardTitle className="text-2xl text-hydro-blue font-bold">{t('comparison.hydro.title')}</CardTitle>
+              <CardTitle className="text-2xl text-emerald-700 font-bold">{t('comparison.hydro.title')}</CardTitle>
             </CardHeader>
             <CardContent className="space-y-4 flex-grow flex flex-col">
               <div className="flex items-center justify-between">
@@ -101,12 +101,12 @@ export const ComparisonSection = () => {
           </Card>
 
           {/* Carbon Credits */}
-          <Card className="border-warning/20 flex flex-col min-h-[600px]">
-            <CardHeader className="text-center pb-4">
-              <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-warning/10 flex items-center justify-center">
-                <Target className="h-8 w-8 text-warning" />
+          <Card className="bg-white/98 backdrop-blur-sm border-2 border-slate-200/80 shadow-xl hover:shadow-2xl hover:border-slate-300 transition-all duration-300 flex flex-col min-h-[600px] rounded-3xl overflow-hidden">
+            <CardHeader className="text-center pb-4 bg-gradient-to-br from-slate-50/50 to-transparent">
+              <div className="w-16 h-16 mx-auto mb-4 rounded-2xl bg-slate-200 flex items-center justify-center">
+                <Target className="h-8 w-8 text-slate-600" />
               </div>
-              <CardTitle className="text-2xl text-warning">{t('comparison.carbon.title')}</CardTitle>
+              <CardTitle className="text-2xl text-slate-700">{t('comparison.carbon.title')}</CardTitle>
             </CardHeader>
             <CardContent className="space-y-4 flex-grow flex flex-col">
               <div className="flex items-center justify-between">
@@ -170,12 +170,12 @@ export const ComparisonSection = () => {
           </Card>
 
           {/* ESG Funds */}
-          <Card className="border-muted flex flex-col min-h-[600px]">
-            <CardHeader className="text-center pb-4">
-              <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-muted flex items-center justify-center">
-                <TrendingUp className="h-8 w-8 text-muted-foreground" />
+          <Card className="bg-white/98 backdrop-blur-sm border-2 border-slate-200/80 shadow-xl hover:shadow-2xl hover:border-slate-300 transition-all duration-300 flex flex-col min-h-[600px] rounded-3xl overflow-hidden">
+            <CardHeader className="text-center pb-4 bg-gradient-to-br from-slate-50/50 to-transparent">
+              <div className="w-16 h-16 mx-auto mb-4 rounded-2xl bg-slate-200 flex items-center justify-center">
+                <TrendingUp className="h-8 w-8 text-slate-600" />
               </div>
-              <CardTitle className="text-2xl text-muted-foreground">{t('comparison.esg.title')}</CardTitle>
+              <CardTitle className="text-2xl text-slate-700">{t('comparison.esg.title')}</CardTitle>
             </CardHeader>
             <CardContent className="space-y-4 flex-grow flex flex-col">
               <div className="flex items-center justify-between">
@@ -240,12 +240,12 @@ export const ComparisonSection = () => {
         </div>
 
         {/* Single Read More Button */}
-        <div className="flex justify-center mt-12">
+        <div className="flex justify-center mt-12 animate-fade-in [animation-delay:400ms]">
           <Button 
             onClick={toggleAllDetails}
             variant="outline"
             size="lg"
-            className="px-8 py-3 border-2 hover:bg-primary hover:text-white transition-all duration-300"
+            className="px-8 py-4 bg-white/98 backdrop-blur-sm border-2 border-slate-300 hover:border-emerald-600 hover:bg-slate-50 text-slate-900 transition-all duration-300 rounded-xl shadow-lg"
           >
             <Info className="h-5 w-5 mr-2" />
             {allDetailsOpen ? t('comparison.showLess') : t('comparison.readMore')}

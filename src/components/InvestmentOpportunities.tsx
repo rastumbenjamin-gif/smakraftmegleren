@@ -93,25 +93,20 @@ export const InvestmentOpportunities = () => {
     <section 
       id="investment-opportunities" 
       ref={sectionRef}
-      className="py-20 bg-muted/20 opacity-0 translate-y-8 transition-all duration-1000 ease-out"
+      className="py-20 bg-white opacity-0 translate-y-8 transition-all duration-1000 ease-out"
     >
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <Badge className="mb-4 bg-hydro-blue text-white">{t('opportunities.badge')}</Badge>
-          <h2 className="text-4xl font-bold mb-6">{t('opportunities.title')}</h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+        <div className="text-center mb-16 animate-fade-in">
+          <Badge className="mb-4 bg-emerald-600 text-white border-0">{t('opportunities.badge')}</Badge>
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-slate-900">{t('opportunities.title')}</h2>
+          <p className="text-xl text-slate-600 max-w-3xl mx-auto font-light">
             {t('opportunities.subtitle')}
           </p>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto justify-items-center">
           {opportunities.map((plant) => (
-            <Card key={plant.id} className="group relative overflow-hidden border-0 shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-[1.02] bg-gradient-to-br from-white to-muted/20 h-full flex flex-col">
-              {/* Gradient Border Effect */}
-              <div className="absolute inset-0 bg-gradient-to-r from-hydro-blue via-hydro-green to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-[2px] rounded-lg">
-                <div className="w-full h-full bg-background rounded-[6px]" />
-              </div>
-              
+            <Card key={plant.id} className="group relative overflow-hidden bg-white/98 backdrop-blur-sm border-2 border-slate-200/80 shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-[1.02] hover:border-emerald-400 h-full flex flex-col rounded-3xl">
               <div className="relative z-10 h-full flex flex-col">
                 {/* Plant Image */}
                 <div className="relative h-48 overflow-hidden rounded-t-lg">
@@ -218,33 +213,33 @@ export const InvestmentOpportunities = () => {
         </div>
 
         {/* More Opportunities CTA Section */}
-        <div className="mt-20 text-center">
-          <Card className="max-w-4xl mx-auto bg-gradient-to-br from-hydro-blue/5 to-hydro-green/5 border-hydro-blue/20">
-            <CardContent className="p-8">
+        <div className="mt-20 text-center animate-fade-in [animation-delay:600ms]">
+          <Card className="max-w-4xl mx-auto bg-white/98 backdrop-blur-sm border-2 border-slate-200/80 shadow-xl rounded-3xl">
+            <CardContent className="p-10">
               <div className="space-y-6">
                 <div className="flex items-center justify-center gap-3 mb-4">
-                  <div className="w-12 h-12 rounded-full bg-gradient-to-r from-hydro-blue to-hydro-green flex items-center justify-center">
-                    <Zap className="h-6 w-6 text-white" />
+                  <div className="w-14 h-14 rounded-2xl bg-emerald-600 flex items-center justify-center shadow-lg">
+                    <Zap className="h-7 w-7 text-white" />
                   </div>
-                  <h3 className="text-2xl font-bold">{t('opportunities.more.title')}</h3>
+                  <h3 className="text-3xl font-bold text-slate-900">{t('opportunities.more.title')}</h3>
                 </div>
                 
-                <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                <p className="text-lg text-slate-600 max-w-2xl mx-auto font-light">
                   {t('opportunities.more.subtitle')}
                 </p>
 
                 <div className="flex flex-wrap justify-center gap-4 text-sm">
-                  <div className="flex items-center gap-2 bg-hydro-blue/10 px-4 py-2 rounded-full">
-                    <MapPin className="h-4 w-4 text-hydro-blue" />
-                    <span>{t('opportunities.more.feature1')}</span>
+                  <div className="flex items-center gap-2 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full border border-slate-200 shadow-sm">
+                    <MapPin className="h-4 w-4 text-emerald-600" />
+                    <span className="text-slate-700">{t('opportunities.more.feature1')}</span>
                   </div>
-                  <div className="flex items-center gap-2 bg-hydro-green/10 px-4 py-2 rounded-full">
-                    <TrendingUp className="h-4 w-4 text-hydro-green" />
-                    <span>{t('opportunities.more.feature2')}</span>
+                  <div className="flex items-center gap-2 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full border border-slate-200 shadow-sm">
+                    <TrendingUp className="h-4 w-4 text-blue-600" />
+                    <span className="text-slate-700">{t('opportunities.more.feature2')}</span>
                   </div>
-                  <div className="flex items-center gap-2 bg-primary/10 px-4 py-2 rounded-full">
-                    <Users className="h-4 w-4 text-primary" />
-                    <span>{t('opportunities.more.feature3')}</span>
+                  <div className="flex items-center gap-2 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full border border-slate-200 shadow-sm">
+                    <Users className="h-4 w-4 text-slate-600" />
+                    <span className="text-slate-700">{t('opportunities.more.feature3')}</span>
                   </div>
                 </div>
 
@@ -253,7 +248,7 @@ export const InvestmentOpportunities = () => {
                     <Button 
                       variant="default"
                       size="lg"
-                      className="bg-gradient-to-r from-hydro-blue to-hydro-green text-white px-8 py-6 h-auto text-lg w-full sm:w-auto"
+                      className="bg-emerald-600 hover:bg-emerald-700 text-white px-10 py-7 h-auto text-lg w-full sm:w-auto rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
                     >
                       {t('opportunities.more.cta')}
                     </Button>
