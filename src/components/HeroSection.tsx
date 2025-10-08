@@ -56,8 +56,7 @@ export const HeroSection = () => {
             >
               <div className="flex flex-col items-center justify-center text-center h-full gap-2">
                 <span className="font-bold text-white text-xl sm:text-2xl drop-shadow-lg">{t('hero.cta1')}</span>
-                <span className="text-base opacity-90 text-white drop-shadow-md">{t('hero.cta1.line1')}</span>
-                <span className="text-base opacity-90 text-white drop-shadow-md">{t('hero.cta1.line2')}</span>
+                <span className="text-base opacity-90 text-white drop-shadow-md">{t('hero.cta1.line1')} • {t('hero.cta1.line2')}</span>
               </div>
             </Button>
             <SellPowerPlantModal>
