@@ -9,13 +9,13 @@ export const HeroSection = () => {
   const { t } = useLanguage();
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-900 via-blue-950 to-slate-900">
       {/* Background Image */}
       <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-40"
         style={{ backgroundImage: `url(${heroImage})` }}
       >
-        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/80" />
+        <div className="absolute inset-0 bg-gradient-to-b from-blue-900/80 via-cyan-900/70 to-blue-950/90" />
       </div>
 
       {/* Content */}
@@ -33,16 +33,16 @@ export const HeroSection = () => {
 
           {/* Feature Badges */}
           <div className="flex flex-wrap justify-center gap-4 mb-12 animate-fade-in [animation-delay:400ms]">
-            <div className="flex items-center gap-2 bg-white/10 backdrop-blur-md px-5 py-3 rounded-full border border-white/30">
-              <Zap className="h-5 w-5" />
+            <div className="flex items-center gap-2 bg-white/15 backdrop-blur-md px-5 py-3 rounded-full border border-cyan-400/40">
+              <Zap className="h-5 w-5 text-cyan-300" />
               <span className="font-medium text-base">{t('hero.feature1')}</span>
             </div>
-            <div className="flex items-center gap-2 bg-white/10 backdrop-blur-md px-5 py-3 rounded-full border border-white/30">
-              <Droplet className="h-5 w-5" />
+            <div className="flex items-center gap-2 bg-white/15 backdrop-blur-md px-5 py-3 rounded-full border border-blue-400/40">
+              <Droplet className="h-5 w-5 text-blue-300" />
               <span className="font-medium text-base">{t('hero.feature2')}</span>
             </div>
-            <div className="flex items-center gap-2 bg-white/10 backdrop-blur-md px-5 py-3 rounded-full border border-white/30">
-              <TrendingUp className="h-5 w-5" />
+            <div className="flex items-center gap-2 bg-white/15 backdrop-blur-md px-5 py-3 rounded-full border border-emerald-400/40">
+              <TrendingUp className="h-5 w-5 text-emerald-300" />
               <span className="font-medium text-base">{t('hero.feature3')}</span>
             </div>
           </div>
@@ -52,7 +52,7 @@ export const HeroSection = () => {
             <Button 
               variant="outline" 
               size="lg" 
-              className="group w-full text-lg px-8 py-10 h-auto bg-white/10 backdrop-blur-md hover:bg-white/20 text-white border-2 border-white/40 hover:border-white hover:shadow-[0_0_30px_rgba(255,255,255,0.3)] transition-all duration-500 hover:scale-[1.02] rounded-2xl"
+              className="group w-full text-lg px-8 py-10 h-auto bg-white/15 backdrop-blur-md hover:bg-cyan-500/30 text-white border-2 border-cyan-400/50 hover:border-cyan-300 hover:shadow-[0_0_30px_rgba(34,211,238,0.4)] transition-all duration-500 hover:scale-[1.02] rounded-2xl"
               onClick={() => document.getElementById('investment-opportunities')?.scrollIntoView({ behavior: 'smooth' })}
             >
               <div className="flex flex-col items-center justify-center text-center gap-2">
@@ -64,7 +64,7 @@ export const HeroSection = () => {
               <Button 
                 variant="outline" 
                 size="lg"
-                className="group w-full text-lg px-8 py-10 h-auto bg-white/10 backdrop-blur-md hover:bg-white/20 text-white border-2 border-white/40 hover:border-white hover:shadow-[0_0_30px_rgba(255,255,255,0.3)] transition-all duration-500 hover:scale-[1.02] rounded-2xl"
+                className="group w-full text-lg px-8 py-10 h-auto bg-white/15 backdrop-blur-md hover:bg-blue-500/30 text-white border-2 border-blue-400/50 hover:border-blue-300 hover:shadow-[0_0_30px_rgba(59,130,246,0.4)] transition-all duration-500 hover:scale-[1.02] rounded-2xl"
               >
                 <div className="flex flex-col items-center justify-center text-center gap-2">
                   <span className="font-bold text-2xl">{t('hero.cta2')}</span>
