@@ -7,9 +7,9 @@ export const Header = () => {
     <header className="absolute top-0 left-0 right-0 z-50 bg-transparent">
       <div className="container mx-auto px-4 py-6">
         <div className="flex items-center justify-between">
-          <div className="text-2xl md:text-3xl font-bold text-white tracking-tight">
-            <span className="text-white">Småkraft</span>
-            <span className="text-hydro-green">megleren</span>
+          <div className="text-2xl md:text-3xl font-bold tracking-tight">
+            <span className="text-slate-900">Småkraft</span>
+            <span className="text-emerald-600">megleren</span>
           </div>
           
           {/* Navigation placeholder for future use */}

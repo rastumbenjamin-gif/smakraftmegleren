@@ -56,11 +56,11 @@ export const HeroSection = () => {
                 </div>
               </div>
 
-              {/* CTA Buttons */}
-              <div className="space-y-4 pt-4 animate-fade-in [animation-delay:400ms]">
+              {/* Mobile CTA Buttons */}
+              <div className="md:hidden space-y-4 pt-4 animate-fade-in [animation-delay:400ms]">
                 <Button 
                   size="lg"
-                  className="group w-full md:w-auto text-lg px-10 py-7 h-auto bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-700 hover:to-blue-700 text-white border-0 shadow-xl hover:shadow-2xl hover:shadow-cyan-500/30 transition-all duration-300 hover:scale-[1.02] rounded-xl font-semibold"
+                  className="group w-full text-lg px-10 py-7 h-auto bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-700 hover:to-blue-700 text-white border-0 shadow-xl hover:shadow-2xl hover:shadow-cyan-500/30 transition-all duration-300 hover:scale-[1.02] rounded-xl font-semibold"
                   onClick={() => document.getElementById('investment-opportunities')?.scrollIntoView({ behavior: 'smooth' })}
                 >
                   <div className="flex items-center gap-3">
@@ -73,7 +73,7 @@ export const HeroSection = () => {
                   <Button 
                     variant="outline"
                     size="lg"
-                    className="group w-full md:w-auto text-lg px-10 py-7 h-auto bg-white hover:bg-slate-50 text-slate-900 border-2 border-slate-300 hover:border-slate-400 shadow-lg transition-all duration-300 hover:scale-[1.02] rounded-xl font-semibold"
+                    className="group w-full text-lg px-10 py-7 h-auto bg-white hover:bg-slate-50 text-slate-900 border-2 border-slate-300 hover:border-slate-400 shadow-lg transition-all duration-300 hover:scale-[1.02] rounded-xl font-semibold"
                   >
                     <div className="flex items-center gap-3">
                       <span>{t('hero.cta2')}</span>
@@ -84,46 +84,42 @@ export const HeroSection = () => {
               </div>
             </div>
 
-            {/* Right Column - Floating Cards */}
+            {/* Right Column - CTA Cards */}
             <div className="hidden md:block relative h-[600px] animate-fade-in [animation-delay:600ms]">
-              {/* Card 1 - Investment Stats */}
-              <div className="absolute top-10 right-20 bg-white rounded-2xl shadow-2xl p-6 border border-slate-200 hover:shadow-3xl transition-all duration-300 hover:-translate-y-2 cursor-pointer max-w-xs">
-                <div className="flex items-center gap-3 mb-3">
-                  <div className="w-10 h-10 rounded-full bg-gradient-to-br from-cyan-500 to-blue-500 flex items-center justify-center">
-                    <TrendingUp className="h-5 w-5 text-white" />
+              {/* Card 1 - Invest CTA */}
+              <div 
+                className="absolute top-20 right-10 bg-white rounded-2xl shadow-2xl p-8 border border-slate-200 hover:shadow-3xl transition-all duration-500 hover:-translate-y-2 cursor-pointer max-w-sm group"
+                onClick={() => document.getElementById('investment-opportunities')?.scrollIntoView({ behavior: 'smooth' })}
+              >
+                <div className="flex items-start gap-4">
+                  <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+                    <TrendingUp className="h-7 w-7 text-white" />
                   </div>
-                  <div>
-                    <p className="text-2xl font-bold text-slate-900">{t('hero.cta1.line1')}</p>
-                    <p className="text-sm text-slate-600">{t('hero.feature1')}</p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Card 2 - Hydro Power */}
-              <div className="absolute top-64 right-4 bg-white rounded-2xl shadow-2xl p-6 border border-slate-200 hover:shadow-3xl transition-all duration-300 hover:-translate-y-2 cursor-pointer max-w-xs">
-                <div className="flex items-center gap-3 mb-3">
-                  <div className="w-10 h-10 rounded-full bg-gradient-to-br from-blue-500 to-indigo-500 flex items-center justify-center">
-                    <Droplet className="h-5 w-5 text-white" />
-                  </div>
-                  <div>
-                    <p className="text-2xl font-bold text-slate-900">{t('hero.feature2')}</p>
-                    <p className="text-sm text-slate-600">{t('hero.cta1.line2')}</p>
+                  <div className="flex-1">
+                    <h3 className="text-2xl font-bold text-slate-900 mb-2">{t('hero.cta1')}</h3>
+                    <p className="text-sm text-slate-600 leading-relaxed">
+                      {t('hero.cta1.line1')} • {t('hero.cta1.line2')}
+                    </p>
                   </div>
                 </div>
               </div>
 
-              {/* Card 3 - Energy */}
-              <div className="absolute bottom-20 right-32 bg-white rounded-2xl shadow-2xl p-6 border border-slate-200 hover:shadow-3xl transition-all duration-300 hover:-translate-y-2 cursor-pointer max-w-xs">
-                <div className="flex items-center gap-3 mb-3">
-                  <div className="w-10 h-10 rounded-full bg-gradient-to-br from-emerald-500 to-teal-500 flex items-center justify-center">
-                    <Zap className="h-5 w-5 text-white" />
-                  </div>
-                  <div>
-                    <p className="text-2xl font-bold text-slate-900">{t('hero.feature3')}</p>
-                    <p className="text-sm text-slate-600">{t('hero.subtitle').slice(0, 30)}...</p>
+              {/* Card 2 - Sell CTA */}
+              <SellPowerPlantModal>
+                <div className="absolute bottom-32 right-20 bg-white rounded-2xl shadow-2xl p-8 border border-slate-200 hover:shadow-3xl transition-all duration-500 hover:-translate-y-2 cursor-pointer max-w-sm group">
+                  <div className="flex items-start gap-4">
+                    <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+                      <Droplet className="h-7 w-7 text-white" />
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="text-2xl font-bold text-slate-900 mb-2">{t('hero.cta2')}</h3>
+                      <p className="text-sm text-slate-600 leading-relaxed">
+                        {t('hero.cta2.subtitle')}
+                      </p>
+                    </div>
                   </div>
                 </div>
-              </div>
+              </SellPowerPlantModal>
             </div>
 
           </div>
