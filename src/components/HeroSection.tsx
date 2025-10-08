@@ -1,8 +1,8 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import heroImage from "@/assets/hydro-hero-new.jpg";
-import hydroPlant1 from "@/assets/hydro-plant-1.jpg";
-import hydroPlant2 from "@/assets/hydro-plant-2.jpg";
+import riverFlow from "@/assets/river-flow.jpg";
+import waterfall from "@/assets/small-waterfall.jpg";
 import { Zap, Droplet, TrendingUp } from "lucide-react";
 import { SellPowerPlantModal } from "./SellPowerPlantModal";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -58,9 +58,9 @@ export const HeroSection = () => {
             >
               <div 
                 className="absolute inset-0 bg-cover bg-center opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-                style={{ backgroundImage: `url(${hydroPlant1})` }}
+                style={{ backgroundImage: `url(${riverFlow})` }}
               />
-              <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               <div className="relative flex flex-col items-center justify-center text-center h-full gap-2">
                 <span className="font-bold text-white text-xl sm:text-2xl drop-shadow-lg">{t('hero.cta1')}</span>
                 <span className="text-base opacity-90 text-white drop-shadow-md">{t('hero.cta1.line1')} • {t('hero.cta1.line2')}</span>
@@ -74,9 +74,9 @@ export const HeroSection = () => {
               >
                 <div 
                   className="absolute inset-0 bg-cover bg-center opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-                  style={{ backgroundImage: `url(${hydroPlant2})` }}
+                  style={{ backgroundImage: `url(${waterfall})` }}
                 />
-                <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 <div className="relative flex flex-col items-center justify-center text-center w-full h-full gap-2">
                   <span className="font-bold text-white text-xl sm:text-2xl drop-shadow-lg">{t('hero.cta2')}</span>
                   <span className="text-base opacity-90 text-white drop-shadow-md">{t('hero.cta2.subtitle')}</span>
