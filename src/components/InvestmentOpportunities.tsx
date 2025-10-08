@@ -96,10 +96,10 @@ export const InvestmentOpportunities = () => {
       className="py-12 bg-white opacity-0 translate-y-8 transition-all duration-1000 ease-out"
     >
       <div className="container mx-auto px-4">
-        <div className="text-center mb-10 animate-fade-in">
-          <Badge className="mb-3 bg-emerald-600 text-white border-0 text-sm">{t('opportunities.badge')}</Badge>
-          <h2 className="text-2xl md:text-3xl font-bold mb-4 text-slate-900">{t('opportunities.title')}</h2>
-          <p className="text-base text-slate-600 max-w-2xl mx-auto font-light">
+        <div className="text-center mb-8 animate-fade-in">
+          <Badge className="mb-2 bg-emerald-600 text-white border-0 text-xs">{t('opportunities.badge')}</Badge>
+          <h2 className="text-xl md:text-2xl font-bold mb-3 text-slate-900">{t('opportunities.title')}</h2>
+          <p className="text-sm text-slate-600 max-w-xl mx-auto font-light">
             {t('opportunities.subtitle')}
           </p>
         </div>
