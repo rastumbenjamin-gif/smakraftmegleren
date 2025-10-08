@@ -1,8 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import heroImage from "@/assets/hydro-hero-new.jpg";
-import riverFlow from "@/assets/river-flow.jpg";
-import waterfall from "@/assets/small-waterfall.jpg";
 import { Zap, Droplet, TrendingUp } from "lucide-react";
 import { SellPowerPlantModal } from "./SellPowerPlantModal";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -53,15 +51,10 @@ export const HeroSection = () => {
             <Button 
               variant="outline" 
               size="lg" 
-              className="group relative flex-1 sm:flex-1 sm:max-w-[500px] text-base sm:text-xl px-6 sm:px-8 py-8 sm:py-10 h-auto bg-black/60 backdrop-blur-md text-white border-2 border-white/50 hover:border-white hover:shadow-[0_0_40px_rgba(255,255,255,0.4)] transition-all duration-300 hover:scale-[1.02] rounded-2xl overflow-hidden"
+              className="group flex-1 sm:flex-1 sm:max-w-[500px] text-base sm:text-xl px-6 sm:px-8 py-8 sm:py-10 h-auto bg-black/60 backdrop-blur-md hover:bg-black/20 hover:backdrop-blur-sm text-white border-2 border-white/50 hover:border-white hover:shadow-[0_0_40px_rgba(255,255,255,0.4)] transition-all duration-500 hover:scale-[1.02] rounded-2xl"
               onClick={() => document.getElementById('investment-opportunities')?.scrollIntoView({ behavior: 'smooth' })}
             >
-              <div 
-                className="absolute inset-0 bg-cover bg-center opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-                style={{ backgroundImage: `url(${riverFlow})` }}
-              />
-              <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              <div className="relative flex flex-col items-center justify-center text-center h-full gap-2">
+              <div className="flex flex-col items-center justify-center text-center h-full gap-2">
                 <span className="font-bold text-white text-xl sm:text-2xl drop-shadow-lg">{t('hero.cta1')}</span>
                 <span className="text-base opacity-90 text-white drop-shadow-md">{t('hero.cta1.line1')} • {t('hero.cta1.line2')}</span>
               </div>
@@ -70,14 +63,9 @@ export const HeroSection = () => {
               <Button 
                 variant="outline" 
                 size="lg"
-                className="group relative flex-1 sm:flex-1 sm:max-w-[500px] text-base sm:text-xl px-6 sm:px-8 py-8 sm:py-10 h-auto bg-black/60 backdrop-blur-md text-white border-2 border-white/50 hover:border-white hover:shadow-[0_0_40px_rgba(255,255,255,0.4)] transition-all duration-300 hover:scale-[1.02] rounded-2xl overflow-hidden"
+                className="group flex-1 sm:flex-1 sm:max-w-[500px] text-base sm:text-xl px-6 sm:px-8 py-8 sm:py-10 h-auto bg-black/60 backdrop-blur-md hover:bg-black/20 hover:backdrop-blur-sm text-white border-2 border-white/50 hover:border-white hover:shadow-[0_0_40px_rgba(255,255,255,0.4)] transition-all duration-500 hover:scale-[1.02] rounded-2xl"
               >
-                <div 
-                  className="absolute inset-0 bg-cover bg-center opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-                  style={{ backgroundImage: `url(${waterfall})` }}
-                />
-                <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                <div className="relative flex flex-col items-center justify-center text-center w-full h-full gap-2">
+                <div className="flex flex-col items-center justify-center text-center w-full h-full gap-2">
                   <span className="font-bold text-white text-xl sm:text-2xl drop-shadow-lg">{t('hero.cta2')}</span>
                   <span className="text-base opacity-90 text-white drop-shadow-md">{t('hero.cta2.subtitle')}</span>
                 </div>
