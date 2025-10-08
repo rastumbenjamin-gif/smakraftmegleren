@@ -4,6 +4,12 @@ export const useTypewriter = (text: string, baseSpeed: number = 50, delay: numbe
   const [displayText, setDisplayText] = useState('');
   const [currentIndex, setCurrentIndex] = useState(0);
 
+  // Reset when text changes
+  useEffect(() => {
+    setDisplayText('');
+    setCurrentIndex(0);
+  }, [text]);
+
   useEffect(() => {
     // Initial delay before starting
     const initialTimeout = setTimeout(() => {
