@@ -9,65 +9,66 @@ export const HeroSection = () => {
   const { t } = useLanguage();
 
   return (
-    <section className="relative min-h-[120vh] flex items-center justify-center overflow-hidden py-20">
-      {/* Background Image with Parallax Effect */}
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Background Image */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: `url(${heroImage})` }}
       >
-        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70" />
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/60 via-primary/40 to-hydro-green/50" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/80" />
       </div>
 
       {/* Content */}
-      <div className="relative z-10 container mx-auto px-4 text-center text-white">
-        <div className="max-w-4xl mx-auto space-y-10 sm:space-y-12 animate-fade-in">
-          <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold leading-tight animate-fade-in [animation-delay:400ms] text-white drop-shadow-2xl [text-shadow:_2px_2px_8px_rgb(0_0_0_/_0.8)] mb-8">
-            {t('hero.title')}
-          </h1>
-          
-          <div className="bg-black/30 backdrop-blur-sm rounded-xl p-8 mx-auto max-w-3xl border border-white/20 shadow-2xl my-10">
-            <p className="text-lg sm:text-xl md:text-2xl text-white leading-relaxed animate-fade-in [animation-delay:600ms] font-medium">
+      <div className="relative z-10 container mx-auto px-4 text-white pt-24 pb-16">
+        <div className="max-w-7xl mx-auto">
+          {/* Main Title */}
+          <div className="text-center mb-12 animate-fade-in">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-white drop-shadow-2xl [text-shadow:_2px_2px_8px_rgb(0_0_0_/_0.8)] mb-6">
+              {t('hero.title')}
+            </h1>
+            <p className="text-xl sm:text-2xl md:text-3xl text-white/90 font-light max-w-3xl mx-auto animate-fade-in [animation-delay:200ms]">
               {t('hero.subtitle')}
             </p>
           </div>
 
-          <div className="flex flex-wrap justify-center gap-4 text-sm animate-fade-in [animation-delay:800ms] py-6">
-            <div className="flex items-center gap-2 bg-black/40 backdrop-blur-sm px-4 py-2 rounded-full border border-white/30 shadow-lg">
-              <Zap className="h-4 w-4" />
-              <span className="font-medium">{t('hero.feature1')}</span>
+          {/* Feature Badges */}
+          <div className="flex flex-wrap justify-center gap-4 mb-12 animate-fade-in [animation-delay:400ms]">
+            <div className="flex items-center gap-2 bg-white/10 backdrop-blur-md px-5 py-3 rounded-full border border-white/30">
+              <Zap className="h-5 w-5" />
+              <span className="font-medium text-base">{t('hero.feature1')}</span>
             </div>
-            <div className="flex items-center gap-2 bg-black/40 backdrop-blur-sm px-4 py-2 rounded-full border border-white/30 shadow-lg">
-              <Droplet className="h-4 w-4" />
-              <span className="font-medium">{t('hero.feature2')}</span>
+            <div className="flex items-center gap-2 bg-white/10 backdrop-blur-md px-5 py-3 rounded-full border border-white/30">
+              <Droplet className="h-5 w-5" />
+              <span className="font-medium text-base">{t('hero.feature2')}</span>
             </div>
-            <div className="flex items-center gap-2 bg-black/40 backdrop-blur-sm px-4 py-2 rounded-full border border-white/30 shadow-lg">
-              <TrendingUp className="h-4 w-4" />
-              <span className="font-medium">{t('hero.feature3')}</span>
+            <div className="flex items-center gap-2 bg-white/10 backdrop-blur-md px-5 py-3 rounded-full border border-white/30">
+              <TrendingUp className="h-5 w-5" />
+              <span className="font-medium text-base">{t('hero.feature3')}</span>
             </div>
           </div>
 
-          <div className="flex flex-col sm:flex-row gap-6 justify-center items-stretch pt-12 animate-fade-in [animation-delay:1000ms] max-w-6xl mx-auto">
+          {/* CTA Buttons */}
+          <div className="grid sm:grid-cols-2 gap-6 max-w-5xl mx-auto animate-fade-in [animation-delay:600ms]">
             <Button 
               variant="outline" 
               size="lg" 
-              className="group flex-1 sm:flex-1 sm:max-w-[500px] text-base sm:text-xl px-6 sm:px-8 py-8 sm:py-10 h-auto bg-black/60 backdrop-blur-md hover:bg-black/20 hover:backdrop-blur-sm text-white border-2 border-white/50 hover:border-white hover:shadow-[0_0_40px_rgba(255,255,255,0.4)] transition-all duration-500 hover:scale-[1.02] rounded-2xl"
+              className="group w-full text-lg px-8 py-10 h-auto bg-white/10 backdrop-blur-md hover:bg-white/20 text-white border-2 border-white/40 hover:border-white hover:shadow-[0_0_30px_rgba(255,255,255,0.3)] transition-all duration-500 hover:scale-[1.02] rounded-2xl"
               onClick={() => document.getElementById('investment-opportunities')?.scrollIntoView({ behavior: 'smooth' })}
             >
-              <div className="flex flex-col items-center justify-center text-center h-full gap-2">
-                <span className="font-bold text-white text-xl sm:text-2xl drop-shadow-lg">{t('hero.cta1')}</span>
-                <span className="text-base opacity-90 text-white drop-shadow-md">{t('hero.cta1.line1')} • {t('hero.cta1.line2')}</span>
+              <div className="flex flex-col items-center justify-center text-center gap-2">
+                <span className="font-bold text-2xl">{t('hero.cta1')}</span>
+                <span className="text-base font-normal text-white/90">{t('hero.cta1.line1')} • {t('hero.cta1.line2')}</span>
               </div>
             </Button>
             <SellPowerPlantModal>
               <Button 
                 variant="outline" 
                 size="lg"
-                className="group flex-1 sm:flex-1 sm:max-w-[500px] text-base sm:text-xl px-6 sm:px-8 py-8 sm:py-10 h-auto bg-black/60 backdrop-blur-md hover:bg-black/20 hover:backdrop-blur-sm text-white border-2 border-white/50 hover:border-white hover:shadow-[0_0_40px_rgba(255,255,255,0.4)] transition-all duration-500 hover:scale-[1.02] rounded-2xl"
+                className="group w-full text-lg px-8 py-10 h-auto bg-white/10 backdrop-blur-md hover:bg-white/20 text-white border-2 border-white/40 hover:border-white hover:shadow-[0_0_30px_rgba(255,255,255,0.3)] transition-all duration-500 hover:scale-[1.02] rounded-2xl"
               >
-                <div className="flex flex-col items-center justify-center text-center w-full h-full gap-2">
-                  <span className="font-bold text-white text-xl sm:text-2xl drop-shadow-lg">{t('hero.cta2')}</span>
-                  <span className="text-base opacity-90 text-white drop-shadow-md">{t('hero.cta2.subtitle')}</span>
+                <div className="flex flex-col items-center justify-center text-center gap-2">
+                  <span className="font-bold text-2xl">{t('hero.cta2')}</span>
+                  <span className="text-base font-normal text-white/90">{t('hero.cta2.subtitle')}</span>
                 </div>
               </Button>
             </SellPowerPlantModal>
