@@ -151,34 +151,34 @@ export const InvestmentOpportunities = () => {
                 <div className="flex-1 space-y-6">
                 {/* Key Metrics - Prominent Display */}
                 <div className="grid grid-cols-3 gap-3">
-                  <div className="text-center p-4 bg-slate-50 rounded-xl border border-slate-200/80">
-                    <div className="text-xl font-bold text-slate-900">{plant.capacity}</div>
-                    <div className="text-xs text-slate-600 mt-1.5 font-medium">{t('opportunities.capacity')}</div>
+                  <div className="text-center p-3.5 bg-white/70 backdrop-blur-md rounded-2xl border border-slate-200/60 shadow-sm">
+                    <div className="text-lg font-bold text-slate-900 leading-tight">{plant.capacity}</div>
+                    <div className="text-[10px] text-slate-600 mt-1.5 font-medium leading-tight">{t('opportunities.capacity')}</div>
                   </div>
-                  <div className="text-center p-4 bg-emerald-50 rounded-xl border border-emerald-200/80">
-                    <div className="text-xl font-bold text-emerald-700">{plant.annualProduction.replace('år', 'year')}</div>
-                    <div className="text-xs text-slate-600 mt-1.5 font-medium">{t('opportunities.production')}</div>
+                  <div className="text-center p-3.5 bg-emerald-50/70 backdrop-blur-md rounded-2xl border border-emerald-200/60 shadow-sm">
+                    <div className="text-lg font-bold text-emerald-700 leading-tight">{plant.annualProduction.replace('GWh/år', 'GWh')}</div>
+                    <div className="text-[10px] text-slate-600 mt-1.5 font-medium leading-tight break-words">{t('opportunities.production')}</div>
                   </div>
-                  <div className="text-center p-4 bg-blue-50 rounded-xl border border-blue-200/80">
-                    <div className="text-2xl font-extrabold text-blue-700">{plant.roi}</div>
-                    <div className="text-xs text-slate-600 mt-1.5 font-medium">ROI</div>
+                  <div className="text-center p-3.5 bg-blue-50/70 backdrop-blur-md rounded-2xl border border-blue-200/60 shadow-sm">
+                    <div className="text-2xl font-extrabold text-blue-700 leading-tight">{plant.roi}</div>
+                    <div className="text-[10px] text-slate-600 mt-1.5 font-medium leading-tight">ROI</div>
                   </div>
                 </div>
 
                 {/* Additional Details */}
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="flex items-center gap-3 p-3 bg-slate-50 rounded-xl border border-slate-200/80">
-                    <MapPin className="h-5 w-5 text-slate-500 flex-shrink-0" />
-                    <div>
-                      <div className="font-semibold text-slate-900 text-sm">{plant.location.split(',')[0]}</div>
-                      <div className="text-xs text-slate-600">{plant.location.split(',')[1]}</div>
+                <div className="grid grid-cols-2 gap-3">
+                  <div className="flex items-center gap-2.5 p-3 bg-white/70 backdrop-blur-md rounded-2xl border border-slate-200/60 shadow-sm">
+                    <MapPin className="h-4 w-4 text-slate-500 flex-shrink-0" />
+                    <div className="min-w-0 flex-1">
+                      <div className="font-semibold text-slate-900 text-xs leading-tight truncate">{plant.location.split(',')[0]}</div>
+                      <div className="text-[10px] text-slate-600 leading-tight truncate">{plant.location.split(',')[1]}</div>
                     </div>
                   </div>
-                  <div className="flex items-center gap-3 p-3 bg-slate-50 rounded-xl border border-slate-200/80">
-                    <Calendar className="h-5 w-5 text-slate-500 flex-shrink-0" />
-                    <div>
-                      <div className="font-semibold text-slate-900 text-sm">{plant.buildYear}</div>
-                      <div className="text-xs text-slate-600">{t('opportunities.buildYear')}</div>
+                  <div className="flex items-center gap-2.5 p-3 bg-white/70 backdrop-blur-md rounded-2xl border border-slate-200/60 shadow-sm">
+                    <Calendar className="h-4 w-4 text-slate-500 flex-shrink-0" />
+                    <div className="min-w-0 flex-1">
+                      <div className="font-semibold text-slate-900 text-xs leading-tight">{plant.buildYear}</div>
+                      <div className="text-[10px] text-slate-600 leading-tight truncate">{t('opportunities.buildYear')}</div>
                     </div>
                   </div>
                 </div>
