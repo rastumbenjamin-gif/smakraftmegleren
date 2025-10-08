@@ -54,9 +54,10 @@ export const HeroSection = () => {
               className="w-full sm:w-auto sm:min-w-[300px] lg:min-w-[400px] text-base sm:text-lg px-4 sm:px-6 py-6 sm:py-8 h-auto min-h-[120px] bg-gradient-to-r from-hydro-blue to-hydro-green hover:opacity-90 shadow-2xl border-2 border-white/20"
               onClick={() => document.getElementById('investment-opportunities')?.scrollIntoView({ behavior: 'smooth' })}
             >
-              <div className="flex flex-col items-center justify-center text-center h-full">
-                <span className="font-bold text-white">{t('hero.cta1')}</span>
-                <span className="text-sm opacity-90 mt-1 text-white">{t('hero.cta1.subtitle')}</span>
+              <div className="flex flex-col items-center justify-center text-center h-full gap-1">
+                <span className="font-bold text-white text-lg">{t('hero.cta1')}</span>
+                <span className="text-sm opacity-90 text-white">{t('hero.cta1.line1')}</span>
+                <span className="text-sm opacity-90 text-white">{t('hero.cta1.line2')}</span>
               </div>
             </Button>
             <SellPowerPlantModal>
