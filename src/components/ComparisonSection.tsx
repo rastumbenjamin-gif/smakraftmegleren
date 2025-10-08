@@ -41,8 +41,8 @@ export const ComparisonSection = () => {
             </CardHeader>
             <CardContent className="space-y-4 flex-grow flex flex-col">
               <div className="flex items-center justify-between">
-                <span className="text-sm font-medium">Annual ROI</span>
-                <Badge className="bg-success text-white">{t('comparison.hydro.roi')}</Badge>
+                <span className="text-sm font-semibold text-slate-900">{t('comparison.roi')}</span>
+                <Badge className="bg-emerald-600 text-white border-0 font-semibold">{t('comparison.hydro.roi')}</Badge>
               </div>
               <div className="flex items-center gap-2">
                 <CheckCircle className="h-4 w-4 text-success" />
@@ -110,8 +110,8 @@ export const ComparisonSection = () => {
             </CardHeader>
             <CardContent className="space-y-4 flex-grow flex flex-col">
               <div className="flex items-center justify-between">
-                <span className="text-sm font-medium">Annual ROI</span>
-                <Badge variant="outline" className="text-warning border-warning">{t('comparison.carbon.roi')}</Badge>
+                <span className="text-sm font-semibold text-slate-900">{t('comparison.roi')}</span>
+                <Badge variant="outline" className="text-slate-700 border-slate-400 font-semibold bg-white/50">{t('comparison.carbon.roi')}</Badge>
               </div>
               <div className="flex items-center gap-2">
                 <XCircle className="h-4 w-4 text-destructive" />
@@ -179,8 +179,8 @@ export const ComparisonSection = () => {
             </CardHeader>
             <CardContent className="space-y-4 flex-grow flex flex-col">
               <div className="flex items-center justify-between">
-                <span className="text-sm font-medium">Annual ROI</span>
-                <Badge variant="outline" className="text-muted-foreground">{t('comparison.esg.roi')}</Badge>
+                <span className="text-sm font-semibold text-slate-900">{t('comparison.roi')}</span>
+                <Badge variant="outline" className="text-slate-700 border-slate-400 font-semibold bg-white/50">{t('comparison.esg.roi')}</Badge>
               </div>
               <div className="flex items-center gap-2">
                 <XCircle className="h-4 w-4 text-destructive" />

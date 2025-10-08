@@ -121,11 +121,11 @@ export const InvestmentOpportunities = () => {
                     variant="secondary"
                     className={`${
                       plant.operationalDate.includes("Operation") 
-                        ? 'bg-success/90 text-white border-success/20' 
+                        ? 'bg-emerald-600 text-white border-0 shadow-lg' 
                         : plant.operationalDate.includes("construction")
-                        ? 'bg-orange-500/90 text-white border-orange-500/20'
-                        : 'bg-primary/90 text-white border-primary/20'
-                    } px-3 py-1 text-xs font-medium backdrop-blur-sm`}
+                        ? 'bg-orange-500 text-white border-0 shadow-lg'
+                        : 'bg-blue-600 text-white border-0 shadow-lg'
+                    } px-4 py-1.5 text-sm font-semibold backdrop-blur-sm`}
                   >
                     {plant.operationalDate.includes("Operation") 
                       ? t('opportunities.inOperation') 
@@ -139,8 +139,8 @@ export const InvestmentOpportunities = () => {
                 <CardHeader className="pb-4">
                   {/* Plant Info */}
                   <div className="space-y-2">
-                    <CardTitle className="text-xl group-hover:text-hydro-blue transition-colors duration-300">{plant.name}</CardTitle>
-                    <div className="flex items-center gap-1 text-muted-foreground text-sm">
+                    <CardTitle className="text-2xl font-bold text-slate-900 group-hover:text-emerald-700 transition-colors duration-300">{plant.name}</CardTitle>
+                    <div className="flex items-center gap-2 text-slate-600 text-base">
                       <MapPin className="h-4 w-4" />
                       {plant.location}
                     </div>
@@ -151,46 +151,46 @@ export const InvestmentOpportunities = () => {
                 <div className="flex-1 space-y-6">
                 {/* Key Metrics - Prominent Display */}
                 <div className="grid grid-cols-3 gap-3">
-                  <div className="text-center p-3 bg-hydro-blue/5 rounded-lg border border-hydro-blue/10">
-                    <div className="text-lg font-bold text-hydro-blue">{plant.capacity}</div>
-                    <div className="text-xs text-muted-foreground mt-1">{t('opportunities.capacity')}</div>
+                  <div className="text-center p-4 bg-slate-50 rounded-xl border border-slate-200/80">
+                    <div className="text-xl font-bold text-slate-900">{plant.capacity}</div>
+                    <div className="text-xs text-slate-600 mt-1.5 font-medium">{t('opportunities.capacity')}</div>
                   </div>
-                  <div className="text-center p-3 bg-success/5 rounded-lg border border-success/10">
-                    <div className="text-lg font-bold text-success">{plant.annualProduction.replace('år', 'year')}</div>
-                    <div className="text-xs text-muted-foreground mt-1">{t('opportunities.production')}</div>
+                  <div className="text-center p-4 bg-emerald-50 rounded-xl border border-emerald-200/80">
+                    <div className="text-xl font-bold text-emerald-700">{plant.annualProduction.replace('år', 'year')}</div>
+                    <div className="text-xs text-slate-600 mt-1.5 font-medium">{t('opportunities.production')}</div>
                   </div>
-                  <div className="text-center p-3 bg-primary/5 rounded-lg border border-primary/10">
-                    <div className="text-xl font-extrabold text-primary">{plant.roi}</div>
-                    <div className="text-xs text-muted-foreground mt-1 font-medium">ROI</div>
+                  <div className="text-center p-4 bg-blue-50 rounded-xl border border-blue-200/80">
+                    <div className="text-2xl font-extrabold text-blue-700">{plant.roi}</div>
+                    <div className="text-xs text-slate-600 mt-1.5 font-medium">ROI</div>
                   </div>
                 </div>
 
                 {/* Additional Details */}
-                <div className="grid grid-cols-2 gap-4 text-sm">
-                  <div className="flex items-center gap-2">
-                    <MapPin className="h-4 w-4 text-muted-foreground" />
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="flex items-center gap-3 p-3 bg-slate-50 rounded-xl border border-slate-200/80">
+                    <MapPin className="h-5 w-5 text-slate-500 flex-shrink-0" />
                     <div>
-                      <div className="font-medium">{plant.location.split(',')[0]}</div>
-                      <div className="text-xs text-muted-foreground">{plant.location.split(',')[1]}</div>
+                      <div className="font-semibold text-slate-900 text-sm">{plant.location.split(',')[0]}</div>
+                      <div className="text-xs text-slate-600">{plant.location.split(',')[1]}</div>
                     </div>
                   </div>
-                  <div className="flex items-center gap-2">
-                    <Calendar className="h-4 w-4 text-muted-foreground" />
+                  <div className="flex items-center gap-3 p-3 bg-slate-50 rounded-xl border border-slate-200/80">
+                    <Calendar className="h-5 w-5 text-slate-500 flex-shrink-0" />
                     <div>
-                      <div className="font-medium">{plant.buildYear}</div>
-                      <div className="text-xs text-muted-foreground">{t('opportunities.buildYear')}</div>
+                      <div className="font-semibold text-slate-900 text-sm">{plant.buildYear}</div>
+                      <div className="text-xs text-slate-600">{t('opportunities.buildYear')}</div>
                     </div>
                   </div>
                 </div>
 
                 {/* Unique Advantages */}
                 <div>
-                  <h4 className="font-semibold mb-3">{t('opportunities.advantages')}</h4>
-                  <div className="space-y-2">
+                  <h4 className="font-semibold text-slate-900 mb-3 text-base">{t('opportunities.advantages')}</h4>
+                  <div className="space-y-2.5">
                     {plant.advantages.map((advantage, index) => (
-                      <div key={index} className="flex items-start gap-2">
-                        <div className="w-2 h-2 rounded-full bg-hydro-green mt-2 flex-shrink-0" />
-                        <span className="text-sm text-muted-foreground">{advantage}</span>
+                      <div key={index} className="flex items-start gap-2.5">
+                        <div className="w-1.5 h-1.5 rounded-full bg-emerald-600 mt-2 flex-shrink-0" />
+                        <span className="text-sm text-slate-600 leading-relaxed">{advantage}</span>
                       </div>
                     ))}
                   </div>
@@ -201,7 +201,7 @@ export const InvestmentOpportunities = () => {
                 <RegistrationModal plantName={plant.name}>
                   <Button 
                     variant="default" 
-                    className="w-full bg-primary hover:bg-primary/90 text-white group-hover:bg-gradient-to-r group-hover:from-hydro-blue group-hover:to-hydro-green transition-all duration-300 h-auto py-3 px-4 text-sm font-medium whitespace-normal mt-auto"
+                    className="w-full bg-emerald-600 hover:bg-emerald-700 text-white transition-all duration-300 h-auto py-4 px-6 text-base font-semibold whitespace-normal mt-auto rounded-xl shadow-lg"
                   >
                     {t('opportunities.register')}
                   </Button>
