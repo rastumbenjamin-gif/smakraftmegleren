@@ -24,30 +24,14 @@ export const HeroSection = () => {
           <div className="grid lg:grid-cols-[1.2fr_auto] gap-20 items-center max-w-[1400px] mx-auto">
             
             {/* Left Column - Main Content */}
-            <div className="space-y-10 animate-fade-in max-w-2xl">
-              <div className="space-y-6">
+            <div className="space-y-12 animate-fade-in max-w-2xl">
+              <div className="space-y-8">
                 <h1 className="text-5xl md:text-6xl lg:text-[4.5rem] font-bold leading-[1.1] text-slate-900 tracking-tight">
                   {t('hero.title')}
                 </h1>
                 <p className="text-xl md:text-2xl text-slate-600 leading-relaxed font-light max-w-xl">
                   {t('hero.subtitle')}
                 </p>
-              </div>
-
-              {/* Feature Pills */}
-              <div className="flex flex-wrap gap-3 animate-fade-in [animation-delay:200ms]">
-                <div className="flex items-center gap-2.5 bg-white/90 backdrop-blur-sm px-5 py-3 rounded-full border border-slate-200 shadow-sm">
-                  <Zap className="h-4 w-4 text-emerald-600" />
-                  <span className="text-sm font-medium text-slate-700">{t('hero.feature1')}</span>
-                </div>
-                <div className="flex items-center gap-2.5 bg-white/90 backdrop-blur-sm px-5 py-3 rounded-full border border-slate-200 shadow-sm">
-                  <Droplet className="h-4 w-4 text-blue-600" />
-                  <span className="text-sm font-medium text-slate-700">{t('hero.feature2')}</span>
-                </div>
-                <div className="flex items-center gap-2.5 bg-white/90 backdrop-blur-sm px-5 py-3 rounded-full border border-slate-200 shadow-sm">
-                  <TrendingUp className="h-4 w-4 text-slate-600" />
-                  <span className="text-sm font-medium text-slate-700">{t('hero.feature3')}</span>
-                </div>
               </div>
 
               {/* Mobile CTA Buttons */}
