@@ -47,11 +47,11 @@ export const HeroSection = () => {
             </div>
           </div>
 
-          <div className="flex flex-col sm:flex-row gap-6 justify-center items-stretch pt-8 animate-fade-in [animation-delay:1000ms] max-w-5xl mx-auto">
+          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center pt-8 animate-fade-in [animation-delay:1000ms] max-w-5xl mx-auto">
             <Button 
-              variant="invest" 
+              variant="outline" 
               size="lg" 
-              className="w-full sm:w-auto sm:min-w-[300px] lg:min-w-[400px] text-base sm:text-lg px-4 sm:px-6 py-6 sm:py-8 h-auto min-h-[120px] bg-gradient-to-r from-hydro-blue to-hydro-green hover:opacity-90 shadow-2xl border-2 border-white/20"
+              className="w-full sm:w-auto sm:min-w-[300px] lg:min-w-[400px] text-base sm:text-lg px-4 sm:px-6 py-6 sm:py-8 h-auto min-h-[120px] bg-black/30 backdrop-blur-sm text-white border-2 border-white hover:bg-white hover:text-primary shadow-2xl"
               onClick={() => document.getElementById('investment-opportunities')?.scrollIntoView({ behavior: 'smooth' })}
             >
               <div className="flex flex-col items-center justify-center text-center h-full gap-1">
@@ -68,13 +68,13 @@ export const HeroSection = () => {
               >
                 <div className="flex flex-col items-center justify-center text-center w-full h-full">
                   <div className="flex flex-wrap items-center justify-center gap-2 mb-1">
-                    <span className="font-bold whitespace-nowrap">{t('hero.cta2')}</span>
+                    <span className="font-bold whitespace-nowrap text-white">{t('hero.cta2')}</span>
                     <div className="flex items-center gap-1 bg-green-500 px-2 py-1 rounded text-xs font-bold text-white whitespace-nowrap">
                       <span className="line-through text-green-200">10k NOK</span>
                       <span>{t('hero.freeLimited')}</span>
                     </div>
                   </div>
-                  <span className="text-sm opacity-90">{t('hero.cta2.subtitle')}</span>
+                  <span className="text-sm opacity-90 text-white">{t('hero.cta2.subtitle')}</span>
                 </div>
               </Button>
             </SellPowerPlantModal>
