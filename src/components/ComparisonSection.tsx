@@ -136,27 +136,27 @@ export const ComparisonSection = () => {
               
               <div className="mt-auto">
                 <Collapsible open={allDetailsOpen}>
-                  <CollapsibleContent className="mt-4 p-6 bg-white/80 backdrop-blur-sm rounded-2xl border border-slate-200/80 shadow-sm">
-                    <div className="space-y-4">
-                      <p className="font-semibold text-slate-700 text-lg mb-4">{t('comparison.carbon.details.title')}</p>
-                      <div className="space-y-4">
-                        <div className="flex gap-3">
-                          <div className="w-2 h-2 rounded-full bg-slate-400 mt-2 flex-shrink-0"></div>
-                          <div className="text-base">
+                  <CollapsibleContent className="mt-3 p-4 bg-white/80 backdrop-blur-sm rounded-xl border border-slate-200/80 shadow-sm">
+                    <div className="space-y-3">
+                      <p className="font-semibold text-slate-700 text-sm mb-2">{t('comparison.carbon.details.title')}</p>
+                      <div className="space-y-2.5">
+                        <div className="flex gap-2">
+                          <div className="w-1.5 h-1.5 rounded-full bg-slate-400 mt-1.5 flex-shrink-0"></div>
+                          <div className="text-xs">
                             <span className="font-semibold text-slate-900">{t('comparison.carbon.details.1.title')}</span>
                             <span className="text-slate-600 ml-1">{t('comparison.carbon.details.1.text')}</span>
                           </div>
                         </div>
-                        <div className="flex gap-3">
-                          <div className="w-2 h-2 rounded-full bg-slate-400 mt-2 flex-shrink-0"></div>
-                          <div className="text-base">
+                        <div className="flex gap-2">
+                          <div className="w-1.5 h-1.5 rounded-full bg-slate-400 mt-1.5 flex-shrink-0"></div>
+                          <div className="text-xs">
                             <span className="font-semibold text-slate-900">{t('comparison.carbon.details.2.title')}</span>
                             <span className="text-slate-600 ml-1">{t('comparison.carbon.details.2.text')}</span>
                           </div>
                         </div>
-                        <div className="flex gap-3">
-                          <div className="w-2 h-2 rounded-full bg-slate-400 mt-2 flex-shrink-0"></div>
-                          <div className="text-base">
+                        <div className="flex gap-2">
+                          <div className="w-1.5 h-1.5 rounded-full bg-slate-400 mt-1.5 flex-shrink-0"></div>
+                          <div className="text-xs">
                             <span className="font-semibold text-slate-900">{t('comparison.carbon.details.3.title')}</span>
                             <span className="text-slate-600 ml-1">{t('comparison.carbon.details.3.text')}</span>
                           </div>
@@ -205,27 +205,27 @@ export const ComparisonSection = () => {
               
               <div className="mt-auto">
                 <Collapsible open={allDetailsOpen}>
-                  <CollapsibleContent className="mt-4 p-6 bg-white/80 backdrop-blur-sm rounded-2xl border border-slate-200/80 shadow-sm">
-                    <div className="space-y-4">
-                      <p className="font-semibold text-slate-700 text-lg mb-4">{t('comparison.esg.details.title')}</p>
-                      <div className="space-y-4">
-                        <div className="flex gap-3">
-                          <div className="w-2 h-2 rounded-full bg-slate-400 mt-2 flex-shrink-0"></div>
-                          <div className="text-base">
+                  <CollapsibleContent className="mt-3 p-4 bg-white/80 backdrop-blur-sm rounded-xl border border-slate-200/80 shadow-sm">
+                    <div className="space-y-3">
+                      <p className="font-semibold text-slate-700 text-sm mb-2">{t('comparison.esg.details.title')}</p>
+                      <div className="space-y-2.5">
+                        <div className="flex gap-2">
+                          <div className="w-1.5 h-1.5 rounded-full bg-slate-400 mt-1.5 flex-shrink-0"></div>
+                          <div className="text-xs">
                             <span className="font-semibold text-slate-900">{t('comparison.esg.details.1.title')}</span>
                             <span className="text-slate-600 ml-1">{t('comparison.esg.details.1.text')}</span>
                           </div>
                         </div>
-                        <div className="flex gap-3">
-                          <div className="w-2 h-2 rounded-full bg-slate-400 mt-2 flex-shrink-0"></div>
-                          <div className="text-base">
+                        <div className="flex gap-2">
+                          <div className="w-1.5 h-1.5 rounded-full bg-slate-400 mt-1.5 flex-shrink-0"></div>
+                          <div className="text-xs">
                             <span className="font-semibold text-slate-900">{t('comparison.esg.details.2.title')}</span>
                             <span className="text-slate-600 ml-1">{t('comparison.esg.details.2.text')}</span>
                           </div>
                         </div>
-                        <div className="flex gap-3">
-                          <div className="w-2 h-2 rounded-full bg-slate-400 mt-2 flex-shrink-0"></div>
-                          <div className="text-base">
+                        <div className="flex gap-2">
+                          <div className="w-1.5 h-1.5 rounded-full bg-slate-400 mt-1.5 flex-shrink-0"></div>
+                          <div className="text-xs">
                             <span className="font-semibold text-slate-900">{t('comparison.esg.details.3.title')}</span>
                             <span className="text-slate-600 ml-1">{t('comparison.esg.details.3.text')}</span>
                           </div>
