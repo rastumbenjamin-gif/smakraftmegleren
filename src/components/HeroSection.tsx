@@ -79,19 +79,19 @@ export const HeroSection = () => {
             </div>
 
             {/* Right Column - CTA Cards */}
-            <div className="hidden lg:flex flex-col gap-5 animate-fade-in [animation-delay:400ms] min-w-[440px]">
+            <div className="hidden lg:flex flex-col gap-6 animate-fade-in [animation-delay:400ms] min-w-[480px]">
               {/* Card 1 - Invest CTA */}
               <div 
-                className="bg-white/98 backdrop-blur-sm rounded-2xl shadow-lg p-7 border border-slate-200/80 hover:shadow-xl hover:border-slate-300 transition-all duration-300 hover:-translate-y-1 cursor-pointer group"
+                className="bg-white/98 backdrop-blur-sm rounded-3xl shadow-xl p-8 border-2 border-slate-200/80 hover:shadow-2xl hover:border-emerald-600 transition-all duration-300 hover:-translate-y-1 cursor-pointer group"
                 onClick={() => document.getElementById('investment-opportunities')?.scrollIntoView({ behavior: 'smooth' })}
               >
-                <div className="flex items-start gap-5">
-                  <div className="w-14 h-14 rounded-xl bg-emerald-600 flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-transform shadow-lg shadow-emerald-600/20">
-                    <TrendingUp className="h-7 w-7 text-white" />
+                <div className="flex items-start gap-6">
+                  <div className="w-16 h-16 rounded-2xl bg-emerald-600 flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-transform shadow-xl shadow-emerald-600/30">
+                    <TrendingUp className="h-8 w-8 text-white" />
                   </div>
                   <div className="flex-1 pt-1">
-                    <h3 className="text-xl font-semibold text-slate-900 mb-2 leading-tight">{t('hero.cta1')}</h3>
-                    <p className="text-sm text-slate-600 leading-relaxed">
+                    <h3 className="text-2xl font-bold text-slate-900 mb-3 leading-tight">{t('hero.cta1')}</h3>
+                    <p className="text-base text-slate-600 leading-relaxed">
                       {t('hero.cta1.line1')} • {t('hero.cta1.line2')}
                     </p>
                   </div>
@@ -100,14 +100,14 @@ export const HeroSection = () => {
 
               {/* Card 2 - Sell CTA */}
               <SellPowerPlantModal>
-                <div className="bg-white/98 backdrop-blur-sm rounded-2xl shadow-lg p-7 border border-slate-200/80 hover:shadow-xl hover:border-slate-300 transition-all duration-300 hover:-translate-y-1 cursor-pointer group">
-                  <div className="flex items-start gap-5">
-                    <div className="w-14 h-14 rounded-xl bg-emerald-600 flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-transform shadow-lg shadow-emerald-600/20">
-                      <Droplet className="h-7 w-7 text-white" />
+                <div className="bg-white/98 backdrop-blur-sm rounded-3xl shadow-xl p-8 border-2 border-slate-200/80 hover:shadow-2xl hover:border-emerald-600 transition-all duration-300 hover:-translate-y-1 cursor-pointer group">
+                  <div className="flex items-start gap-6">
+                    <div className="w-16 h-16 rounded-2xl bg-emerald-600 flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-transform shadow-xl shadow-emerald-600/30">
+                      <Droplet className="h-8 w-8 text-white" />
                     </div>
                     <div className="flex-1 pt-1">
-                      <h3 className="text-xl font-semibold text-slate-900 mb-2 leading-tight">{t('hero.cta2')}</h3>
-                      <p className="text-sm text-slate-600 leading-relaxed">
+                      <h3 className="text-2xl font-bold text-slate-900 mb-3 leading-tight">{t('hero.cta2')}</h3>
+                      <p className="text-base text-slate-600 leading-relaxed">
                         {t('hero.cta2.subtitle')}
                       </p>
                     </div>
