@@ -51,7 +51,7 @@ export const HeroSection = () => {
             <Button 
               variant="outline" 
               size="lg" 
-              className="group flex-1 sm:flex-1 sm:max-w-[500px] text-base sm:text-xl px-6 sm:px-8 py-8 sm:py-10 h-auto bg-black/60 backdrop-blur-md text-white border-2 border-white/50 hover:border-white hover:bg-black/40 hover:shadow-[0_0_40px_rgba(255,255,255,0.4)] transition-all duration-300 hover:scale-[1.02] rounded-2xl"
+              className="group flex-1 sm:flex-1 sm:max-w-[500px] text-base sm:text-xl px-6 sm:px-8 py-8 sm:py-10 h-auto bg-hydro-blue/40 backdrop-blur-md text-white border-2 border-white/50 hover:border-white hover:bg-hydro-blue/60 hover:shadow-[0_0_40px_rgba(59,130,246,0.5)] transition-all duration-300 hover:scale-[1.02] rounded-2xl"
               onClick={() => document.getElementById('investment-opportunities')?.scrollIntoView({ behavior: 'smooth' })}
             >
               <div className="flex flex-col items-center justify-center text-center h-full gap-2">
@@ -63,7 +63,7 @@ export const HeroSection = () => {
               <Button 
                 variant="outline" 
                 size="lg"
-                className="group flex-1 sm:flex-1 sm:max-w-[500px] text-base sm:text-xl px-6 sm:px-8 py-8 sm:py-10 h-auto bg-black/60 backdrop-blur-md text-white border-2 border-white/50 hover:border-white hover:bg-black/40 hover:shadow-[0_0_40px_rgba(255,255,255,0.4)] transition-all duration-300 hover:scale-[1.02] rounded-2xl"
+                className="group flex-1 sm:flex-1 sm:max-w-[500px] text-base sm:text-xl px-6 sm:px-8 py-8 sm:py-10 h-auto bg-hydro-green/40 backdrop-blur-md text-white border-2 border-white/50 hover:border-white hover:bg-hydro-green/60 hover:shadow-[0_0_40px_rgba(34,197,94,0.5)] transition-all duration-300 hover:scale-[1.02] rounded-2xl"
               >
                 <div className="flex flex-col items-center justify-center text-center w-full h-full gap-2">
                   <span className="font-bold text-white text-xl sm:text-2xl drop-shadow-lg">{t('hero.cta2')}</span>
