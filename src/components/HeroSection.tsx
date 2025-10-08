@@ -12,7 +12,7 @@ export const HeroSection = () => {
   const typedTitle = useTypewriter(titleText, 8, 150);
 
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden bg-slate-50">
+    <section className="relative min-h-[90vh] flex items-center overflow-hidden bg-slate-50 pt-16">
       {/* Background Image */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"

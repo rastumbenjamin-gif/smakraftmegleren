@@ -11,14 +11,14 @@ const Index = () => {
     <div className="min-h-screen">
       <Header />
       <LanguageToggle />
-      <main>
+      <main className="space-y-0">
         <section className="scroll-snap-start">
           <HeroSection />
         </section>
-        <section className="scroll-snap-start">
+        <section className="scroll-snap-start mt-8">
           <ComparisonSection />
         </section>
-        <section className="scroll-snap-start">
+        <section className="scroll-snap-start mt-8">
           <InvestmentOpportunities />
         </section>
       </main>
