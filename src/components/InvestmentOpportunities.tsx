@@ -93,23 +93,23 @@ export const InvestmentOpportunities = () => {
     <section 
       id="investment-opportunities" 
       ref={sectionRef}
-      className="py-20 bg-white opacity-0 translate-y-8 transition-all duration-1000 ease-out"
+      className="py-12 bg-white opacity-0 translate-y-8 transition-all duration-1000 ease-out"
     >
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16 animate-fade-in">
-          <Badge className="mb-4 bg-emerald-600 text-white border-0">{t('opportunities.badge')}</Badge>
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-slate-900">{t('opportunities.title')}</h2>
-          <p className="text-xl text-slate-600 max-w-3xl mx-auto font-light">
+        <div className="text-center mb-10 animate-fade-in">
+          <Badge className="mb-3 bg-emerald-600 text-white border-0 text-sm">{t('opportunities.badge')}</Badge>
+          <h2 className="text-2xl md:text-3xl font-bold mb-4 text-slate-900">{t('opportunities.title')}</h2>
+          <p className="text-base text-slate-600 max-w-2xl mx-auto font-light">
             {t('opportunities.subtitle')}
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto justify-items-center">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 max-w-6xl mx-auto justify-items-center">
           {opportunities.map((plant) => (
-            <Card key={plant.id} className="group relative overflow-hidden bg-white/98 backdrop-blur-sm border-2 border-slate-200/80 shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-[1.02] hover:border-emerald-400 h-full flex flex-col rounded-3xl">
+            <Card key={plant.id} className="group relative overflow-hidden bg-white/98 backdrop-blur-sm border-2 border-slate-200/80 shadow-lg hover:shadow-xl transition-all duration-500 hover:scale-[1.02] hover:border-emerald-400 h-full flex flex-col rounded-2xl">
               <div className="relative z-10 h-full flex flex-col">
                 {/* Plant Image */}
-                <div className="relative h-48 overflow-hidden rounded-t-lg">
+                <div className="relative h-36 overflow-hidden rounded-t-lg">
                   <img 
                     src={plant.image} 
                     alt={`${plant.name} hydroelectric plant`}
@@ -136,61 +136,61 @@ export const InvestmentOpportunities = () => {
                   </div>
                 </div>
 
-                <CardHeader className="pb-4">
+                <CardHeader className="pb-3 pt-4">
                   {/* Plant Info */}
-                  <div className="space-y-2">
-                    <CardTitle className="text-2xl font-bold text-slate-900 group-hover:text-emerald-700 transition-colors duration-300">{plant.name}</CardTitle>
-                    <div className="flex items-center gap-2 text-slate-600 text-base">
-                      <MapPin className="h-4 w-4" />
+                  <div className="space-y-1.5">
+                    <CardTitle className="text-lg font-bold text-slate-900 group-hover:text-emerald-700 transition-colors duration-300">{plant.name}</CardTitle>
+                    <div className="flex items-center gap-1.5 text-slate-600 text-sm">
+                      <MapPin className="h-3.5 w-3.5" />
                       {plant.location}
                     </div>
                   </div>
                 </CardHeader>
 
-              <CardContent className="space-y-6 flex-1 flex flex-col">
-                <div className="flex-1 space-y-6">
+              <CardContent className="space-y-4 flex-1 flex flex-col pt-3">
+                <div className="flex-1 space-y-4">
                 {/* Key Metrics - Prominent Display */}
-                <div className="grid grid-cols-3 gap-3">
-                  <div className="text-center p-3.5 bg-white/70 backdrop-blur-md rounded-2xl border border-slate-200/60 shadow-sm">
-                    <div className="text-lg font-bold text-slate-900 leading-tight">{plant.capacity}</div>
-                    <div className="text-[10px] text-slate-600 mt-1.5 font-medium leading-tight">{t('opportunities.capacity')}</div>
+                <div className="grid grid-cols-3 gap-2">
+                  <div className="text-center p-2.5 bg-white/70 backdrop-blur-md rounded-xl border border-slate-200/60 shadow-sm">
+                    <div className="text-base font-bold text-slate-900 leading-tight">{plant.capacity}</div>
+                    <div className="text-[9px] text-slate-600 mt-1 font-medium leading-tight">{t('opportunities.capacity')}</div>
                   </div>
-                  <div className="text-center p-3.5 bg-emerald-50/70 backdrop-blur-md rounded-2xl border border-emerald-200/60 shadow-sm">
-                    <div className="text-lg font-bold text-emerald-700 leading-tight">{plant.annualProduction.replace('GWh/år', 'GWh')}</div>
-                    <div className="text-[10px] text-slate-600 mt-1.5 font-medium leading-tight break-words">{t('opportunities.production')}</div>
+                  <div className="text-center p-2.5 bg-emerald-50/70 backdrop-blur-md rounded-xl border border-emerald-200/60 shadow-sm">
+                    <div className="text-base font-bold text-emerald-700 leading-tight">{plant.annualProduction.replace('GWh/år', 'GWh')}</div>
+                    <div className="text-[9px] text-slate-600 mt-1 font-medium leading-tight break-words">{t('opportunities.production')}</div>
                   </div>
-                  <div className="text-center p-3.5 bg-blue-50/70 backdrop-blur-md rounded-2xl border border-blue-200/60 shadow-sm">
-                    <div className="text-2xl font-extrabold text-blue-700 leading-tight">{plant.roi}</div>
-                    <div className="text-[10px] text-slate-600 mt-1.5 font-medium leading-tight">ROI</div>
+                  <div className="text-center p-2.5 bg-blue-50/70 backdrop-blur-md rounded-xl border border-blue-200/60 shadow-sm">
+                    <div className="text-xl font-extrabold text-blue-700 leading-tight">{plant.roi}</div>
+                    <div className="text-[9px] text-slate-600 mt-1 font-medium leading-tight">ROI</div>
                   </div>
                 </div>
 
                 {/* Additional Details */}
-                <div className="grid grid-cols-2 gap-3">
-                  <div className="flex items-center gap-2.5 p-3 bg-white/70 backdrop-blur-md rounded-2xl border border-slate-200/60 shadow-sm">
-                    <MapPin className="h-4 w-4 text-slate-500 flex-shrink-0" />
+                <div className="grid grid-cols-2 gap-2">
+                  <div className="flex items-center gap-2 p-2 bg-white/70 backdrop-blur-md rounded-xl border border-slate-200/60 shadow-sm">
+                    <MapPin className="h-3.5 w-3.5 text-slate-500 flex-shrink-0" />
                     <div className="min-w-0 flex-1">
-                      <div className="font-semibold text-slate-900 text-xs leading-tight truncate">{plant.location.split(',')[0]}</div>
-                      <div className="text-[10px] text-slate-600 leading-tight truncate">{plant.location.split(',')[1]}</div>
+                      <div className="font-semibold text-slate-900 text-[11px] leading-tight truncate">{plant.location.split(',')[0]}</div>
+                      <div className="text-[9px] text-slate-600 leading-tight truncate">{plant.location.split(',')[1]}</div>
                     </div>
                   </div>
-                  <div className="flex items-center gap-2.5 p-3 bg-white/70 backdrop-blur-md rounded-2xl border border-slate-200/60 shadow-sm">
-                    <Calendar className="h-4 w-4 text-slate-500 flex-shrink-0" />
+                  <div className="flex items-center gap-2 p-2 bg-white/70 backdrop-blur-md rounded-xl border border-slate-200/60 shadow-sm">
+                    <Calendar className="h-3.5 w-3.5 text-slate-500 flex-shrink-0" />
                     <div className="min-w-0 flex-1">
-                      <div className="font-semibold text-slate-900 text-xs leading-tight">{plant.buildYear}</div>
-                      <div className="text-[10px] text-slate-600 leading-tight truncate">{t('opportunities.buildYear')}</div>
+                      <div className="font-semibold text-slate-900 text-[11px] leading-tight">{plant.buildYear}</div>
+                      <div className="text-[9px] text-slate-600 leading-tight truncate">{t('opportunities.buildYear')}</div>
                     </div>
                   </div>
                 </div>
 
                 {/* Unique Advantages */}
                 <div>
-                  <h4 className="font-semibold text-slate-900 mb-3 text-base">{t('opportunities.advantages')}</h4>
-                  <div className="space-y-2.5">
+                  <h4 className="font-semibold text-slate-900 mb-2 text-sm">{t('opportunities.advantages')}</h4>
+                  <div className="space-y-2">
                     {plant.advantages.map((advantage, index) => (
-                      <div key={index} className="flex items-start gap-2.5">
-                        <div className="w-1.5 h-1.5 rounded-full bg-emerald-600 mt-2 flex-shrink-0" />
-                        <span className="text-sm text-slate-600 leading-relaxed">{advantage}</span>
+                      <div key={index} className="flex items-start gap-2">
+                        <div className="w-1 h-1 rounded-full bg-emerald-600 mt-1.5 flex-shrink-0" />
+                        <span className="text-xs text-slate-600 leading-relaxed">{advantage}</span>
                       </div>
                     ))}
                   </div>
@@ -201,7 +201,7 @@ export const InvestmentOpportunities = () => {
                 <RegistrationModal plantName={plant.name}>
                   <Button 
                     variant="default" 
-                    className="w-full bg-emerald-600 hover:bg-emerald-700 text-white transition-all duration-300 h-auto py-4 px-6 text-base font-semibold whitespace-normal mt-auto rounded-xl shadow-lg"
+                    className="w-full bg-emerald-600 hover:bg-emerald-700 text-white transition-all duration-300 h-auto py-3 px-4 text-sm font-semibold whitespace-normal mt-auto rounded-lg shadow-md"
                   >
                     {t('opportunities.register')}
                   </Button>
