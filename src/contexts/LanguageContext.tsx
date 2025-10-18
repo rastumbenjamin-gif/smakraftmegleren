@@ -52,7 +52,7 @@ const translations = {
     // Hero Section
     "hero.title": "Real Green Investments",
     "hero.subtitle":
-      "Own hydro plants in Norway. Generate 5-10% annual returns while creating measurable environmental impact that directly contributes to your sustainability goals.",
+      "Get access to renewable energy plants in Norway. Generate 5-10% annual returns while creating measurable environmental impact that directly contributes to your sustainability goals.",
     "hero.feature1": "Clean Energy Production",
     "hero.feature2": "Norwegian Fjord Power",
     "hero.feature3": "5-10% Annual ROI",
@@ -64,8 +64,8 @@ const translations = {
     "hero.freeLimited": "Free for a limited time",
 
     // Comparison Section
-    "comparison.badge": "Real Investment Comparison",
-    "comparison.title": "Hydro Plants vs Alternative Investments",
+    "comparison.badge": "Investment Comparison",
+    "comparison.title": "The benefits of renewable investments",
     "comparison.subtitle":
       "See why owning actual renewable energy infrastructure delivers superior returns and genuine environmental impact compared to carbon credits and ESG funds.",
     "comparison.roi": "Annual ROI",
@@ -126,7 +126,7 @@ const translations = {
 
     // Investment Opportunities
     "opportunities.badge": "Current Opportunities",
-    "opportunities.title": "Available Hydro Plant Investments",
+    "opportunities.title": "Available Renewable Energy Investments",
     "opportunities.subtitle":
       "Invest in operational and under-construction hydro plants across Norway's most productive fjords and mountain regions.",
     "opportunities.capacity": "Installed capacity",
