@@ -67,7 +67,7 @@ const translations = {
     "comparison.badge": "Real Investment Comparison",
     "comparison.title": "How Hydro Plants Compare",
     "comparison.subtitle":
-      "See why owning actual renewable energy infrastructure delivers superior returns and genuine environmental impact compared to carbon credits and ESG funds.",
+      "See why owning actual renewable energy infrastructure delivers stable returns and genuine environmental impact compared to carbon credits and ESG funds.",
     "comparison.roi": "Annual ROI",
     "comparison.hydro.title": "Norwegian Hydro Plants",
     "comparison.hydro.roi": "5-10%",
