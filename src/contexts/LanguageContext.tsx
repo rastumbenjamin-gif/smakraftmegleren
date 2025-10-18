@@ -59,13 +59,13 @@ const translations = {
     "hero.cta1": "View Investment Opportunities",
     "hero.cta1.line1": "Start investing today",
     "hero.cta1.line2": "See available plants",
-    "hero.cta2": "Evaluate Your Hydro Plant",
+    "hero.cta2": "Evaluation Of Your Asset",
     "hero.cta2.subtitle": "Free evaluation • No obligations",
     "hero.freeLimited": "Free for a limited time",
 
     // Comparison Section
     "comparison.badge": "Real Investment Comparison",
-    "comparison.title": "Hydro Plants vs Alternative Investments",
+    "comparison.title": "How Hydro Plants Compare",
     "comparison.subtitle":
       "See why owning actual renewable energy infrastructure delivers superior returns and genuine environmental impact compared to carbon credits and ESG funds.",
     "comparison.roi": "Annual ROI",
@@ -301,9 +301,9 @@ const translations = {
     "header.title": "Småkraftmegleren",
 
     // Hero Section
-    "hero.title": "Ekte Grønne Investeringer",
+    "hero.title": "Investeringer i Fornybar Energi",
     "hero.subtitle":
-      "Få tilgang til eierskap i vannkraftverk i Norge. Generer 5-10% årlig avkastning mens du skaper målbar miljøpåvirkning som direkte bidrar til dine bærekraftsmål.",
+      "Få tilgang til grønn verdiskapning i Norden. Generer 5-10% årlig avkastning mens du skaper målbar miljøpåvirkning som direkte bidrar til dine bærekraftsmål.",
     "hero.feature1": "Ren Energiproduksjon",
     "hero.feature2": "Norsk Fjordkraft",
     "hero.feature3": "5-10% Årlig Avkastning",
@@ -316,9 +316,9 @@ const translations = {
 
     // Comparison Section
     "comparison.badge": "Reell Investeringssammenligning",
-    "comparison.title": "Vannkraftverk vs Alternative Investeringer",
+    "comparison.title": "Hvordan Vannkraft Holder Opp Mot Alternative Investeringer",
     "comparison.subtitle":
-      "Se hvorfor eierskap av infrastruktur for fornybar energi gir overlegen avkastning og genuin miljøpåvirkning sammenlignet med karbonkreditter og ESG-fond.",
+      "Se hvorfor eierskap av infrastruktur for fornybar energi gir stabil avkastning og genuin miljøpåvirkning sammenlignet med karbonkreditter og ESG-fond.",
     "comparison.roi": "Årlig Avkastning",
     "comparison.hydro.title": "Norske Vannkraftverk",
     "comparison.hydro.roi": "5-10%",
