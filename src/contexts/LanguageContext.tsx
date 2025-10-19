@@ -161,6 +161,10 @@ const translations = {
       "Modern, low-risk asset – Commissioned in 2008, avoiding the refurbishment risk of older small hydro plants.",
     "opportunities.molnelva.advantage2":
       "Solid performance profile ~3.8 GWh annual production with strong 99 m head, ensuring efficient energy conversion and stable revenues.",
+    "opportunities.solarpark.advantage1":
+      "Operational 4.8 MWp solar park with a strong track record and prime SE3 location.",
+    "opportunities.solarpark.advantage2":
+      "Low costs and battery-ready setup unlock long-term flexibility and value.",
 
     // More opportunities
     "opportunities.more.title": "Discover More Opportunities",
@@ -413,6 +417,10 @@ const translations = {
       "Moderne, lavrisiko anlegg – Satt i drift i 2008, og unngår dermed oppgraderingsrisikoen som eldre småkraftverk har.",
     "opportunities.molnelva.advantage2":
       "Solid ytelsesprofil ~3,8 GWh årlig produksjon med sterk fallhøyde på 99 meter, som sikrer effektiv energikonvertering og stabile inntekter.",
+    "opportunities.solarpark.advantage1":
+      "Driftsklart solkraftverk på 4,8 MWp med solid historikk og attraktiv beliggenhet i SE3.",
+    "opportunities.solarpark.advantage2":
+      "Lave kostnader og batteriklar infrastruktur gir langsiktig fleksibilitet og verdiskaping.",
 
     // More opportunities
     "opportunities.more.title": "Oppdag Flere Muligheter",

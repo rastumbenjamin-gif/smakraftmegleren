@@ -15,6 +15,7 @@ import sandvikEnergi from "@/assets/sandvik-energi.jpg";
 import hindbergelvaKraftverk from "@/assets/hindbergelva-kraftverk.jpg";
 import vollabekkenKraftverkNew from "@/assets/vollabekken-kraftverk-new.jpg";
 import molnelvaKraftverk from "@/assets/molnelva-kraftverk.jpg";
+import solarPark from "@/assets/solar-park.jpg";
 
 export const InvestmentOpportunities = () => {
   const sectionRef = useScrollAnimation();
@@ -85,6 +86,28 @@ export const InvestmentOpportunities = () => {
       advantages: [
         t('opportunities.molnelva.advantage1'),
         t('opportunities.molnelva.advantage2')
+      ]
+    },
+    {
+      id: 5,
+      name: "SE3 Solar Park",
+      location: "SE3, Sweden",
+      capacity: "4.8 MWp",
+      annualProduction: "5.3 GWh/år",
+      roi: "High ROI potential",
+      funded: 0,
+      totalInvestment: "TBD",
+      minInvestment: "0.5 MNOK",
+      co2Reduction: "2,200",
+      operationalDate: "In Operation (2021)",
+      investors: 0,
+      image: solarPark,
+      status: "Available investment",
+      statusColor: "bg-success",
+      buildYear: "2021",
+      advantages: [
+        t('opportunities.solarpark.advantage1'),
+        t('opportunities.solarpark.advantage2')
       ]
     }
   ];
