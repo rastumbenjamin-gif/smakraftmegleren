@@ -126,9 +126,9 @@ const translations = {
 
     // Investment Opportunities
     "opportunities.badge": "Current Opportunities",
-    "opportunities.title": "Nordic Renewable Energy Investments",
+    "opportunities.title": "Available Hydro Plant Investments",
     "opportunities.subtitle":
-      "Invest in operating and development-stage renewable energy plants across the Nordics’ most productive regions.",
+      "Invest in operational and under-construction hydro plants across Norway's most productive fjords and mountain regions.",
     "opportunities.capacity": "Installed capacity",
     "opportunities.production": "Annual production",
     "opportunities.buildYear": "Build year",
@@ -165,8 +165,8 @@ const translations = {
     // More opportunities
     "opportunities.more.title": "Discover More Opportunities",
     "opportunities.more.subtitle":
-      "These are selected highlights. Additional renewable projects — hydro, solar, wind, and biogas — are available across the Nordics.",
-    "opportunities.more.feature1": "Nordics wide coverage",
+      "These are just our featured investments. We have additional hydropower plants across Norway, ranging from small-scale community projects to larger commercial installations.",
+    "opportunities.more.feature1": "Nationwide coverage",
     "opportunities.more.feature2": "ROI 5-10%",
     "opportunities.more.feature3": "Various investment sizes",
     "opportunities.more.cta": "Request More Investment Opportunities",
@@ -316,7 +316,7 @@ const translations = {
 
     // Comparison Section
     "comparison.badge": "Reell Investeringssammenligning",
-    "comparison.title": "Hvordan Vannkraft Holder Opp Mot Alternative Investeringer",
+    "comparison.title": "Hvordan Vannkraft Holder Opp",
     "comparison.subtitle":
       "Se hvorfor eierskap av infrastruktur for fornybar energi gir stabil avkastning og genuin miljøpåvirkning sammenlignet med karbonkreditter og ESG-fond.",
     "comparison.roi": "Årlig Avkastning",
@@ -379,8 +379,9 @@ const translations = {
 
     // Investment Opportunities
     "opportunities.badge": "Nåværende Muligheter",
-    "opportunities.title": "Tilgjengelige Investeringer i Fornybar Energi",
-    "opportunities.subtitle": "Invester i operative og under-konstruksjon kraftverk på tvers av Norden.",
+    "opportunities.title": "Tilgjengelige Vannkraftinvesteringer",
+    "opportunities.subtitle":
+      "Invester i operative og under-konstruksjon vannkraftverk på tvers av Norges mest produktive fjorder og fjellregioner.",
     "opportunities.capacity": "Installert kapasitet",
     "opportunities.production": "Årlig produksjon",
     "opportunities.buildYear": "Byggeår",
@@ -416,7 +417,7 @@ const translations = {
     // More opportunities
     "opportunities.more.title": "Oppdag Flere Muligheter",
     "opportunities.more.subtitle":
-      "Dette er et utdrag av investeringsmulighetene. Vi har flere kraftverk over hele Norden, fra småskala samfunnsprosjekter til større kommersielle installasjoner.",
+      "Dette er bare våre fremhevede investeringer. Vi har flere vannkraftverk over hele Norge, fra småskala samfunnsprosjekter til større kommersielle installasjoner.",
     "opportunities.more.feature1": "Landsdekkende",
     "opportunities.more.feature2": "Avkastning 5-10%",
     "opportunities.more.feature3": "Ulike investeringsstørrelser",
