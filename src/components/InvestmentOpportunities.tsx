@@ -90,7 +90,7 @@ export const InvestmentOpportunities = () => {
     },
     {
       id: 5,
-      name: "SE3 Solar Park",
+      name: "Sweden West",
       location: "SE3, Sweden",
       capacity: "4.8 MWp",
       annualProduction: "5.3 GWh/år",
