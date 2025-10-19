@@ -126,9 +126,9 @@ const translations = {
 
     // Investment Opportunities
     "opportunities.badge": "Current Opportunities",
-    "opportunities.title": "Available Hydro Plant Investments",
+    "opportunities.title": "Available Investment Opportunities",
     "opportunities.subtitle":
-      "Invest in operational and under-construction hydro plants across Norway's most productive fjords and mountain regions.",
+      "Invest in operating and development-stage renewable energy plants across the Nordics’ most productive regions.",
     "opportunities.capacity": "Installed capacity",
     "opportunities.production": "Annual production",
     "opportunities.buildYear": "Build year",
@@ -163,8 +163,7 @@ const translations = {
       "Solid performance profile ~3.8 GWh annual production with strong 99 m head, ensuring efficient energy conversion and stable revenues.",
     "opportunities.solarpark.advantage1":
       "Operational 4.8 MWp solar park with a strong track record and prime SE3 location.",
-    "opportunities.solarpark.advantage2":
-      "Low costs and battery-ready setup unlock long-term flexibility and value.",
+    "opportunities.solarpark.advantage2": "Low costs and battery-ready setup unlock long-term flexibility and value.",
 
     // More opportunities
     "opportunities.more.title": "Discover More Opportunities",
@@ -383,9 +382,8 @@ const translations = {
 
     // Investment Opportunities
     "opportunities.badge": "Nåværende Muligheter",
-    "opportunities.title": "Tilgjengelige Vannkraftinvesteringer",
-    "opportunities.subtitle":
-      "Invester i operative og under-konstruksjon vannkraftverk på tvers av Norges mest produktive fjorder og fjellregioner.",
+    "opportunities.title": "Tilgjengelige Investeringsmuligheter",
+    "opportunities.subtitle": "Invester i operative og under-konstruksjon kraftverk på tvers av Norden.",
     "opportunities.capacity": "Installert kapasitet",
     "opportunities.production": "Årlig produksjon",
     "opportunities.buildYear": "Byggeår",
