@@ -139,7 +139,7 @@ export const InvestmentOpportunities = () => {
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                   {/* Status Badge Overlay on Image */}
-                  <div className="absolute top-4 left-4">
+                  <div className="absolute top-4 left-4 flex gap-2">
                   <Badge 
                     variant="secondary"
                     className={`${
@@ -156,6 +156,14 @@ export const InvestmentOpportunities = () => {
                       ? "Consented project - not built"
                       : t('opportunities.consentedProject')}
                   </Badge>
+                  {plant.id === 3 && (
+                    <Badge 
+                      variant="secondary"
+                      className="bg-blue-600 text-white border-0 shadow-lg px-4 py-1.5 text-sm font-semibold backdrop-blur-sm"
+                    >
+                      {t('opportunities.offerReceived')}
+                    </Badge>
+                  )}
                   </div>
                 </div>
 
