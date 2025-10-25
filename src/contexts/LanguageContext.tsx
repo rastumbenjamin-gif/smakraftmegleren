@@ -392,7 +392,7 @@ const translations = {
     "opportunities.register": "Registrer for prising og info",
     "opportunities.inOperation": "I Drift",
     "opportunities.consentedProject": "Konsesjonert Prosjekt",
-    "opportunities.offerReceived": "Tilbud mottatt",
+    "opportunities.offerReceived": "Bud mottatt",
 
     // Plant specific data
     "opportunities.hindbergelva.advantage1":
