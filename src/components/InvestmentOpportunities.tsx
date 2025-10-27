@@ -38,7 +38,7 @@ export const InvestmentOpportunities = () => {
       image: hindbergelvaKraftverk,
       status: "Available investment",
       statusColor: "bg-gradient-to-r from-yellow-400 to-orange-500",
-      buildYear: "1987",
+      buildYear: "2009",
       advantages: [t("opportunities.hindbergelva.advantage1"), t("opportunities.hindbergelva.advantage2")],
     },
     {
