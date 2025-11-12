@@ -136,6 +136,36 @@ export type Database = {
           },
         ]
       }
+      profiles: {
+        Row: {
+          id: string
+          email: string
+          name: string
+          phone: string
+          investor_type: string | null
+          created_at: string | null
+          updated_at: string | null
+        }
+        Insert: {
+          id: string
+          email: string
+          name: string
+          phone: string
+          investor_type?: string | null
+          created_at?: string | null
+          updated_at?: string | null
+        }
+        Update: {
+          id?: string
+          email?: string
+          name?: string
+          phone?: string
+          investor_type?: string | null
+          created_at?: string | null
+          updated_at?: string | null
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never

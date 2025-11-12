@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -12,6 +12,7 @@ import { SearchKraftverkCombobox } from "./SearchKraftverkCombobox";
 import { RevenueOptionInput } from "./RevenueOptionInput";
 import { supabase } from "@/integrations/supabase/client";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { useAuth } from "@/contexts/AuthContext";
 
 
 interface SellPowerPlantModalProps {
@@ -21,6 +22,7 @@ interface SellPowerPlantModalProps {
 export const SellPowerPlantModal = ({ children }: SellPowerPlantModalProps) => {
   const [open, setOpen] = useState(false);
   const { t } = useLanguage();
+  const { profile } = useAuth();
   const [formData, setFormData] = useState({
     // Contact Information
     name: "",
@@ -44,6 +46,18 @@ export const SellPowerPlantModal = ({ children }: SellPowerPlantModalProps) => {
     waterRightsDetails: null as { type: 'percentage' | 'fixed'; amount: string } | null
   });
   const { toast } = useToast();
+
+  // Auto-fill form when user profile is available
+  useEffect(() => {
+    if (profile && open) {
+      setFormData(prev => ({
+        ...prev,
+        name: profile.name || prev.name,
+        phone: profile.phone || prev.phone,
+        email: profile.email || prev.email,
+      }));
+    }
+  }, [profile, open]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();

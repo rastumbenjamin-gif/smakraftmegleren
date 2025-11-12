@@ -124,12 +124,13 @@ All colors MUST be HSL.
 
   html {
     scroll-behavior: smooth;
+    /* Scale down the entire page to 80% */
+    font-size: 80%;
   }
 
   body {
     @apply bg-background text-foreground;
     font-family: 'Inter', sans-serif;
-    font-size: 13px;
     scroll-snap-type: y proximity;
   }
 

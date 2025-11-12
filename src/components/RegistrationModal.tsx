@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -8,6 +8,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { useAuth } from "@/contexts/AuthContext";
 
 interface RegistrationModalProps {
   plantName: string;
@@ -17,9 +18,11 @@ interface RegistrationModalProps {
 export const RegistrationModal = ({ plantName, children }: RegistrationModalProps) => {
   const [open, setOpen] = useState(false);
   const { t } = useLanguage();
+  const { profile } = useAuth();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
+    phone: "",
     investorType: "",
     budgetRange: "",
     pricingArea: "",
@@ -28,6 +31,19 @@ export const RegistrationModal = ({ plantName, children }: RegistrationModalProp
     comments: ""
   });
   const { toast } = useToast();
+
+  // Auto-fill form when user profile is available
+  useEffect(() => {
+    if (profile && open) {
+      setFormData(prev => ({
+        ...prev,
+        name: profile.name || prev.name,
+        email: profile.email || prev.email,
+        phone: profile.phone || prev.phone,
+        investorType: profile.investor_type || prev.investorType,
+      }));
+    }
+  }, [profile, open]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -81,6 +97,7 @@ export const RegistrationModal = ({ plantName, children }: RegistrationModalProp
       setFormData({
         name: "",
         email: "",
+        phone: "",
         investorType: "",
         budgetRange: "",
         pricingArea: "",
@@ -134,6 +151,18 @@ export const RegistrationModal = ({ plantName, children }: RegistrationModalProp
                 className="bg-background"
               />
             </div>
+          </div>
+
+          <div className="space-y-2">
+            <Label htmlFor="phone">{t('form.phone')}</Label>
+            <Input
+              id="phone"
+              type="tel"
+              value={formData.phone}
+              onChange={(e) => setFormData(prev => ({ ...prev, phone: e.target.value }))}
+              placeholder="+47 123 45 678"
+              className="bg-background"
+            />
           </div>
 
           <div className="space-y-2">

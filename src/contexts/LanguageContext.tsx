@@ -299,6 +299,53 @@ const translations = {
     // Language toggle
     "language.norwegian": "Norsk",
     "language.english": "English",
+
+    // Authentication
+    "auth.login": "Log In",
+    "auth.signup": "Sign Up",
+    "auth.logout": "Log Out",
+
+    // Login Modal
+    "login.title": "Log In",
+    "login.description": "Enter your email and password to access your account.",
+    "login.email": "Email",
+    "login.emailPlaceholder": "your@email.com",
+    "login.password": "Password",
+    "login.passwordPlaceholder": "Enter your password",
+    "login.submit": "Log In",
+    "login.loading": "Logging in...",
+    "login.switchToSignUp": "Don't have an account? Sign up",
+    "login.error": "Login failed. Please check your credentials.",
+    "login.success": "Successfully logged in!",
+
+    // Sign Up Modal
+    "signup.title": "Create Account",
+    "signup.description": "Fill in your information to create an account.",
+    "signup.name": "Full Name",
+    "signup.namePlaceholder": "John Doe",
+    "signup.email": "Email",
+    "signup.emailPlaceholder": "your@email.com",
+    "signup.phone": "Phone Number",
+    "signup.phonePlaceholder": "+47 123 45 678",
+    "signup.investorType": "Investor Type",
+    "signup.selectInvestorType": "Select investor type",
+    "signup.password": "Password",
+    "signup.passwordPlaceholder": "Minimum 6 characters",
+    "signup.confirmPassword": "Confirm Password",
+    "signup.confirmPasswordPlaceholder": "Re-enter password",
+    "signup.submit": "Sign Up",
+    "signup.loading": "Creating account...",
+    "signup.switchToLogin": "Already have an account? Log in",
+    "signup.passwordMismatch": "Passwords do not match",
+    "signup.passwordTooShort": "Password must be at least 6 characters",
+    "signup.error": "Sign up failed. Please try again.",
+    "signup.success": "Account created successfully! Please check your email to verify your account.",
+
+    // Registration Modal
+    "registration.investorType.private": "Private Person",
+    "registration.investorType.company": "Company",
+    "registration.investorType.fund": "Investment Fund",
+    "registration.investorType.institutional": "Institutional Investor",
   },
   no: {
     // Header
@@ -555,5 +602,52 @@ const translations = {
     // Language toggle
     "language.norwegian": "Norsk",
     "language.english": "English",
+
+    // Authentication
+    "auth.login": "Logg Inn",
+    "auth.signup": "Registrer Deg",
+    "auth.logout": "Logg Ut",
+
+    // Login Modal
+    "login.title": "Logg Inn",
+    "login.description": "Skriv inn e-post og passord for å få tilgang til kontoen din.",
+    "login.email": "E-post",
+    "login.emailPlaceholder": "din@epost.no",
+    "login.password": "Passord",
+    "login.passwordPlaceholder": "Skriv inn passordet ditt",
+    "login.submit": "Logg Inn",
+    "login.loading": "Logger inn...",
+    "login.switchToSignUp": "Har du ikke konto? Registrer deg",
+    "login.error": "Innlogging mislyktes. Vennligst sjekk påloggingsdetaljene dine.",
+    "login.success": "Logget inn!",
+
+    // Sign Up Modal
+    "signup.title": "Opprett Konto",
+    "signup.description": "Fyll inn informasjonen din for å opprette en konto.",
+    "signup.name": "Fullt Navn",
+    "signup.namePlaceholder": "Ola Nordmann",
+    "signup.email": "E-post",
+    "signup.emailPlaceholder": "din@epost.no",
+    "signup.phone": "Telefonnummer",
+    "signup.phonePlaceholder": "+47 123 45 678",
+    "signup.investorType": "Investortype",
+    "signup.selectInvestorType": "Velg investortype",
+    "signup.password": "Passord",
+    "signup.passwordPlaceholder": "Minimum 6 tegn",
+    "signup.confirmPassword": "Bekreft Passord",
+    "signup.confirmPasswordPlaceholder": "Skriv inn passord på nytt",
+    "signup.submit": "Registrer Deg",
+    "signup.loading": "Oppretter konto...",
+    "signup.switchToLogin": "Har du allerede konto? Logg inn",
+    "signup.passwordMismatch": "Passordene samsvarer ikke",
+    "signup.passwordTooShort": "Passordet må være minst 6 tegn",
+    "signup.error": "Registrering mislyktes. Vennligst prøv igjen.",
+    "signup.success": "Konto opprettet! Vennligst sjekk e-posten din for å verifisere kontoen.",
+
+    // Registration Modal
+    "registration.investorType.private": "Privatperson",
+    "registration.investorType.company": "Selskap",
+    "registration.investorType.fund": "Investeringsfond",
+    "registration.investorType.institutional": "Institusjonell Investor",
   },
 };

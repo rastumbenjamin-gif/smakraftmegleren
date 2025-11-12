@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -9,6 +9,7 @@ import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 import { Loader2 } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { useAuth } from "@/contexts/AuthContext";
 
 interface MoreOpportunitiesModalProps {
   children: React.ReactNode;
@@ -18,6 +19,7 @@ export const MoreOpportunitiesModal = ({ children }: MoreOpportunitiesModalProps
   const [isOpen, setIsOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const { t } = useLanguage();
+  const { profile } = useAuth();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -28,6 +30,18 @@ export const MoreOpportunitiesModal = ({ children }: MoreOpportunitiesModalProps
     interests: "",
     additionalInfo: ""
   });
+
+  // Auto-fill form when user profile is available
+  useEffect(() => {
+    if (profile && isOpen) {
+      setFormData(prev => ({
+        ...prev,
+        name: profile.name || prev.name,
+        email: profile.email || prev.email,
+        phone: profile.phone || prev.phone,
+      }));
+    }
+  }, [profile, isOpen]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
