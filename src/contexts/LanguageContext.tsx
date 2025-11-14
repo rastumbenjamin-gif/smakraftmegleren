@@ -50,9 +50,9 @@ const translations = {
     "header.title": "Småkraftmegleren",
 
     // Hero Section
-    "hero.title": "Renewable Energy Investments",
+    "hero.title": "The Marketplace for Renewable Energy Infrastructure",
     "hero.subtitle":
-      "Get access to renewable energy assets in the Nordics. Generate 5-10% annual returns while creating measurable environmental impact that directly contributes to your sustainability goals.",
+      "We broker hydroelectric plants, solar parks, wind farms, and other renewable assets across Europe. Whether you're an investor seeking cash-flowing infrastructure or an owner looking to exit—we connect buyers and sellers.",
     "hero.feature1": "Clean Energy Production",
     "hero.feature2": "Norwegian Fjord Power",
     "hero.feature3": "5-10% Annual ROI",
@@ -352,9 +352,9 @@ const translations = {
     "header.title": "Småkraftmegleren",
 
     // Hero Section
-    "hero.title": "Investeringer i Fornybar Energi",
+    "hero.title": "Markedsplassen for Kraftverk og Fornybar Energi",
     "hero.subtitle":
-      "Få tilgang til grønn verdiskapning i Norden. Generer 5-10% årlig avkastning mens du skaper målbar miljøpåvirkning som direkte bidrar til dine bærekraftsmål.",
+      "Vi megler vannkraftverk, solparker, vindkraftanlegg og andre fornybare kraftverk i hele Europa. Enten du er investor som søker anlegg med stabil avkastning, eller eier som vil selge – vi bringer kjøpere og selgere sammen.",
     "hero.feature1": "Ren Energiproduksjon",
     "hero.feature2": "Norsk Fjordkraft",
     "hero.feature3": "5-10% Årlig Avkastning",
