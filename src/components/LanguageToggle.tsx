@@ -10,7 +10,7 @@ export const LanguageToggle = () => {
   };
 
   return (
-    <div className="fixed top-6 right-6 z-50">
+    <div className="fixed top-20 right-4 z-40">
       <Button
         onClick={toggleLanguage}
         variant="outline"
